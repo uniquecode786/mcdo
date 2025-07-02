@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mcdo/routers/routers.dart';
@@ -17,6 +18,8 @@ class TermsConditionsScreen extends StatefulWidget {
 
 class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
   bool switchValue = false;
+  bool switchValue1 = false;
+  bool switchValue2 = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,49 +83,90 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                   addHeight(30),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Image.asset('assets/icons/star.png',
-                        height: 20,
-                        width: 10,
+                      Expanded(
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Image.asset('assets/icons/star.png',
+                              height: 20,
+                              width: 10,
+                            ),
+                            addWidth(5),
+                            const Expanded(
+                              child: AddText(
+                                text: 'i am aged 16 or over and agree to the Terms',
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                                height: 1.2,
+                                color: Colors.black,
+                              ),
+                            )
+                          ],
+                        ),
                       ),
-                      addWidth(5),
-                      const AddText(
-                        text: 'i am aged 16 or over and agree to the Terms',
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.black,
-                      )
+                      CupertinoSwitch(
+                        value: switchValue,
+                        activeColor: const Color(0xFFFEBB0A),
+                        onChanged: (bool value) {
+                          setState(() {
+                            switchValue = value;
+                          });
+                        },
+                      ),
                     ],
                   ),
                   addHeight(37),
-                  const Row(
+                  Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Expanded(
+                      addWidth(20),
+                      const Expanded(
                         child: AddText(
                           text: 'i\'d like to receive news, updates and promotions from McDonald\'s via email',
                           fontSize: 14,
+                          height: 1.2,
                           fontWeight: FontWeight.w400,
                           color: Colors.black,
                         ),
-                      )
+                      ),
+                      CupertinoSwitch(
+                        value: switchValue1,
+                        activeColor: const Color(0xFFFEBB0A),
+                        onChanged: (bool value) {
+                          setState(() {
+                            switchValue1 = value;
+                          });
+                        },
+                      ),
                     ],
                   ),
                   addHeight(37),
-                  const Row(
+                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Expanded(
+                      addWidth(20),
+                      const Expanded(
                         child: AddText(
                           text: 'i\'d like to receive news, updates and promotions from McDonald\'s via sMS',
                           fontSize: 14,
                           fontWeight: FontWeight.w400,
                           color: Colors.black,
                         ),
-                      )
+                      ),
+                      CupertinoSwitch(
+                        value: switchValue2,
+                        activeColor: const Color(0xFFFEBB0A),
+                        onChanged: (bool value) {
+                          setState(() {
+                            switchValue2 = value;
+                          });
+                        },
+                      ),
                     ],
                   ),
                   addHeight(46),
@@ -130,6 +174,7 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
+                      addWidth(20),
                      const AddText(
                         text: 'terms & conditions',
                         fontSize: 14,
@@ -148,6 +193,7 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
+                      addWidth(20),
                      const AddText(
                         text: 'Privacy Statement',
                         fontSize: 14,
@@ -162,10 +208,13 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                     ],
                   ),
                   addHeight(36),
-                  const AddText(text: 'The purpose of this app is to provide you with offers based on your preferences and app usage. If you do not want McDonald\'s to use your preferences and app usage in this way then you should not proceed to registration.',
-                  fontWeight: FontWeight.w400,
-                  fontSize: 11,
-                  color: Color(0xFF6B6B6B),),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 20.0),
+                    child: AddText(text: 'The purpose of this app is to provide you with offers based on your preferences and app usage. If you do not want McDonald\'s to use your preferences and app usage in this way then you should not proceed to registration.',
+                    fontWeight: FontWeight.w400,
+                    fontSize: 11,
+                    color: Color(0xFF6B6B6B),),
+                  ),
                   addHeight(66),
                 ],
               ).paddingSymmetric(horizontal: 10),
