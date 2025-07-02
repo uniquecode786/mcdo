@@ -1,0 +1,60 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+
+class CustomButton extends StatelessWidget {
+  final String title;
+  final VoidCallback? onPressed;
+  final Color? backgroundColor;
+  final bool? expandedValue;
+  final Color? textColor;
+  final double radius;
+
+  const CustomButton(
+      {Key? key, required this.title,required this.radius, this.onPressed, this.backgroundColor, this.textColor, this.expandedValue = false})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    return SizedBox(
+      width: size.width,
+      height: 65,
+      child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            shape:  RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius)),
+            surfaceTintColor: const Color(0xFFFEBB0A),
+            backgroundColor: const Color(0xFFFEBB0A),
+            textStyle: GoogleFonts.poppins(
+              fontSize: 17,
+              fontWeight: FontWeight.w400,
+              color: Colors.black,
+            ),),
+          onPressed: onPressed,
+          child: expandedValue == true
+              ? SizedBox(
+            width: double.maxFinite,
+            child: Center(
+              child: Text(
+                title,
+                style: GoogleFonts.poppins(
+                  fontSize: 17,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+          )
+              : FittedBox(
+            child: Text(
+              title,
+              style: GoogleFonts.poppins(
+                fontSize: 17,
+                fontWeight: FontWeight.w400,
+                color: Colors.black,
+              ),
+            ),
+          )),
+    );
+  }
+}
