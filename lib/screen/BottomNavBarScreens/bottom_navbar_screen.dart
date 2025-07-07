@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../controller/bottom_controller.dart';
+import 'deals_screen.dart';
 import 'food_main_screen.dart';
 import 'home_screen.dart';
 import 'mcDelivery_screen.dart';
@@ -22,8 +23,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
 
   final pages = [
     const HomePageScreen(),
-    const HomePageScreen(),
-    const McDeliveryScreen(),
+    const DealsScreen(),
     const FoodMainScreen(),
     const MoreScreen(),
   ];
@@ -196,7 +196,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Image.asset(
-                                  'assets/icons/bike.png',
+                                  'assets/icons/food.png',
                                   height: 20,
                                   color: bottomController.pageIndex.value == 2
                                       ? null
@@ -204,7 +204,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
                                 ),
                               ),
                               Text(
-                                'McDelivery',
+                               'Food',
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: GoogleFonts.poppins(
@@ -231,45 +231,10 @@ class _BottomNavbarState extends State<BottomNavbar> {
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Image.asset(
-                                  'assets/icons/food.png',
-                                  height: 20,
-                                  color: bottomController.pageIndex.value == 3
-                                      ? null
-                                      : const Color(0xFF9E9E9E),
-                                ),
-                              ),
-                              Text(
-                               'Food',
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                                style: GoogleFonts.poppins(
-                                    color:Colors.black,
-                                    fontSize: 13,
-                                    fontWeight: bottomController.pageIndex.value == 3 ?FontWeight.w700 : FontWeight.w500),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Flexible(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                        child: MaterialButton(
-                          padding: padding,
-                          onPressed: () {
-                            bottomController.updateIndexValue(4);
-                          },
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Image.asset(
                                   'assets/icons/more.png',
                                   height: 20,
                                   width: 20,
-                                  color: bottomController.pageIndex.value == 4
+                                  color: bottomController.pageIndex.value == 3
                                       ? null
                                       : const Color(0xFF9E9E9E),
                                 ),
@@ -281,7 +246,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
                                 style: GoogleFonts.poppins(
                                     color:Colors.black,
                                     fontSize: 13,
-                                    fontWeight: bottomController.pageIndex.value == 4 ?FontWeight.w700 : FontWeight.w500),
+                                    fontWeight: bottomController.pageIndex.value == 3 ?FontWeight.w700 : FontWeight.w500),
                               )
                             ],
                           ),
