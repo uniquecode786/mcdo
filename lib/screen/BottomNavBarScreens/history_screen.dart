@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../routers/routers.dart';
@@ -35,15 +36,20 @@ class _HistoryScreenState extends State<HistoryScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        leading: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset('assets/icons/app_new_icon.png',
-              width: 30,
-              height: 30,
-            ),
-          ],
+        leading: GestureDetector(
+          onTap: (){
+            Get.back();
+          },
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset('assets/icons/common_back.png',
+                height: 40,
+                width: 40,
+              )
+            ],
+          ),
         ),
         leadingWidth: 60,
         actions: [

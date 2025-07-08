@@ -18,6 +18,10 @@ import '../screen/authScreens/signIn_option_screen.dart';
 import '../screen/authScreens/terms_conditions_screen.dart';
 import '../screen/authScreens/two_factor_validation_screen.dart';
 import '../screen/authScreens/welcome_screen.dart';
+import '../screen/more_screens/about_screen.dart';
+import '../screen/more_screens/favourites_screen.dart';
+import '../screen/more_screens/select_religion_more.dart';
+import '../screen/more_screens/terms_condition_screen.dart';
 
 
 SizedBox addHeight(double size) => SizedBox(height: size);
@@ -43,6 +47,10 @@ class MyRouters {
     GetPage(name: BottomNavbar.route, page: () =>  const BottomNavbar()),
     GetPage(name: NoMatchesFoundScreen.route, page: () =>  const NoMatchesFoundScreen()),
     GetPage(name: HistoryScreen.route, page: () =>  const HistoryScreen()),
+    GetPage(name: SelectReligionScreen.route, page: () =>  const SelectReligionScreen()),
+    GetPage(name: TermsConditionScreen.route, page: () =>  const TermsConditionScreen()),
+    GetPage(name: AboutScreen.route, page: () =>  const AboutScreen()),
+    GetPage(name: FavouritesScreen.route, page: () =>  const FavouritesScreen()),
 
   ];
 }

@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mcdo/routers/routers.dart';
 import '../../wigets/addText.dart';
+import '../more_screens/about_screen.dart';
+import '../more_screens/favourites_screen.dart';
+import '../more_screens/select_religion_more.dart';
+import '../more_screens/terms_condition_screen.dart';
 import 'account_screen.dart';
+import 'history_screen.dart';
 
 
 class MoreScreen extends StatefulWidget {
@@ -48,18 +53,22 @@ class _MoreScreenState extends State<MoreScreen> {
                  leadingIcon: 'assets/icons/menu.png',
                   text: 'menu',
                   onTap: (){
-                     Get.to(()=> const AccountScreen());
+
                   },
                 ),
                 IconTextArrowRow(
                  leadingIcon: 'assets/icons/history.png',
                   text: 'history',
-                  onTap: (){},
+                  onTap: (){
+                   Get.toNamed(HistoryScreen.route);
+                  },
                 ),
                 IconTextArrowRow(
                  leadingIcon: 'assets/icons/my_profile.png',
                   text: 'my profile',
-                  onTap: (){},
+                  onTap: (){
+                    Get.to(()=> const AccountScreen());
+                  },
                 ),
                 IconTextArrowRow(
                  leadingIcon: 'assets/icons/addresses.png',
@@ -74,21 +83,29 @@ class _MoreScreenState extends State<MoreScreen> {
                 IconTextArrowRow(
                  leadingIcon: 'assets/icons/favorites.png',
                   text: 'favorites',
-                  onTap: (){},
+                  onTap: (){
+                   Get.toNamed(FavouritesScreen.route);
+                  },
                 ),   IconTextArrowRow(
                  leadingIcon: 'assets/icons/about_app.png',
                   text: 'about app',
-                  onTap: (){},
+                  onTap: (){
+                   Get.toNamed(AboutScreen.route);
+                  },
                 ),
                 IconTextArrowRow(
                  leadingIcon: 'assets/icons/terms.png',
                   text: 'terms & conditions',
-                  onTap: (){},
+                  onTap: (){
+                   Get.toNamed(TermsConditionScreen.route);
+                  },
                 ),
                 IconTextArrowRow(
                  leadingIcon: 'assets/icons/delete_user.png',
                   text: 'delete user',
-                  onTap: (){},
+                  onTap: (){
+                    showDeleteAccountPopup(context);
+                  },
                 ),
                 IconTextArrowRow(
                  leadingIcon: 'assets/icons/share.png',
@@ -98,18 +115,69 @@ class _MoreScreenState extends State<MoreScreen> {
                 IconTextArrowRow(
                  leadingIcon: 'assets/icons/sign_out.png',
                   text: 'sign out',
-                  onTap: (){},
+                  onTap: (){
+                    showSignOutPopup(context);
+                  },
                 ),
                 IconTextArrowRow(
                  leadingIcon: 'assets/icons/world.png',
                   text: 'religion & language',
-                  onTap: (){},
+                  onTap: (){
+                   Get.toNamed( SelectReligionScreen.route);
+                  },
                 ),
               ],
             ),
           )),
     );
   }
+}
+
+void showSignOutPopup(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (context) => AlertDialog(
+      backgroundColor: Colors.white,
+      title: const Text('Sign Out'),
+      content: const Text('Are you sure you want to sign out?'),
+      actions: [
+        TextButton(
+          onPressed: () {
+            Navigator.pop(context);
+            // Add sign-out logic here
+          },
+          child: const Text('Yes'),
+        ),
+        TextButton(
+          onPressed: () => Navigator.pop(context),
+          child: const Text('No'),
+        ),
+      ],
+    ),
+  );
+}
+void showDeleteAccountPopup(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (context) => AlertDialog(
+      backgroundColor: Colors.white,
+      title: const Text('Delete Account'),
+      content: const Text('This action cannot be undone.\nAre you sure you want to delete your account?'),
+      actions: [
+        TextButton(
+          onPressed: () {
+            Navigator.pop(context);
+            // Add delete account logic here
+          },
+          child: const Text('Delete', style: TextStyle(color: Colors.red)),
+        ),
+        TextButton(
+          onPressed: () => Navigator.pop(context),
+          child: const Text('Cancel'),
+        ),
+      ],
+    ),
+  );
 }
 
 
