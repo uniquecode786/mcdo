@@ -4,9 +4,8 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../controller/bottom_controller.dart';
 import 'deals_screen.dart';
-import 'food_main_screen.dart';
+import 'food_screen.dart';
 import 'home_screen.dart';
-import 'mcDelivery_screen.dart';
 import 'more_screen.dart';
 
 class BottomNavbar extends StatefulWidget {
@@ -24,7 +23,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
   final pages = [
     const HomePageScreen(),
     const DealsScreen(),
-    const FoodMainScreen(),
+    const FoodScreen(),
     const MoreScreen(),
   ];
 

@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import '../screen/BottomNavBarScreens/bottom_navbar_screen.dart';
 import '../screen/BottomNavBarScreens/communication_settings_screen.dart';
 import '../screen/BottomNavBarScreens/delete_account_screen.dart';
+import '../screen/BottomNavBarScreens/history_screen.dart';
+import '../screen/BottomNavBarScreens/no_matches_found.dart';
 import '../screen/BottomNavBarScreens/password_security.dart';
 import '../screen/BottomNavBarScreens/personal_details_screen.dart';
 import '../screen/artboardScreen/artBoard_screen2.dart';
@@ -39,6 +41,8 @@ class MyRouters {
     GetPage(name: PasswordSecurityScreen.route, page: () =>  const PasswordSecurityScreen()),
     GetPage(name: PersonalDetailsScreenEdit.route, page: () =>  const PersonalDetailsScreenEdit()),
     GetPage(name: BottomNavbar.route, page: () =>  const BottomNavbar()),
+    GetPage(name: NoMatchesFoundScreen.route, page: () =>  const NoMatchesFoundScreen()),
+    GetPage(name: HistoryScreen.route, page: () =>  const HistoryScreen()),
 
   ];
 }
