@@ -1,12 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import '../screen/BottomNavBarScreens/account_screen.dart';
 import '../screen/BottomNavBarScreens/bottom_navbar_screen.dart';
 import '../screen/BottomNavBarScreens/communication_settings_screen.dart';
 import '../screen/BottomNavBarScreens/delete_account_screen.dart';
+import '../screen/BottomNavBarScreens/drawer_menu_Screen.dart';
 import '../screen/BottomNavBarScreens/history_screen.dart';
 import '../screen/BottomNavBarScreens/no_matches_found.dart';
 import '../screen/BottomNavBarScreens/password_security.dart';
 import '../screen/BottomNavBarScreens/personal_details_screen.dart';
+import '../screen/BottomNavBarScreens/single_food_screen.dart';
 import '../screen/artboardScreen/artBoard_screen2.dart';
 import '../screen/artboardScreen/artBoard_screen3.dart';
 import '../screen/artboardScreen/artboard_screen.dart';
@@ -18,8 +21,14 @@ import '../screen/authScreens/signIn_option_screen.dart';
 import '../screen/authScreens/terms_conditions_screen.dart';
 import '../screen/authScreens/two_factor_validation_screen.dart';
 import '../screen/authScreens/welcome_screen.dart';
+import '../screen/more_screens/AddressScreen/address_details_screen.dart';
+import '../screen/more_screens/AddressScreen/delivery_location_screen.dart';
+import '../screen/more_screens/AddressScreen/edit_address_screen.dart';
+import '../screen/more_screens/AddressScreen/support_screen.dart';
 import '../screen/more_screens/about_screen.dart';
+import '../screen/more_screens/contact_us.dart';
 import '../screen/more_screens/favourites_screen.dart';
+import '../screen/more_screens/privacy_statement.dart';
 import '../screen/more_screens/select_religion_more.dart';
 import '../screen/more_screens/terms_condition_screen.dart';
 
@@ -51,6 +60,15 @@ class MyRouters {
     GetPage(name: TermsConditionScreen.route, page: () =>  const TermsConditionScreen()),
     GetPage(name: AboutScreen.route, page: () =>  const AboutScreen()),
     GetPage(name: FavouritesScreen.route, page: () =>  const FavouritesScreen()),
+    GetPage(name: SupportScreen.route, page: () =>  const SupportScreen()),
+    GetPage(name: AddressScreen.route, page: () =>  const AddressScreen()),
+    GetPage(name: AddAddressScreen.route, page: () =>  const AddAddressScreen()),
+    GetPage(name: DeliveryTrackingScreen.route, page: () =>  const DeliveryTrackingScreen()),
+    GetPage(name: FoodSupport.route, page: () =>  const FoodSupport()),
+    GetPage(name: AccountScreen.route, page: () =>  const AccountScreen()),
+    GetPage(name: PrivacyStatementScreen.route, page: () =>  const PrivacyStatementScreen()),
+    GetPage(name: DrawerMenuScreen.route, page: () =>  const DrawerMenuScreen()),
+    GetPage(name: SingleFoodScreen.route, page: () =>  const SingleFoodScreen()),
 
   ];
 }

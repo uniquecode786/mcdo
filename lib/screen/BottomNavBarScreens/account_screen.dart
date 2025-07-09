@@ -4,7 +4,6 @@ import 'package:mcdo/routers/routers.dart';
 import 'package:mcdo/screen/BottomNavBarScreens/password_security.dart';
 import 'package:mcdo/screen/BottomNavBarScreens/personal_details_screen.dart';
 import '../../wigets/addText.dart';
-import '../authScreens/personal_details_screen.dart';
 import 'communication_settings_screen.dart';
 import 'delete_account_screen.dart';
 import 'more_screen.dart';
@@ -12,7 +11,7 @@ import 'more_screen.dart';
 
 class AccountScreen extends StatefulWidget {
   const AccountScreen({super.key});
-  // static String route = '/AccountScreen';
+  static String route = '/AccountScreen';
   @override
   State<AccountScreen> createState() => _AccountScreenState();
 }
@@ -48,8 +47,7 @@ class _AccountScreenState extends State<AccountScreen> {
                 addHeight(29),
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.0),
-                  child: AddText(text: 'A'
-                      'account',
+                  child: AddText(text: 'account',
                   fontSize: 34,
                     fontWeight: FontWeight.w700,
                     color: Colors.black,

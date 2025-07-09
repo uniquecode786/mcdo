@@ -7,6 +7,7 @@ import 'package:mcdo/screen/authScreens/signIn_option_screen.dart';
 import 'package:mcdo/wigets/addText.dart';
 
 import '../../wigets/common_button.dart';
+import '../more_screens/privacy_statement.dart';
 
 
 class TermsConditionsScreen extends StatefulWidget {
@@ -189,24 +190,29 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                     ],
                   ),
                   addHeight(19),
-                   Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      addWidth(20),
-                     const AddText(
-                        text: 'Privacy Statement',
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        color: Color(0xFF176397),
-                      ),
-                      addWidth(8),
-                      Image.asset('assets/icons/tm_icon.png',
-                        height: 15,
-                        width: 15,
-                      )
-                    ],
-                  ),
+                   GestureDetector(
+                     onTap: (){
+                       Get.toNamed(PrivacyStatementScreen.route);
+                     },
+                     child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        addWidth(20),
+                       const AddText(
+                          text: 'Privacy Statement',
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xFF176397),
+                        ),
+                        addWidth(8),
+                        Image.asset('assets/icons/tm_icon.png',
+                          height: 15,
+                          width: 15,
+                        )
+                      ],
+                                       ),
+                   ),
                   addHeight(36),
                   const Padding(
                     padding: EdgeInsets.only(left: 20.0),

@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mcdo/routers/routers.dart';
 import '../../wigets/addText.dart';
+import '../more_screens/AddressScreen/address_details_screen.dart';
 import '../more_screens/about_screen.dart';
+import '../more_screens/contact_us.dart';
 import '../more_screens/favourites_screen.dart';
 import '../more_screens/select_religion_more.dart';
 import '../more_screens/terms_condition_screen.dart';
 import 'account_screen.dart';
+import 'delete_account_screen.dart';
 import 'history_screen.dart';
 
 
@@ -67,18 +70,22 @@ class _MoreScreenState extends State<MoreScreen> {
                  leadingIcon: 'assets/icons/my_profile.png',
                   text: 'my profile',
                   onTap: (){
-                    Get.to(()=> const AccountScreen());
+                    Get.toNamed(AccountScreen.route);
                   },
                 ),
                 IconTextArrowRow(
                  leadingIcon: 'assets/icons/addresses.png',
                   text: 'addresses',
-                  onTap: (){},
+                  onTap: (){
+                   Get.toNamed(AddressScreen.route);
+                  },
                 ),
                 IconTextArrowRow(
                  leadingIcon: 'assets/icons/support.png',
                   text: 'support',
-                  onTap: (){},
+                  onTap: (){
+                   Get.toNamed(SupportScreen.route);
+                  },
                 ),
                 IconTextArrowRow(
                  leadingIcon: 'assets/icons/favorites.png',
@@ -104,7 +111,8 @@ class _MoreScreenState extends State<MoreScreen> {
                  leadingIcon: 'assets/icons/delete_user.png',
                   text: 'delete user',
                   onTap: (){
-                    showDeleteAccountPopup(context);
+                   Get.toNamed(DeleteAccountScreen.route);
+                    // showDeleteAccountPopup(context);
                   },
                 ),
                 IconTextArrowRow(
@@ -151,29 +159,6 @@ void showSignOutPopup(BuildContext context) {
         TextButton(
           onPressed: () => Navigator.pop(context),
           child: const Text('No'),
-        ),
-      ],
-    ),
-  );
-}
-void showDeleteAccountPopup(BuildContext context) {
-  showDialog(
-    context: context,
-    builder: (context) => AlertDialog(
-      backgroundColor: Colors.white,
-      title: const Text('Delete Account'),
-      content: const Text('This action cannot be undone.\nAre you sure you want to delete your account?'),
-      actions: [
-        TextButton(
-          onPressed: () {
-            Navigator.pop(context);
-            // Add delete account logic here
-          },
-          child: const Text('Delete', style: TextStyle(color: Colors.red)),
-        ),
-        TextButton(
-          onPressed: () => Navigator.pop(context),
-          child: const Text('Cancel'),
         ),
       ],
     ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../../routers/routers.dart';
 import '../../wigets/addText.dart';
 
 
@@ -14,47 +16,68 @@ class _PasswordSecurityScreenState extends State<PasswordSecurityScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        leading: GestureDetector(
+          onTap: (){
+            Get.back();
+          },
+          child: const Icon(Icons.arrow_back_ios),
+        ),
+      ),
+      backgroundColor: Colors.white,
       body: SafeArea(
           child: SingleChildScrollView(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                 const AddText(
-                     text: 'Password & Security',
-                     fontSize: 34,
-                   fontWeight: FontWeight.w700,
-                   color: Colors.black,
-                 ),
-                const Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                addHeight(70),
+                Image.asset('assets/icons/key.png',
+                  height: 63,
+                  width: 81,
+                ),
+                addHeight(29),
+                const AddText(text: 'Password & Security',
+                  fontSize: 34,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.black,
+                ),
+                addHeight(27),
+                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                     Icon(Icons.check_circle),
-                    AddText(
+                     const Icon(Icons.check_circle),
+                    addWidth(5),
+                    const AddText(
                       text: 'Two fector authcation is on',
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w700,
                       color: Colors.black,
                     ),
                   ],
                 ),
+                addHeight(27),
                 const AddText(
-                  text: 'Two fector authcation is on',
+                  text: 'two ipsum dolor sit amet, consectetur adipis cing elit. nunc elementum quis urna laoreet luctus. cras consequat eleifend magna et pulvinar.',
                   fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.black,
+                  fontWeight: FontWeight.w500,
+                  color: Color(0xFF6B6B6B),
                 ),
+                addHeight(23),
                 const AddText(
-                  text: 'Two fector authcation is on',
+                  text: ' nulla porttitor magna elementum, maximus ipsum et, mollis nisi. nunc gravida est et nisi cursus, interdum venenatis.',
                   fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.black,
+                  fontWeight: FontWeight.w500,
+                  color: Color(0xFF6B6B6B),
                 ),
+                addHeight(29),
                 GestureDetector(
                   onTap: (){},
                   child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.grey),
                       borderRadius: BorderRadius.circular(4),
@@ -64,7 +87,9 @@ class _PasswordSecurityScreenState extends State<PasswordSecurityScreen> {
                       children: [
                         Text(
                           'Change Password',
-                          style: TextStyle(fontSize: 16, color: Colors.black),
+                          style: TextStyle(fontSize: 16, color: Color(0xFF6B6B6B),
+                          fontWeight: FontWeight.w500
+                          ),
                         ),
                         Icon(Icons.arrow_forward_ios, size: 16, color: Colors.grey),
                       ],
