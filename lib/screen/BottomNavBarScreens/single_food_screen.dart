@@ -284,7 +284,7 @@ class _SingleFoodScreenState extends State<SingleFoodScreen> {
                         width: 110,
                       ),
                     ),
-                    addHeight(20)
+                    addHeight(120)
                   ],
                 ),
               ),

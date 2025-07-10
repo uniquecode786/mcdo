@@ -58,3 +58,65 @@ class CustomButton extends StatelessWidget {
     );
   }
 }
+
+class CustomOutlinedButton extends StatelessWidget {
+  final String title;
+  final VoidCallback? onPressed;
+  final Color? backgroundColor;
+  final bool? expandedValue;
+  final Color? textColor;
+  final double radius;
+
+  const CustomOutlinedButton({
+    Key? key,
+    required this.title,
+    required this.radius,
+    this.onPressed,
+    this.backgroundColor,
+    this.textColor,
+    this.expandedValue = false,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    return SizedBox(
+      width: size.width,
+      height: 65,
+      child: OutlinedButton(
+        style: OutlinedButton.styleFrom(
+          side: BorderSide(color: backgroundColor ?? const Color(0xFFFEBB0A), width: 2),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(radius),
+          ),
+          backgroundColor: backgroundColor ?? Colors.transparent,
+        ),
+        onPressed: onPressed,
+        child: expandedValue == true
+            ? SizedBox(
+          width: double.infinity,
+          child: Center(
+            child: Text(
+              title,
+              style: GoogleFonts.poppins(
+                fontSize: 17,
+                fontWeight: FontWeight.w400,
+                color: textColor ?? const Color(0xFFFEBB0A),
+              ),
+            ),
+          ),
+        )
+            : FittedBox(
+          child: Text(
+            title,
+            style: GoogleFonts.poppins(
+              fontSize: 17,
+              fontWeight: FontWeight.w400,
+              color: textColor ?? const Color(0xFFFEBB0A),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

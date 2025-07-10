@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import '../screen/BottomNavBarScreens/account_screen.dart';
 import '../screen/BottomNavBarScreens/basket_screen.dart';
 import '../screen/BottomNavBarScreens/bottom_navbar_screen.dart';
+import '../screen/BottomNavBarScreens/checkout_screen.dart';
 import '../screen/BottomNavBarScreens/communication_settings_screen.dart';
 import '../screen/BottomNavBarScreens/delete_account_screen.dart';
 import '../screen/BottomNavBarScreens/drawer_menu_Screen.dart';
@@ -71,6 +72,7 @@ class MyRouters {
     GetPage(name: DrawerMenuScreen.route, page: () =>  const DrawerMenuScreen()),
     GetPage(name: SingleFoodScreen.route, page: () =>  const SingleFoodScreen()),
     GetPage(name: BasketScreen.route, page: () =>  const BasketScreen()),
+    GetPage(name: CheckoutScreen.route, page: () =>  const CheckoutScreen()),
 
   ];
 }
