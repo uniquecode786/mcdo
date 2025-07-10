@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mcdo/routers/routers.dart';
 import 'package:mcdo/screen/BottomNavBarScreens/single_food_screen.dart';
 
+import '../../wigets/custom_button.dart';
 import 'drawer_menu_Screen.dart';
 
 
@@ -507,6 +508,13 @@ class _FoodScreenState extends State<FoodScreen> {
                )
            )
          ],
+       ),
+       bottomSheet: CustomBottomBar(
+         title: 'View Basket',
+         price: 'LBP 6,520,000',
+         onTap: () {
+           Get.toNamed(SingleFoodScreen.route);
+         },
        ),
       );
     }

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import '../screen/BottomNavBarScreens/account_screen.dart';
+import '../screen/BottomNavBarScreens/basket_screen.dart';
 import '../screen/BottomNavBarScreens/bottom_navbar_screen.dart';
 import '../screen/BottomNavBarScreens/communication_settings_screen.dart';
 import '../screen/BottomNavBarScreens/delete_account_screen.dart';
@@ -69,6 +70,7 @@ class MyRouters {
     GetPage(name: PrivacyStatementScreen.route, page: () =>  const PrivacyStatementScreen()),
     GetPage(name: DrawerMenuScreen.route, page: () =>  const DrawerMenuScreen()),
     GetPage(name: SingleFoodScreen.route, page: () =>  const SingleFoodScreen()),
+    GetPage(name: BasketScreen.route, page: () =>  const BasketScreen()),
 
   ];
 }
