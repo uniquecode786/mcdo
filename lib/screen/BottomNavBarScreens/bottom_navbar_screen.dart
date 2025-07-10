@@ -125,11 +125,11 @@ class _BottomNavbarState extends State<BottomNavbar> {
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Image.asset(
-                                  'assets/icons/home_icon.png',
+                                  'assets/icons/home_more.png',
                                   height: 20,
                                   color: bottomController.pageIndex.value == 0
-                                      ? null
-                                      : const Color(0xFF9E9E9E),
+                                      ? const Color(0xFFFFC732)
+                                      : const Color(0xFFBCBCBC),
                                 ),
                               ),
                               Text(
