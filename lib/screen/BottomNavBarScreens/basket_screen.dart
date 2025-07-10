@@ -37,7 +37,7 @@ class _BasketScreenState extends State<BasketScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xFFe3e3e3),
       appBar: AppBar(
         backgroundColor: Colors.white,
         leading: GestureDetector(
@@ -55,36 +55,39 @@ class _BasketScreenState extends State<BasketScreen> {
             ],
           ),
         ),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Image.asset('assets/icons/home_more.png',
-              height: 20,
-              width: 20,
-              color: const Color(0xFFEAAD21),
-            ),
-            addWidth(10),
-            Text('BASKET',
-              style: GoogleFonts.poppins(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 18,
-                  color: Colors.black
-              ),),
-            addWidth(10),
-            Image.asset('assets/icons/home_more.png',
-              height: 20,
-              width: 20,
-              color: const Color(0xFFEAAD21),
-            ),
-          ],
+        title: Padding(
+          padding: const EdgeInsets.only(left: 73.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Image.asset('assets/icons/home_more.png',
+                height: 20,
+                width: 20,
+                color: const Color(0xFFEAAD21),
+              ),
+              addWidth(10),
+              Text('BASKET',
+                style: GoogleFonts.poppins(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 18,
+                    color: Colors.black
+                ),),
+              addWidth(10),
+              Image.asset('assets/icons/home_more.png',
+                height: 20,
+                width: 20,
+                color: const Color(0xFFEAAD21),
+              ),
+            ],
+          ),
         ),
         centerTitle: true,
         shadowColor: Colors.black.withOpacity(0.5),
         elevation: 5,
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -114,8 +117,8 @@ class _BasketScreenState extends State<BasketScreen> {
               itemBuilder: (context, index) {
                 return Card(
                   color: Colors.white,
-                  margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  elevation: 4,
+                  elevation: 0,
+                  margin: const EdgeInsets.symmetric(vertical: 5),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                   child: Stack(
                     children: [
@@ -300,7 +303,42 @@ class _BasketScreenState extends State<BasketScreen> {
                 );
               },
             ),
-
+            addHeight(20),
+            Container(
+              width: Get.width,
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(8),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.2),
+                    blurRadius: 8,
+                    spreadRadius: 2,
+                    offset: const Offset(0, 4), // Shadow position
+                  ),
+                ],
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const AddText(
+                    text: 'Special request',
+                    fontWeight: FontWeight.w400,
+                    fontSize: 14,
+                    color: Color(0xFF333333),
+                  ),
+                  addHeight(35),
+                  const AddText(
+                    text: 'write your special request here',
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12,
+                    color: Color(0xFF999999),
+                  ),
+                  addHeight(50),
+                ],
+              ),
+            ),
           ],
         ),
       ),
