@@ -146,6 +146,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
                         ),
                       ),
                     ),
+
                     Flexible(
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 5.0),
