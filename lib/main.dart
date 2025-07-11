@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'McDo',
+      title: 'Meatway',
       locale: const Locale('en','US'),
       builder: (c, child) => GestureDetector(
         onTap: () {

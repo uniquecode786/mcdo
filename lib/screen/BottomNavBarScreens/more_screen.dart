@@ -35,7 +35,7 @@ class _MoreScreenState extends State<MoreScreen> {
                    crossAxisAlignment: CrossAxisAlignment.center,
                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                    children: [
-                     const AddText(text: 'more',
+                     const AddText(text: 'More',
                      fontWeight: FontWeight.w700,
                        fontSize: 34,
                        color: Colors.black,
@@ -195,7 +195,7 @@ class IconTextArrowRow extends StatelessWidget {
                     height: 20,),
                     const SizedBox(width: 10),
                     Text(
-                      text,
+                      text.capitalizeFirst!,
                       style: const TextStyle(fontSize: 16, color: Colors.black),
                     ),
                   ],

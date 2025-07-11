@@ -23,10 +23,10 @@ class CustomButton extends StatelessWidget {
       child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             shape:  RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius)),
-            surfaceTintColor: const Color(0xFFFEBB0A),
-            backgroundColor: const Color(0xFFFEBB0A),
+            surfaceTintColor: const Color(0xFFFFC732),
+            backgroundColor: const Color(0xFFFFC732),
             textStyle: GoogleFonts.poppins(
-              fontSize: 17,
+              fontSize: 15,
               fontWeight: FontWeight.w400,
               color: Colors.black,
             ),),

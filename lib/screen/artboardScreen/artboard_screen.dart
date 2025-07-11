@@ -21,18 +21,19 @@ class _ArtboardScreenState extends State<ArtboardScreen> {
       backgroundColor: Colors.white,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
+          addHeight(40),
            Center(
              child: Image.asset('assets/icons/earth_icon.png',
-             height: 300,
-               width: 300,
+             height: 260,
+               width: 260,
              ),
            ),
            AddText(
-              text:'select region'.tr,
+              text:'Select region'.tr,
               color: Colors.black,
-              fontSize: 34,
+              fontSize: 30,
               fontWeight: FontWeight.w700
            ),
           addHeight(35),

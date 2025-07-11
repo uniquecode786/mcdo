@@ -37,7 +37,7 @@ class _SelectReligionScreenState extends State<SelectReligionScreen> {
             ),
           ),
           AddText(
-              text:'select region'.tr,
+              text:'Select region'.tr,
               color: Colors.black,
               fontSize: 34,
               fontWeight: FontWeight.w700
