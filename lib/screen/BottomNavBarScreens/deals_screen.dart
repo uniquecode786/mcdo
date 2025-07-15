@@ -43,17 +43,20 @@ class _DealsScreenState extends State<DealsScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        leading: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset('assets/icons/app_new_icon.png',
-              width: 30,
-              height: 30,
-            ),
-          ],
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Image.asset('assets/icons/logo.png',
+                height: 23,
+                width: 120,
+              ),
+            ],
+          ),
         ),
-        leadingWidth: 60,
+        leadingWidth: 80,
         actions: [
           GestureDetector(
             onTap: (){
@@ -98,7 +101,7 @@ class _DealsScreenState extends State<DealsScreen> {
                       child: Text('get 50 bonus points on your first order - scan the qr code or order in the app.',
                         style: GoogleFonts.poppins(
                           fontWeight: FontWeight.w400,
-                          fontSize: 12,
+                          fontSize: 10,
                           color: Colors.black
                         ),),
                     )
@@ -442,7 +445,7 @@ class _DealsScreenState extends State<DealsScreen> {
                         onTap: () {
                         },
                         child:  Text(
-                          'how it works',
+                          'How it works',
                           style: GoogleFonts.poppins(
                             fontSize: 15,
                             fontWeight: FontWeight.w400,

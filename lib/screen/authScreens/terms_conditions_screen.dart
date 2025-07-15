@@ -40,8 +40,10 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                     onTap: (){
                       Get.back();
                     },
-                    child: const Icon(Icons.arrow_back_ios,color: Colors.black,
-                      size: 20,),
+                    child: Image.asset('assets/icons/arrow_circle.png',
+                     height: 40,
+                     width: 50,
+                    )
                   ),
                   addHeight(25),
                   Row(
@@ -52,7 +54,7 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                           child: AddText(text: 'The super important legal bit',
                             color: Colors.black,
                             fontWeight: FontWeight.w700,
-                            fontSize: 34,
+                            fontSize: 31,
                             height: 1.2,
                           )),
                       addWidth(20),
@@ -98,8 +100,8 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                             addWidth(5),
                             const Expanded(
                               child: AddText(
-                                text: 'i am aged 16 or over and agree to the Terms',
-                                fontSize: 14,
+                                text: 'I am aged 16 or over and agree to the Terms',
+                                fontSize: 12,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2,
                                 color: Colors.black,
@@ -127,9 +129,9 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                       addWidth(20),
                       const Expanded(
                         child: AddText(
-                          text: 'i\'d like to receive news, updates and promotions from McDonald\'s via email',
-                          fontSize: 14,
-                          height: 1.2,
+                          text: 'I\'d like to receive news, updates and promotions from McDonald\'s via email',
+                          fontSize: 12,
+                          height: 1.4,
                           fontWeight: FontWeight.w400,
                           color: Colors.black,
                         ),
@@ -153,8 +155,9 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                       addWidth(20),
                       const Expanded(
                         child: AddText(
-                          text: 'i\'d like to receive news, updates and promotions from McDonald\'s via sMS',
-                          fontSize: 14,
+                          text: 'I\'d like to receive news, updates and promotions from McDonald\'s via sMS',
+                          fontSize: 12,
+                          height: 1.4,
                           fontWeight: FontWeight.w400,
                           color: Colors.black,
                         ),
@@ -177,7 +180,7 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                     children: [
                       addWidth(20),
                      const AddText(
-                        text: 'terms & conditions',
+                        text: 'Terms & Conditions',
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
                         color: Color(0xFF176397),
@@ -218,7 +221,8 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                     padding: EdgeInsets.only(left: 20.0),
                     child: AddText(text: 'The purpose of this app is to provide you with offers based on your preferences and app usage. If you do not want McDonald\'s to use your preferences and app usage in this way then you should not proceed to registration.',
                     fontWeight: FontWeight.w400,
-                    fontSize: 11,
+                    fontSize: 9,
+                    height: 1.4,
                     color: Color(0xFF6B6B6B),),
                   ),
                   addHeight(66),

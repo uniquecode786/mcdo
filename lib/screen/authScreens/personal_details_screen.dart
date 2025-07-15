@@ -38,12 +38,14 @@ class _PersonalDetailsScreenState extends State<PersonalDetailsScreen> {
                       addHeight(40),
                       Padding(
                         padding: const EdgeInsets.only(left: 10.0),
-                        child: GestureDetector(
-                          onTap: (){
-                            Get.back();
-                          },
-                          child: const Icon(Icons.arrow_back_ios,color: Colors.black,
-                            size: 20,),
+                        child:  GestureDetector(
+                            onTap: (){
+                              Get.back();
+                            },
+                            child: Image.asset('assets/icons/arrow_circle.png',
+                              height: 40,
+                              width: 50,
+                            )
                         ),
                       ),
                       Column(
@@ -56,31 +58,32 @@ class _PersonalDetailsScreenState extends State<PersonalDetailsScreen> {
                             width: 80,
                           ),
                           addHeight(30),
-                          const AddText(text: 'personal details',
+                          const AddText(text: 'Personal details',
                             color: Colors.black,
                             fontWeight: FontWeight.w700,
-                            fontSize: 34,
+                            fontSize: 31,
                             height: 1.2,
                           ),
                           addHeight(46),
                           const AddText(
                             text: 'Let us know how to properly address you. Please fill in your details.',
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                            height: 1.4,
                             color: Colors.black,
                           ),
                           addHeight(22),
                           ...fieldWithName(
-                              title: '*First name',
+                              title: 'First name',
                               hintText: 'First name',
                               controller: nameController),
                           ...fieldWithName(
-                              title: '*Last name',
+                              title: 'Last name',
                               hintText: 'Last name',
                               controller: lastNameController),
                           addHeight(37),
                         ],
-                      ).paddingSymmetric(horizontal: 28),
+                      ).paddingSymmetric(horizontal: 30),
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -91,7 +94,7 @@ class _PersonalDetailsScreenState extends State<PersonalDetailsScreen> {
                           ),
                           addWidth(5),
                           const AddText(
-                            text: 'required information',
+                            text: 'Required information',
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
                             color: Color(0xFF6B6B6B),
@@ -133,14 +136,22 @@ List<Widget> fieldWithName({required String title,
   Widget? suffixIcon,
   Widget? prefix}) {
   return [
-    Text(
-      title.toString() ?? '',
-      style: GoogleFonts.poppins(fontSize: 11,
-          fontWeight: FontWeight.w400,
-          color: const Color(0xFF6B6B6B)),
+    Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        const Text('*',style: TextStyle(
+            color: Colors.red
+        ),),
+        Text(
+          title.toString() ?? '',
+          style: GoogleFonts.poppins(fontSize: 11,
+              fontWeight: FontWeight.w400,
+              color: const Color(0xFF6B6B6B)),
+        ),
+      ],
     ),
     const SizedBox(
-      height: 6,
+      height: 2,
     ),
     CommonTextField(
       onTap: onTap,
@@ -156,7 +167,7 @@ List<Widget> fieldWithName({required String title,
       fillColor: Colors.white,
     ),
     const SizedBox(
-      height: 12,
+      height: 10,
     ),
   ];
 }

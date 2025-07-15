@@ -30,16 +30,17 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset('assets/icons/logo.png',
-                        height: 100,
-                        width: 200,
+                        height: 90,
+                        width: 180,
                       ),
                       addHeight(100),
                       const Align(
                         alignment: Alignment.centerLeft,
                         child: AddText(
-                          text: 'welcome to the club!',
-                          fontSize: 34,
+                          text: 'Welcome to the club!',
+                          fontSize: 31,
                           fontWeight: FontWeight.w700,
+                          height: 1.3,
                         ),
                       ),
                       addHeight(20),
@@ -47,15 +48,16 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         alignment: Alignment.centerLeft,
                         child: AddText(
                           text: 'Congrats on signing up. Check out some products for tasty tastiness!',
-                          fontSize: 14,
+                          fontSize: 12,
                           fontWeight: FontWeight.w400,
+                          height: 1.3,
                         ),
                       ),
                     ],
                   ).paddingSymmetric(horizontal: 16)),
               CustomButton(
                 radius: 0,
-                title: 'continue'.tr,
+                title: 'Done'.tr,
                 onPressed: () {
                   Get.offAllNamed(BottomNavbar.route);
                 },

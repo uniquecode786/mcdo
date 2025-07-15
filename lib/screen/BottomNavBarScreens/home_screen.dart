@@ -43,12 +43,12 @@ class _HomePageScreenState extends State<HomePageScreen> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         leading: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Image.asset('assets/icons/app_new_icon.png',
-              width: 30,
-              height: 30,
+              width: 50,
+              height: 50,
             ),
           ],
         ),
@@ -74,16 +74,18 @@ class _HomePageScreenState extends State<HomePageScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
-              height: 288,
+              height: 250,
               decoration: const BoxDecoration(
                 image: DecorationImage(image: AssetImage('assets/icons/home_top.png'),
                   fit: BoxFit.cover,
                 )
               ),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Center(
-                child: Text('life deserves a break and ... a burger.',
+                child: Text('Life deserves a break and ... a burger.',
                 style: GoogleFonts.poppins(
-                  fontSize: 32,
+                  fontSize: 29,
+                  height: 1.1,
                   fontWeight: FontWeight.w700,
                   color: const Color(0xFF17648E)
                 ),
@@ -99,10 +101,98 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 height: 28,
               ),
             ),
-            addHeight(32),
+            addHeight(14),
             const Divider(
               color: Color(0xFFE3E3E3),
               thickness: 1,
+            ),
+            addHeight(28),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Container(
+                width: Get.width,
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.07),
+                      blurRadius: 10,
+                      spreadRadius: 2,
+                      offset: const Offset(0, 4),
+                    )
+                  ],
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Align(
+                      alignment: Alignment.topRight,
+                        child:
+                        Icon(Icons.close, color: Colors.grey.shade600)),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('Seems you\'re not logged in.',
+                              style: GoogleFonts.poppins(
+                                fontSize: 24,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.black,
+                                height: 1.2
+                              ),
+                              ),
+                              const SizedBox(height: 12),
+                               Text(
+                                'Log in or become a member to order and access personalised deals.',
+                                 style: GoogleFonts.poppins(
+                                     fontSize: 13,
+                                     fontWeight: FontWeight.w400,
+                                     color: Colors.black,
+                                     height: 1.4
+                                 ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        addWidth(10),
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: Image.asset(
+                            'assets/icons/key_icon.png',
+                            height: 84,
+                            width: 132,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 12),
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFFFFC732),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                      ),
+                      child:  Text(
+                        'Log in',
+                        style: GoogleFonts.poppins(
+                            color: Colors.black,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
             addHeight(28),
             ListView.builder(
@@ -129,7 +219,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
-                        height: 251,
+                        height: 200,
                         width: Get.width,
                         decoration:  BoxDecoration(
                             color: const Color(0xFFFFC732),
@@ -143,8 +233,8 @@ class _HomePageScreenState extends State<HomePageScreen> {
                               items[index]['image']!,
                               height: items[index]['image'] == '0'
                                   ? 190 : items[index]['image'] == '1' ? 120 :
-                              items[index]['image'] == '2' ? 124 :
-                              items[index]['image'] == '3' ? 146 : 125,
+                              items[index]['image'] == '2' ? 110 :
+                              items[index]['image'] == '3' ? 120 : 100,
                               fit: BoxFit.cover,
                             ),
                           ],
@@ -158,12 +248,12 @@ class _HomePageScreenState extends State<HomePageScreen> {
                           child: Text(
                             items[index]['text']!,
                             style: GoogleFonts.poppins(
-                                fontSize: 25,
+                                fontSize: 20,
                                 fontWeight: FontWeight.w700),
                           ),
                         ),
                       ),
-                      addHeight(40)
+                      addHeight(15)
                     ],
                   ),
                 );

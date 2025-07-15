@@ -38,11 +38,13 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                       Padding(
                         padding: const EdgeInsets.only(left: 10.0),
                         child: GestureDetector(
-                          onTap: (){
-                            Get.back();
-                          },
-                          child: const Icon(Icons.arrow_back_ios,color: Colors.black,
-                            size: 20,),
+                            onTap: (){
+                              Get.back();
+                            },
+                            child: Image.asset('assets/icons/arrow_circle.png',
+                              height: 40,
+                              width: 50,
+                            )
                         ),
                       ),
                       Column(
@@ -59,25 +61,26 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                             child: AddText(text: 'Create your account',
                               color: Colors.black,
                               fontWeight: FontWeight.w700,
-                              fontSize: 34,
+                              fontSize: 31,
                               height: 1.2,
                             ),
                           ),
                           addHeight(46),
                           const AddText(
                             text: 'Please fill in your login details.',
-                            fontSize: 14,
+                            fontSize: 12,
                             fontWeight: FontWeight.w500,
+                            height: 1.4,
                             color: Colors.black,
                           ),
                           addHeight(24),
                           ...fieldWithName(
-                              title: '*Email',
-                              hintText: 'enter email',
+                              title: 'Email',
+                              hintText: 'Enter email',
                               controller: emailController),
                           ...fieldWithName(
-                            title: '*Password',
-                            hintText: 'enter password',
+                            title: 'Password',
+                            hintText: 'Enter password',
                             controller: passwordController,
                               obSecure: obscureText1,
                               suffixIcon: GestureDetector(
@@ -122,7 +125,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
 
                           addHeight(37),
                         ],
-                      ).paddingSymmetric(horizontal: 28),
+                      ).paddingSymmetric(horizontal: 30),
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -133,7 +136,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                           ),
                           addWidth(5),
                           const AddText(
-                            text: 'required information',
+                            text: 'Required information',
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
                             color: Color(0xFF6B6B6B),

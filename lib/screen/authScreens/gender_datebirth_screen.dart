@@ -38,12 +38,14 @@ class _GenderDateBirthScreenState extends State<GenderDateBirthScreen> {
                       addHeight(40),
                       Padding(
                         padding: const EdgeInsets.only(left: 10.0),
-                        child: GestureDetector(
-                          onTap: (){
-                            Get.back();
-                          },
-                          child: const Icon(Icons.arrow_back_ios,color: Colors.black,
-                            size: 20,),
+                        child:  GestureDetector(
+                            onTap: (){
+                              Get.back();
+                            },
+                            child: Image.asset('assets/icons/arrow_circle.png',
+                              height: 40,
+                              width: 50,
+                            )
                         ),
                       ),
                       Column(
@@ -60,7 +62,7 @@ class _GenderDateBirthScreenState extends State<GenderDateBirthScreen> {
                             child: AddText(text: 'Nice to meet you!',
                               color: Colors.black,
                               fontWeight: FontWeight.w700,
-                              fontSize: 34,
+                              fontSize: 31,
                               height: 1.2,
                             ),
                           ),
@@ -73,8 +75,9 @@ class _GenderDateBirthScreenState extends State<GenderDateBirthScreen> {
                           ),
                           addHeight(4),
                           const AddText(
-                            text: 'share your personal data so we can prepare some personal deals just for you.',
-                            fontSize: 14,
+                            text: 'Share your personal data so we can prepare some personal deals just for you.',
+                            fontSize: 12,
+                            height: 1.3,
                             fontWeight: FontWeight.w400,
                             color: Color(0xFF6B6B6B),
                           ),
@@ -120,10 +123,10 @@ class _GenderDateBirthScreenState extends State<GenderDateBirthScreen> {
                         height: 75,
                         decoration: BoxDecoration(
                             color: Colors.transparent,
-                            border: Border.all(color: Colors.grey)
+                            border: Border.all(color: const Color(0xFFD3D3D3))
                         ),
                         child:  Center(
-                          child: AddText(text: 'maybe later'.tr,
+                          child: AddText(text: 'Maybe later'.tr,
                             color: Colors.black,
                             fontSize: 17,
                             fontWeight: FontWeight.w500,
@@ -141,7 +144,7 @@ class _GenderDateBirthScreenState extends State<GenderDateBirthScreen> {
                         height: 75,
                         color: const Color(0xFFFEBB0A),
                         child:  Center(
-                          child: AddText(text: 'continue'.tr,
+                          child: AddText(text: 'Continue'.tr,
                             color: Colors.black,
                             fontSize: 17,
                             fontWeight: FontWeight.w500,

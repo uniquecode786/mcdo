@@ -31,7 +31,7 @@ class _TwoFactorValidationScreenState extends State<TwoFactorValidationScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    addHeight(40),
+                    addHeight(25),
                     Padding(
                       padding: const EdgeInsets.only(left: 20.0),
                       child: Row(
@@ -45,15 +45,15 @@ class _TwoFactorValidationScreenState extends State<TwoFactorValidationScreen> {
                                 Get.back();
                               },
                               child: Image.asset('assets/icons/cancel.png',
-                              height: 20,
-                                width: 20,
+                              height: 40,
+                                width: 40,
                               ),
                             ),
                           ),
                           const Spacer(),
                           const AddText(
-                              text: 'two factor verification',
-                            fontSize: 18,
+                              text: 'Two factor verification',
+                            fontSize: 16,
                             fontWeight: FontWeight.w700,
                             color: Colors.black,
                           ),
@@ -74,22 +74,24 @@ class _TwoFactorValidationScreenState extends State<TwoFactorValidationScreen> {
                               child: AddText(text: 'Check your email',
                                 color: Colors.black,
                                 fontWeight: FontWeight.w700,
-                                fontSize: 34,
+                                fontSize: 31,
                                 height: 1.2,
                               ),
                             ),
+                            addWidth(30),
                             Image.asset('assets/icons/mail.png',
-                              height: 90,
-                              width: 90,
+                              height: 70,
+                              width: 70,
                             )
                           ],
                         ),
                         addHeight(35),
                         const AddText(
                           text: 'We\'ve sent an email to fatima.srour11@icloud.com with a 6 digit code. This can take several minutes to receive. Please enter the code below or tap the link in the email.',
-                          fontSize: 14,
+                          fontSize: 12,
                           fontWeight: FontWeight.w400,
                           color: Colors.black,
+                          height: 1.4,
                         ),
                         addHeight(20),
                         const AddText(
@@ -98,7 +100,7 @@ class _TwoFactorValidationScreenState extends State<TwoFactorValidationScreen> {
                           fontWeight: FontWeight.w400,
                           color: Color(0xFF6B6B6B),
                         ),
-                        addHeight(6),
+                        addHeight(3),
                         TextFormField(
                           textAlign: TextAlign.center,
                           keyboardType: TextInputType.number,
@@ -112,7 +114,7 @@ class _TwoFactorValidationScreenState extends State<TwoFactorValidationScreen> {
                             hintText: 'Enter text here',
                             hintStyle: GoogleFonts.poppins(
                                 color: const Color(0xFFC5C5C5),
-                                fontSize: 15,
+                                fontSize: 13,
                                 fontWeight: FontWeight.w400
                             ),
 

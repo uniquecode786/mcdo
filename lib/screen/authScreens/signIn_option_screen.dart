@@ -32,24 +32,27 @@ class _SignInOptionScreenState extends State<SignInOptionScreen> {
                   addHeight(70),
                   Center(
                     child: Image.asset('assets/icons/logo.png',
-                      height: 106,
-                      width: 235,
+                      height: 60,
+                      width: 250,
                     ),
                   ),
                   addHeight(70),
                   AddText(
                     text: 'Good things ahead'.tr,
                     fontWeight: FontWeight.w700,
-                    fontSize: 34,
+                    fontSize: 31,
+                    height: 1.1,
                   ),
                   addHeight(18),
                   AddText(
                     text: 'Become a member to order and pay in the app, receive tasty deals and collect points on your purchases.'.tr,
                     fontWeight: FontWeight.w400,
-                    fontSize: 14,
+                    fontSize: 12,
+                    height: 1.3,
+                    color: Colors.black,
                   ),
                 ],
-              ).paddingSymmetric(horizontal: 16),
+              ).paddingSymmetric(horizontal: 18),
             ),
             Row(
               children: [
@@ -63,10 +66,10 @@ class _SignInOptionScreenState extends State<SignInOptionScreen> {
                        height: 75,
                        decoration: BoxDecoration(
                          color: Colors.transparent,
-                         border: Border.all(color: Colors.grey)
+                         border: Border.all(color: const Color(0xFFD3D3D3))
                        ),
                        child:  Center(
-                         child: AddText(text: 'log in'.tr,
+                         child: AddText(text: 'Log in'.tr,
                          color: Colors.black,
                            fontSize: 17,
                            fontWeight: FontWeight.w400,
@@ -84,7 +87,7 @@ class _SignInOptionScreenState extends State<SignInOptionScreen> {
                      height: 75,
                      color: const Color(0xFFFEBB0A),
                      child:  Center(
-                       child: AddText(text: 'sign up'.tr,
+                       child: AddText(text: 'Sign up'.tr,
                          color: Colors.black,
                          fontSize: 17,
                          fontWeight: FontWeight.w400,

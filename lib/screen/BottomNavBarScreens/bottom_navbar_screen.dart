@@ -126,7 +126,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
                                 padding: const EdgeInsets.all(8.0),
                                 child: Image.asset(
                                   'assets/icons/home_more.png',
-                                  height: 20,
+                                  height: 13,
                                   color: bottomController.pageIndex.value == 0
                                       ? const Color(0xFFFFC732)
                                       : const Color(0xFFBCBCBC),
@@ -138,7 +138,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
                                 overflow: TextOverflow.ellipsis,
                                 style: GoogleFonts.poppins(
                                     color:Colors.black,
-                                    fontSize: 13,
+                                    fontSize: 12,
                                     fontWeight: bottomController.pageIndex.value == 0 ?FontWeight.w700 : FontWeight.w500),
                               )
                             ],
@@ -162,10 +162,10 @@ class _BottomNavbarState extends State<BottomNavbar> {
                                 padding: const EdgeInsets.all(8.0),
                                 child:  bottomController.pageIndex.value == 1 ? Image.asset(
                                   'assets/icons/deals.png',
-                                  height: 20,
+                                  height: 18,
                                 ) : Image.asset(
                                   'assets/icons/deals_gray.png',
-                                  height: 20,
+                                  height: 18,
                                 ),
                               ),
                               Text(
@@ -174,7 +174,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
                                 overflow: TextOverflow.ellipsis,
                                 style: GoogleFonts.poppins(
                                     color:Colors.black,
-                                    fontSize: 13,
+                                    fontSize: 12,
                                     fontWeight: bottomController.pageIndex.value == 1 ?FontWeight.w700 : FontWeight.w500),
                               )
                             ],
@@ -209,7 +209,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
                                 overflow: TextOverflow.ellipsis,
                                 style: GoogleFonts.poppins(
                                     color:Colors.black,
-                                    fontSize: 13,
+                                    fontSize: 12,
                                     fontWeight: bottomController.pageIndex.value == 2 ?FontWeight.w700 : FontWeight.w500),
                               )
                             ],
@@ -232,8 +232,8 @@ class _BottomNavbarState extends State<BottomNavbar> {
                                 padding: const EdgeInsets.all(8.0),
                                 child: Image.asset(
                                   'assets/icons/more.png',
-                                  height: 20,
-                                  width: 20,
+                                  height: 18,
+                                  width: 18,
                                   color: bottomController.pageIndex.value == 3
                                       ? null
                                       : const Color(0xFF9E9E9E),
@@ -245,7 +245,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
                                 overflow: TextOverflow.ellipsis,
                                 style: GoogleFonts.poppins(
                                     color:Colors.black,
-                                    fontSize: 13,
+                                    fontSize: 12,
                                     fontWeight: bottomController.pageIndex.value == 3 ?FontWeight.w700 : FontWeight.w500),
                               )
                             ],

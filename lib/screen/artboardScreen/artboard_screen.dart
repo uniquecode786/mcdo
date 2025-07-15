@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../routers/routers.dart';
 import '../../wigets/addText.dart';
@@ -23,11 +24,11 @@ class _ArtboardScreenState extends State<ArtboardScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          addHeight(40),
+          addHeight(60),
            Center(
              child: Image.asset('assets/icons/earth_icon.png',
-             height: 260,
-               width: 260,
+             height: 250,
+               width: 250,
              ),
            ),
            AddText(
@@ -57,16 +58,46 @@ class _ArtboardScreenState extends State<ArtboardScreen> {
               fontWeight: FontWeight.w700
           ),
           addHeight(12),
-          selectionTile(
-            leading: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset('assets/icons/language_icon.png',height: 20,width: 20,),
-              ],
+          GestureDetector(
+            onTap: (){},
+            child: Container(
+              height: 74,
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 0),
+              decoration: BoxDecoration(
+                border: Border.all(color: const Color(0xFF707070)),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset('assets/icons/language_icon.png',height: 20,width: 20,),
+                    ],
+                  ),
+                    const SizedBox(width: 12),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'English',
+                          style: GoogleFonts.poppins(
+                              fontSize: 17,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const Icon(Icons.arrow_forward_ios, size: 16),
+                ],
+              ),
             ),
-            title: 'Language',
-            onTap: () {},
           ),
           addHeight(41),
           CustomButton(
@@ -111,12 +142,19 @@ Widget selectionTile({
               children: [
                 Text(
                   title,
-                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  style: GoogleFonts.poppins(
+                      fontSize: 15,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w700),
                 ),
                 if (subtitle != null)
                   Text(
                     subtitle,
-                    style: const TextStyle(color: Colors.grey),
+                    style: GoogleFonts.poppins(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w400,
+                      fontSize: 15
+                    ),
                   ),
               ],
             ),

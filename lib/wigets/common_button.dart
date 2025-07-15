@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_common/get_reset.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 
@@ -36,7 +38,7 @@ class CustomButton extends StatelessWidget {
             width: double.maxFinite,
             child: Center(
               child: Text(
-                title,
+                title.capitalizeFirst!,
                 style: GoogleFonts.poppins(
                   fontSize: 17,
                   fontWeight: FontWeight.w400,
@@ -47,7 +49,7 @@ class CustomButton extends StatelessWidget {
           )
               : FittedBox(
             child: Text(
-              title,
+              title.capitalizeFirst!,
               style: GoogleFonts.poppins(
                 fontSize: 17,
                 fontWeight: FontWeight.w400,

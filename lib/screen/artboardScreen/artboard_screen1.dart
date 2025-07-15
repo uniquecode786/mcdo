@@ -30,22 +30,24 @@ class _ArtboardScreen1State extends State<ArtboardScreen1> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
+                addHeight(40),
                 Center(
                   child: Image.asset('assets/icons/restaurant.png',
-                    height: 392,
+                    height: 320,
                     width: 292,
                   ),
                 ),
                 AddText(
                   text: 'Nice to meet you!'.tr,
                   fontWeight: FontWeight.w700,
-                  fontSize: 34,
+                  fontSize: 31,
                 ),
                 addHeight(12),
                 AddText(
                   text: 'thanks for choosing to use the McDonald\'s app in Lebanon. we\'re really excited to show you what\'s on available...'.tr,
                   fontWeight: FontWeight.w400,
-                  fontSize: 14,
+                  fontSize: 12,
+                  height: 1.3,
                 ),
               ],
             ).paddingSymmetric(horizontal: 16),
