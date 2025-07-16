@@ -98,7 +98,7 @@ class _DealsScreenState extends State<DealsScreen> {
                     ),
                     addWidth(10),
                     Expanded(
-                      child: Text('get 50 bonus points on your first order - scan the qr code or order in the app.',
+                      child: Text('Get 50 bonus points on your first order - scan the qr code or order in the app.',
                         style: GoogleFonts.poppins(
                           fontWeight: FontWeight.w400,
                           fontSize: 10,
@@ -110,47 +110,79 @@ class _DealsScreenState extends State<DealsScreen> {
               ),
             ),
             addHeight(29),
-            Container(
-              height: 320,
-              width: Get.width,
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                image: DecorationImage(image: AssetImage('assets/icons/scan_bg.png',
-                ),fit: BoxFit.cover
-                )
-              ),
-              child: Stack(
-                children: [
-                  Positioned(
-                    left: 0,
-                    right: 0,
-                    top: 50,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.start,
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 28.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(14),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.1),
+                        blurRadius: 20,
+                        spreadRadius: 3,
+                        offset: const Offset(0, 4),
+                      ),
+                    ],
+                  ),
+                  padding: const EdgeInsets.all(3),
+                  child: Container(
+                    height: 240,
+                    width: Get.width,
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFFFC732),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child:  Stack(
                       children: [
-                        Image.asset('assets/icons/scan.png',
-                        height: 160,
-                          width: 169,
+                        Positioned(
+                          left: 0,
+                          right: 0,
+                          top: 20,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Image.asset('assets/icons/scan.png',
+                                height: 160,
+                                width: 169,
+                              ),
+                              addHeight(19),
+                              Text('scan code to collect points.',
+                                style: GoogleFonts.poppins(
+                                    color: Colors.black,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w600
+                                ),
+                              )
+                            ],
+                          ),
                         ),
-                        addHeight(30),
-                        Text('scan code to collect points.',
-                        style: GoogleFonts.poppins(
-                           color: Colors.black,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500
+                        const Positioned(
+                            right: 20,
+                            top: 20,
+                            child: Icon(Icons.error_outline,color: Colors.black,
+                              size: 30,)
                         ),
-                        )
+                        Positioned(
+                            right: 0,
+                            left: 0,
+                            top: 156,
+                            child:  Center(
+                              child: Text('m 778 61',
+                                style: GoogleFonts.poppins(
+                                    color: Colors.black,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w700
+                                ),
+                              ),
+                            )
+                        ),
                       ],
                     ),
                   ),
-                  const Positioned(
-                    right: 50,
-                      top: 50,
-                      child: Icon(Icons.error_outline,color: Colors.black,
-                      size: 30,)
-                  )
-                ],
+                ),
               ),
             ),
             addHeight(49),
@@ -160,17 +192,17 @@ class _DealsScreenState extends State<DealsScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('rewards',
+                  Text('Rewards',
                   style: GoogleFonts.poppins(
                      fontWeight: FontWeight.w700,
-                      fontSize: 25,
+                      fontSize: 21,
                     color: Colors.black
                   ),),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text('view all',
+                      Text('View all',
                       style: GoogleFonts.poppins(
                          fontWeight: FontWeight.w400,
                           fontSize: 14,
@@ -214,7 +246,7 @@ class _DealsScreenState extends State<DealsScreen> {
                                   borderRadius: BorderRadius.circular(10),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: const Color(0xFF0A0D120A).withOpacity(0.1),
+                                      color: const Color(0xFF0A0D120A).withOpacity(0.20),
                                       offset: const Offset(0.0, 2.0),
                                       blurRadius: 5,
                                     ),
@@ -228,17 +260,17 @@ class _DealsScreenState extends State<DealsScreen> {
                                       mainAxisAlignment: MainAxisAlignment.start,
                                       children: [
                                         Image.asset('assets/icons/reward_bg.png',
-                                         height: 130,
-                                         width: 130,
+                                         height: 120,
+                                         width: 120,
                                         ),
-                                        addHeight(8),
+                                        addHeight(12),
 
                                         Container(
                                           decoration: BoxDecoration(
                                               borderRadius: BorderRadius.circular(50),
-                                              border: Border.all(color: Colors.black,width: 2)
+                                              border: Border.all(color: Colors.black,width: 1.4)
                                           ),
-                                          padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 2),
+                                          padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 0),
                                           child: Row(
                                             crossAxisAlignment: CrossAxisAlignment.center,
                                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -250,7 +282,7 @@ class _DealsScreenState extends State<DealsScreen> {
                                               addWidth(5),
                                               Text('200 pts',
                                               style: GoogleFonts.poppins(
-                                                fontSize: 13,
+                                                fontSize: 11,
                                                 fontWeight: FontWeight.w700,
                                                 color: Colors.black
                                               )
@@ -259,7 +291,7 @@ class _DealsScreenState extends State<DealsScreen> {
                                           ),
                                         ),
                                         addHeight(36),
-                                        Text('free espresso',
+                                        Text('Free espresso',
                                         style: GoogleFonts.poppins(
                                           fontWeight: FontWeight.w400,
                                           fontSize: 15,
@@ -271,7 +303,7 @@ class _DealsScreenState extends State<DealsScreen> {
                                     Positioned(
                                         left: 0,
                                         right: 0,
-                                        top: 50,
+                                        top: 40,
                                         child: Image.asset('assets/icons/coffie.png',
                                           height: 93,
                                         )
@@ -292,9 +324,9 @@ class _DealsScreenState extends State<DealsScreen> {
             addHeight(20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Text('deals',
+              child: Text('Deals',
               style: GoogleFonts.poppins(
-                fontSize: 26,
+                fontSize: 21,
                 fontWeight: FontWeight.w600,
                 color: Colors.black
               ),),
@@ -319,11 +351,11 @@ class _DealsScreenState extends State<DealsScreen> {
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(12),
-                          boxShadow: const [
+                          boxShadow:  [
                             BoxShadow(
-                              color: Colors.black12,
-                              blurRadius: 6,
-                              offset: Offset(0, 3),
+                              color: const Color(0xFF0A0D120A).withOpacity(0.30),
+                              offset: const Offset(0.0, 2.0),
+                              blurRadius: 12,
                             ),
                           ],
                         ),
@@ -332,13 +364,13 @@ class _DealsScreenState extends State<DealsScreen> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Container(
-                              height: 200,
+                              height: 180,
                               width: Get.width,
                               decoration:  BoxDecoration(
                                   image: const DecorationImage(image: AssetImage('assets/icons/home_top.png'),
                                   fit: BoxFit.cover
                                   ),
-                                  borderRadius: BorderRadius.circular(14)
+                                  borderRadius: BorderRadius.circular(12)
                               ),
                               child: Stack(
                                 children: [
@@ -347,27 +379,28 @@ class _DealsScreenState extends State<DealsScreen> {
                                       left: 7,
                                       child: Container(
                                         height: 24,
-                                        width: 120,
                                         decoration: BoxDecoration(
                                           color: const Color(0xFFEDEDED),
                                           borderRadius: BorderRadius.circular(4)
                                         ),
                                         child: Row(
                                           crossAxisAlignment: CrossAxisAlignment.center,
-                                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                          mainAxisAlignment: MainAxisAlignment.start,
                                           children: [
+                                            addWidth(5),
                                             Image.asset('assets/icons/watch.png',
-                                            height: 12,
-                                             width: 12,
+                                            height: 10,
+                                             width: 10,
                                             ),
+                                            addWidth(10),
                                             Text('expires soon',
                                             style: GoogleFonts.poppins(
                                               fontWeight: FontWeight.w400,
                                               fontSize: 11,
                                               color: Colors.black
                                             ),
-                                            )
-                                          ],
+                                            ),
+                                            addWidth(5),                                          ],
                                         ),
                                       )
                                   ),
@@ -396,12 +429,12 @@ class _DealsScreenState extends State<DealsScreen> {
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
                                   style: GoogleFonts.poppins(
-                                      fontSize: 25,
+                                      fontSize: 20,
                                       fontWeight: FontWeight.w700),
                                 ),
                               ),
                             ),
-                            addHeight(40)
+                            addHeight(25)
                           ],
                         ),
                       ),

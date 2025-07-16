@@ -47,7 +47,7 @@ class _CommunicationSettingsScreenState extends State<CommunicationSettingsScree
                     text: 'Communication settings',
                     color: Colors.black,
                     fontWeight: FontWeight.w700,
-                  fontSize: 34,
+                  fontSize: 30,
                 ),
                 addHeight(46),
                 Row(
@@ -59,7 +59,8 @@ class _CommunicationSettingsScreenState extends State<CommunicationSettingsScree
                            text: 'i\'d like to receive news, updates and promotions from Meatway\'s via email',
                            color: Colors.black,
                            fontWeight: FontWeight.w400,
-                           fontSize: 14,
+                           fontSize: 12,
+                           height: 1.4,
                          ),
                      ),
                     CupertinoSwitch(
@@ -82,7 +83,8 @@ class _CommunicationSettingsScreenState extends State<CommunicationSettingsScree
                            text: 'i\'d like to receive news, updates and promotions from Meatway\'s via sMS',
                            color: Colors.black,
                            fontWeight: FontWeight.w400,
-                           fontSize: 14,
+                           fontSize: 12,
+                           height: 1.4,
                          ),
                      ),
                     CupertinoSwitch(

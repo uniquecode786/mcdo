@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../../routers/routers.dart';
 import '../../wigets/addText.dart';
 import '../../wigets/common_button.dart';
@@ -28,18 +29,19 @@ class _SelectReligionScreenState extends State<SelectReligionScreen> {
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
+          addHeight(60),
           Center(
             child: Image.asset('assets/icons/earth_icon.png',
-              height: 300,
-              width: 300,
+              height: 250,
+              width: 250,
             ),
           ),
           AddText(
               text:'Select region'.tr,
               color: Colors.black,
-              fontSize: 34,
+              fontSize: 30,
               fontWeight: FontWeight.w700
           ),
           addHeight(35),
@@ -63,16 +65,46 @@ class _SelectReligionScreenState extends State<SelectReligionScreen> {
               fontWeight: FontWeight.w700
           ),
           addHeight(12),
-          selectionTile(
-            leading: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset('assets/icons/language_icon.png',height: 20,width: 20,),
-              ],
+          GestureDetector(
+            onTap: (){},
+            child: Container(
+              height: 74,
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 0),
+              decoration: BoxDecoration(
+                border: Border.all(color: const Color(0xFF707070)),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset('assets/icons/language_icon.png',height: 20,width: 20,),
+                    ],
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'English',
+                          style: GoogleFonts.poppins(
+                              fontSize: 17,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const Icon(Icons.arrow_forward_ios, size: 16),
+                ],
+              ),
             ),
-            title: 'Language',
-            onTap: () {},
           ),
           addHeight(41),
           CustomButton(

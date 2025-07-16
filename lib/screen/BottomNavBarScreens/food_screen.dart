@@ -26,12 +26,12 @@ class _FoodScreenState extends State<FoodScreen> {
              color: Colors.white,
            ),
               Image.asset('assets/icons/food_bg.png',
-               height: 280,
+               height: 220,
                 width: Get.width,
                 fit: BoxFit.cover,
               ),
            Positioned(
-               top: 240,
+               top: 175,
                left: 0,
                right: 0,
                child: Padding(
@@ -226,7 +226,7 @@ class _FoodScreenState extends State<FoodScreen> {
                                     width: 21,
                                   ),
                                   addWidth(5),
-                                  Text('delivery',
+                                  Text('Delivery',
                                     style: GoogleFonts.poppins(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w600,
@@ -249,7 +249,7 @@ class _FoodScreenState extends State<FoodScreen> {
                                     width: 21,
                                   ),
                                   addWidth(5),
-                                  Text('pickup',
+                                  Text('Pickup',
                                     style: GoogleFonts.poppins(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w600,
@@ -272,7 +272,7 @@ class _FoodScreenState extends State<FoodScreen> {
                                     width: 21,
                                   ),
                                   addWidth(5),
-                                  Text('dine-in',
+                                  Text('Dine-in',
                                   style: GoogleFonts.poppins(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w600,
@@ -290,7 +290,7 @@ class _FoodScreenState extends State<FoodScreen> {
                )
            ),
            Positioned.fill(
-               top: 460,
+               top: 400,
                left: 0,
                right: 0,
                child: SingleChildScrollView(
@@ -325,7 +325,7 @@ class _FoodScreenState extends State<FoodScreen> {
                          addWidth(10),
                          Text('Offers',
                            style: GoogleFonts.poppins(
-                               fontWeight: FontWeight.w400,
+                               fontWeight: FontWeight.w500,
                                fontSize: 18,
                                color: Colors.black
                            ),),
@@ -377,7 +377,7 @@ class _FoodScreenState extends State<FoodScreen> {
                                                         style: GoogleFonts.poppins(
                                                           fontSize: 14,
                                                           color: const Color(0xFFE02020),
-                                                          fontWeight: FontWeight.w400,
+                                                          fontWeight: FontWeight.w500,
                                                         ),
                                                       ),
                                                       Text(
@@ -385,7 +385,7 @@ class _FoodScreenState extends State<FoodScreen> {
                                                         style: GoogleFonts.poppins(
                                                           fontSize: 14,
                                                           color: Colors.black,
-                                                          fontWeight: FontWeight.w400,
+                                                          fontWeight: FontWeight.w500,
                                                         ),
                                                       ),
                                                     ],
@@ -395,7 +395,7 @@ class _FoodScreenState extends State<FoodScreen> {
                                                     'Red Hot Twister Sandwich +\nRizo + Coleslaw + Drink.',
                                                     style: GoogleFonts.poppins(
                                                         fontSize: 12,
-                                                        fontWeight: FontWeight.w400,
+                                                        fontWeight: FontWeight.w500,
                                                         color: Colors.black),
                                                   ),
                                                   const SizedBox(height: 6),
@@ -418,7 +418,7 @@ class _FoodScreenState extends State<FoodScreen> {
                                                   padding: const EdgeInsets.only(right: 20.0),
                                                   child: Image.asset('assets/icons/burger_img.png',
                                                   height: 78,
-                                                  width: 110,
+                                                  width: 100,
                                                   ),
                                                 ),
                                                 addHeight(20),
@@ -467,7 +467,7 @@ class _FoodScreenState extends State<FoodScreen> {
                                            Text(
                                             '470,000 LBP',
                                             style: GoogleFonts.poppins(
-                                                fontWeight: FontWeight.w400,
+                                                fontWeight: FontWeight.w500,
                                                 fontSize: 14),
                                           )
                                         ],
@@ -485,7 +485,7 @@ class _FoodScreenState extends State<FoodScreen> {
                                           style: GoogleFonts.poppins(
                                             color: Colors.black,
                                             fontSize: 12,
-                                            fontWeight: FontWeight.w500
+                                            fontWeight: FontWeight.w600
                                           ),
                                           ),
                                         ),

@@ -18,17 +18,20 @@ class _NoMatchesFoundScreenState extends State<NoMatchesFoundScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        leading: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset('assets/icons/app_new_icon.png',
-              width: 30,
-              height: 30,
-            ),
-          ],
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 12.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Image.asset('assets/icons/logo.png',
+                height: 23,
+                width: 120,
+              ),
+            ],
+          ),
         ),
-        leadingWidth: 60,
+        leadingWidth: 100,
         actions: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -44,13 +47,13 @@ class _NoMatchesFoundScreenState extends State<NoMatchesFoundScreen> {
         ],
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
             children: [
               addHeight(40),
-              Text('deals',
+              Text('Deals',
                 style: GoogleFonts.poppins(
                     fontSize: 26,
                     fontWeight: FontWeight.w600,
@@ -64,13 +67,16 @@ class _NoMatchesFoundScreenState extends State<NoMatchesFoundScreen> {
                 ),
               ),
               addHeight(32),
-              Text('There\'s no matching deals right now.',
-                textAlign: TextAlign.center,
-                style: GoogleFonts.poppins(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.black
-                ),),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: Text('There\'s no matching deals right now.',
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.poppins(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.black
+                  ),),
+              ),
               addHeight(10),
               Center(
                 child: Text('Check in again soon for more!',
@@ -114,7 +120,7 @@ class _NoMatchesFoundScreenState extends State<NoMatchesFoundScreen> {
                           onTap: () {
                           },
                           child:  Text(
-                            'how it works',
+                            'How it works',
                             style: GoogleFonts.poppins(
                               fontSize: 15,
                               fontWeight: FontWeight.w400,

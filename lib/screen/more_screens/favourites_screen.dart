@@ -45,7 +45,7 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
               color: const Color(0xFFEAAD21),
             ),
             addWidth(10),
-            Text('favourites',
+            Text('Favourites',
               style: GoogleFonts.poppins(
                   fontWeight: FontWeight.w400,
                   fontSize: 18,

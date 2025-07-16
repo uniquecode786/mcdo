@@ -45,7 +45,7 @@ class _AboutScreenState extends State<AboutScreen> {
               color: const Color(0xFFEAAD21),
             ),
             addWidth(10),
-            Text('about app',
+            Text('About app',
               style: GoogleFonts.poppins(
                   fontWeight: FontWeight.w400,
                   fontSize: 18,
@@ -72,7 +72,8 @@ class _AboutScreenState extends State<AboutScreen> {
               style: GoogleFonts.poppins(
                   color: Colors.black,
                   fontWeight: FontWeight.w400,
-                  fontSize: 14
+                  fontSize: 12,
+                  height: 1.6
               ),
             )
           ],

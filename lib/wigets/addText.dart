@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mcdo/screen/artboardScreen/artboard_screen.dart';
 
 class AddText extends StatelessWidget {
   final String? text;
@@ -31,7 +33,7 @@ class AddText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      text!,
+      text!.capitalizeFirst!,
       maxLines: maxLines,
       overflow: textOverflow,
       textAlign: textAlign,

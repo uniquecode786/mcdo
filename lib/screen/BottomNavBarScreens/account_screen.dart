@@ -47,8 +47,8 @@ class _AccountScreenState extends State<AccountScreen> {
                 addHeight(29),
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.0),
-                  child: AddText(text: 'account',
-                  fontSize: 34,
+                  child: AddText(text: 'Account',
+                  fontSize: 30,
                     fontWeight: FontWeight.w700,
                     color: Colors.black,
                   ),

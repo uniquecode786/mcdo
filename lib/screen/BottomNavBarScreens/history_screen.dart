@@ -36,22 +36,20 @@ class _HistoryScreenState extends State<HistoryScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        leading: GestureDetector(
-          onTap: (){
-            Get.back();
-          },
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 12.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Image.asset('assets/icons/common_back.png',
-                height: 40,
-                width: 40,
-              )
+              Image.asset('assets/icons/logo.png',
+                height: 23,
+                width: 120,
+              ),
             ],
           ),
         ),
-        leadingWidth: 60,
+        leadingWidth: 100,
         actions: [
           GestureDetector(
             onTap: (){
@@ -72,17 +70,17 @@ class _HistoryScreenState extends State<HistoryScreen> {
         ],
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             addHeight(40),
              Text(
-              'history',
+              'History',
               style: GoogleFonts.poppins(
                   fontWeight: FontWeight.w600,
-                  fontSize: 16,
+                  fontSize: 19,
               color: Colors.black),
             ),
             addHeight(20),
@@ -109,8 +107,8 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                Text(
                                  'Chicken Way Hara',
                                  style: GoogleFonts.poppins(
-                                     fontWeight: FontWeight.w600,
-                                     fontSize: 16),
+                                     fontWeight: FontWeight.w500,
+                                     fontSize: 15),
                                ),
                                addHeight(5),
                                Text(
@@ -140,8 +138,8 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                      crossAxisAlignment: CrossAxisAlignment.center,
                                      children: [
                                       Image.asset('assets/icons/star_history.png',
-                                      height: 25,
-                                      width: 25,
+                                      height: 18,
+                                      width: 18,
                                       ),
                                        addWidth(6),
                                             Text('100',
@@ -158,8 +156,8 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                      crossAxisAlignment: CrossAxisAlignment.center,
                                      children: [
                                        Image.asset('assets/icons/money.png',
-                                         height: 25,
-                                         width: 25,
+                                         height: 18,
+                                         width: 18,
                                        ),
                                        addWidth(6),
                                        Text('650,000 LBP',
