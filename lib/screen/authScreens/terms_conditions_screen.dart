@@ -54,7 +54,7 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                           child: AddText(text: 'The super important legal bit',
                             color: Colors.black,
                             fontWeight: FontWeight.w700,
-                            fontSize: 31,
+                            fontSize: 26,
                             height: 1.2,
                           )),
                       addWidth(20),
@@ -77,7 +77,7 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                       addWidth(5),
                       const AddText(
                         text: 'required information',
-                        fontSize: 13,
+                        fontSize: 11,
                         fontWeight: FontWeight.w400,
                         color: Color(0xFF6B6B6B),
                       )
@@ -101,7 +101,7 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                             const Expanded(
                               child: AddText(
                                 text: 'I am aged 16 or over and agree to the Terms',
-                                fontSize: 12,
+                                fontSize: 11,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2,
                                 color: Colors.black,
@@ -130,8 +130,8 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                       const Expanded(
                         child: AddText(
                           text: 'I\'d like to receive news, updates and promotions from McDonald\'s via email',
-                          fontSize: 12,
-                          height: 1.4,
+                          fontSize: 11,
+                          height: 1.6,
                           fontWeight: FontWeight.w400,
                           color: Colors.black,
                         ),
@@ -156,8 +156,8 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                       const Expanded(
                         child: AddText(
                           text: 'I\'d like to receive news, updates and promotions from McDonald\'s via sMS',
-                          fontSize: 12,
-                          height: 1.4,
+                          fontSize: 11,
+                          height: 1.6,
                           fontWeight: FontWeight.w400,
                           color: Colors.black,
                         ),
@@ -181,14 +181,16 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                       addWidth(20),
                      const AddText(
                         text: 'Terms & Conditions',
-                        fontSize: 14,
+                        fontSize: 11,
                         fontWeight: FontWeight.w400,
                         color: Color(0xFF176397),
+                       decoration: TextDecoration.underline,
+                       decoColor: Color(0xFF176397),
                       ),
                       addWidth(8),
                       Image.asset('assets/icons/tm_icon.png',
-                      height: 15,
-                        width: 15,
+                      height: 13,
+                        width: 13,
                       )
                     ],
                   ),
@@ -204,14 +206,16 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                         addWidth(20),
                        const AddText(
                           text: 'Privacy Statement',
-                          fontSize: 14,
+                          fontSize: 11,
                           fontWeight: FontWeight.w400,
                           color: Color(0xFF176397),
+                          decoration: TextDecoration.underline,
+                         decoColor: Color(0xFF176397),
                         ),
                         addWidth(8),
                         Image.asset('assets/icons/tm_icon.png',
-                          height: 15,
-                          width: 15,
+                          height: 13,
+                          width: 13,
                         )
                       ],
                                        ),
@@ -222,7 +226,7 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                     child: AddText(text: 'The purpose of this app is to provide you with offers based on your preferences and app usage. If you do not want McDonald\'s to use your preferences and app usage in this way then you should not proceed to registration.',
                     fontWeight: FontWeight.w400,
                     fontSize: 9,
-                    height: 1.4,
+                    height: 1.6,
                     color: Color(0xFF6B6B6B),),
                   ),
                   addHeight(66),

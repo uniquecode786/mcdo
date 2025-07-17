@@ -40,7 +40,7 @@ class _PersonalDetailsScreenEditState extends State<PersonalDetailsScreenEdit> {
             ),
             addHeight(29),
             const AddText(text: 'personal details',
-              fontSize: 30,
+              fontSize: 26,
               fontWeight: FontWeight.w700,
               color: Colors.black,
             ),

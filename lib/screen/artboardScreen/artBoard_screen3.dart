@@ -31,7 +31,7 @@ class _ArtboardScreen3State extends State<ArtboardScreen3> {
                   addHeight(44),
                   Center(
                     child: Image.asset('assets/icons/notification.png',
-                      height: 150,
+                      height: 140,
                       width: 124,
                     ),
                   ),
@@ -39,15 +39,15 @@ class _ArtboardScreen3State extends State<ArtboardScreen3> {
                   AddText(
                     text: 'Never miss a great deal!'.tr,
                     fontWeight: FontWeight.w700,
-                    fontSize: 31,
+                    fontSize: 26,
                     height: 1.1,
                   ),
                   addHeight(14),
                   AddText(
                     text: 'We would like to send you a notification every now and tehn to let you know when new offers are available'.tr,
                     fontWeight: FontWeight.w400,
-                    fontSize: 12,
-                    height: 1.3,
+                    fontSize: 10,
+                    height: 1.6,
                     color: Colors.black,
                   ),
                 ],

@@ -75,7 +75,7 @@ class _SupportScreenState extends State<SupportScreen> {
         child: ListView(
           children:  [
             Text(
-              'general questions',
+              'General questions',
               style: GoogleFonts.poppins(fontSize: 14,
                   fontWeight: FontWeight.w700,
                   color: const Color(0xFFDA0006)

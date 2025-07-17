@@ -90,11 +90,20 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
             itemCount: 1,
             padding: EdgeInsets.zero,
             itemBuilder: (context, index) {
-              return Card(
-                color: Colors.white,
+              return Container(
                 margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                elevation: 4,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.07),
+                      blurRadius: 10,
+                      spreadRadius: 2,
+                      offset: const Offset(0, 4),
+                    )
+                  ],
+                ),
                 child: Stack(
                   children: [
                     Container(
@@ -119,7 +128,7 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                                         style: GoogleFonts.poppins(
                                           fontSize: 14,
                                           color: const Color(0xFFE02020),
-                                          fontWeight: FontWeight.w400,
+                                          fontWeight: FontWeight.w500,
                                         ),
                                       ),
                                       Text(
@@ -127,7 +136,7 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                                         style: GoogleFonts.poppins(
                                           fontSize: 14,
                                           color: Colors.black,
-                                          fontWeight: FontWeight.w400,
+                                          fontWeight: FontWeight.w500,
                                         ),
                                       ),
                                     ],
@@ -137,7 +146,7 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                                     'Red Hot Twister Sandwich +\nRizo + Coleslaw + Drink.',
                                     style: GoogleFonts.poppins(
                                         fontSize: 12,
-                                        fontWeight: FontWeight.w400,
+                                        fontWeight: FontWeight.w500,
                                         color: Colors.black),
                                   ),
                                   const SizedBox(height: 6),

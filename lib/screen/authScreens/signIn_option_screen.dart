@@ -40,15 +40,15 @@ class _SignInOptionScreenState extends State<SignInOptionScreen> {
                   AddText(
                     text: 'Good things ahead'.tr,
                     fontWeight: FontWeight.w700,
-                    fontSize: 31,
+                    fontSize: 26,
                     height: 1.1,
                   ),
                   addHeight(18),
                   AddText(
                     text: 'Become a member to order and pay in the app, receive tasty deals and collect points on your purchases.'.tr,
                     fontWeight: FontWeight.w400,
-                    fontSize: 12,
-                    height: 1.3,
+                    fontSize: 10,
+                    height: 1.6,
                     color: Colors.black,
                   ),
                 ],

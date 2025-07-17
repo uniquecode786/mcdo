@@ -53,7 +53,7 @@ class _TwoFactorValidationScreenState extends State<TwoFactorValidationScreen> {
                           const Spacer(),
                           const AddText(
                               text: 'Two factor verification',
-                            fontSize: 16,
+                            fontSize: 14,
                             fontWeight: FontWeight.w700,
                             color: Colors.black,
                           ),
@@ -74,7 +74,7 @@ class _TwoFactorValidationScreenState extends State<TwoFactorValidationScreen> {
                               child: AddText(text: 'Check your email',
                                 color: Colors.black,
                                 fontWeight: FontWeight.w700,
-                                fontSize: 31,
+                                fontSize: 26,
                                 height: 1.2,
                               ),
                             ),
@@ -88,10 +88,10 @@ class _TwoFactorValidationScreenState extends State<TwoFactorValidationScreen> {
                         addHeight(35),
                         const AddText(
                           text: 'We\'ve sent an email to fatima.srour11@icloud.com with a 6 digit code. This can take several minutes to receive. Please enter the code below or tap the link in the email.',
-                          fontSize: 12,
+                          fontSize: 11,
                           fontWeight: FontWeight.w400,
                           color: Colors.black,
-                          height: 1.4,
+                          height: 1.6,
                         ),
                         addHeight(20),
                         const AddText(
@@ -105,10 +105,11 @@ class _TwoFactorValidationScreenState extends State<TwoFactorValidationScreen> {
                           textAlign: TextAlign.center,
                           keyboardType: TextInputType.number,
                           inputFormatters: [
-                            FilteringTextInputFormatter.digitsOnly, // Only allow digits
-                            LengthLimitingTextInputFormatter(6),    // Limit length to 6
+                            FilteringTextInputFormatter.digitsOnly,
+                            LengthLimitingTextInputFormatter(6),
                           ],
                           decoration: InputDecoration(
+                            contentPadding: const EdgeInsets.all(15),
                             filled: true,
                             fillColor: Colors.white,
                             hintText: 'Enter text here',
@@ -143,14 +144,14 @@ class _TwoFactorValidationScreenState extends State<TwoFactorValidationScreen> {
                         addHeight(37),
                         const AddText(
                           text: 'Didn\'t get the code?',
-                          fontSize: 15,
+                          fontSize: 12,
                           fontWeight: FontWeight.w400,
                           color: Color(0xFF6B6B6B),
                         ),
                         addHeight(28),
                         Text('Resend code',
                         style: GoogleFonts.poppins(
-                            fontSize: 14,
+                            fontSize: 12,
                             fontWeight: FontWeight.w400,
                             color: const Color(0xFF176397),
                           decoration: TextDecoration.underline,

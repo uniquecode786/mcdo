@@ -55,7 +55,7 @@ class _NoMatchesFoundScreenState extends State<NoMatchesFoundScreen> {
               addHeight(40),
               Text('Deals',
                 style: GoogleFonts.poppins(
-                    fontSize: 26,
+                    fontSize: 24,
                     fontWeight: FontWeight.w600,
                     color: Colors.black
                 ),),
@@ -72,7 +72,7 @@ class _NoMatchesFoundScreenState extends State<NoMatchesFoundScreen> {
                 child: Text('There\'s no matching deals right now.',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
-                      fontSize: 20,
+                      fontSize: 18,
                       fontWeight: FontWeight.w700,
                       color: Colors.black
                   ),),
@@ -82,7 +82,7 @@ class _NoMatchesFoundScreenState extends State<NoMatchesFoundScreen> {
                 child: Text('Check in again soon for more!',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
-                      fontSize: 14,
+                      fontSize: 12,
                       fontWeight: FontWeight.w400,
                       color: Colors.black
                   ),),
@@ -108,10 +108,10 @@ class _NoMatchesFoundScreenState extends State<NoMatchesFoundScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "my meatway's rewards",
+                          "My meatway's rewards",
                           style:  GoogleFonts.poppins(
                             fontWeight: FontWeight.w700,
-                            fontSize: 14,
+                            fontSize: 13,
                             color: Colors.black,
                           ),
                         ),
@@ -122,7 +122,7 @@ class _NoMatchesFoundScreenState extends State<NoMatchesFoundScreen> {
                           child:  Text(
                             'How it works',
                             style: GoogleFonts.poppins(
-                              fontSize: 15,
+                              fontSize: 13,
                               fontWeight: FontWeight.w400,
                               color: const Color(0xFF176397),
                               decoration: TextDecoration.underline,

@@ -72,7 +72,7 @@ class _AboutScreenState extends State<AboutScreen> {
               style: GoogleFonts.poppins(
                   color: Colors.black,
                   fontWeight: FontWeight.w400,
-                  fontSize: 12,
+                  fontSize: 11,
                   height: 1.6
               ),
             )

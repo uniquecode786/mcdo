@@ -82,14 +82,17 @@ class _HomePageScreenState extends State<HomePageScreen> {
               ),
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Center(
-                child: Text('Life deserves a break and ... a burger.',
-                style: GoogleFonts.poppins(
-                  fontSize: 29,
-                  height: 1.1,
-                  fontWeight: FontWeight.w700,
-                  color: const Color(0xFF17648E)
-                ),
-                  textAlign: TextAlign.center,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 18.0),
+                  child: Text('Life deserves a break and ... a burger.',
+                  style: GoogleFonts.poppins(
+                    fontSize: 26,
+                    height: 1.4,
+                    fontWeight: FontWeight.w500,
+                    color: const Color(0xFF17648E)
+                  ),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               )
             ),
@@ -142,17 +145,17 @@ class _HomePageScreenState extends State<HomePageScreen> {
                             children: [
                               Text('Seems you\'re not logged in.',
                               style: GoogleFonts.poppins(
-                                fontSize: 24,
+                                fontSize: 20,
                                 fontWeight: FontWeight.w700,
                                 color: Colors.black,
-                                height: 1.2
+                                height: 1.3
                               ),
                               ),
                               const SizedBox(height: 12),
                                Text(
                                 'Log in or become a member to order and access personalised deals.',
                                  style: GoogleFonts.poppins(
-                                     fontSize: 13,
+                                     fontSize: 11,
                                      fontWeight: FontWeight.w400,
                                      color: Colors.black,
                                      height: 1.4
@@ -174,22 +177,27 @@ class _HomePageScreenState extends State<HomePageScreen> {
                     ),
                     const SizedBox(height: 12),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+
+                      },
                       style: ElevatedButton.styleFrom(
+                        fixedSize: const Size(80, 25),
                         backgroundColor: const Color(0xFFFFC732),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(6),
                         ),
-                        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4), // Adjust padding if needed
                       ),
-                      child:  Text(
+                      child: Text(
                         'Log in',
                         style: GoogleFonts.poppins(
-                            color: Colors.black,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400),
+                          color: Colors.black,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                        ),
                       ),
                     ),
+
                   ],
                 ),
               ),

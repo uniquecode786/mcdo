@@ -31,7 +31,7 @@ class _ArtboardScreen2State extends State<ArtboardScreen2> {
                     addHeight(70),
                     Center(
                       child: Image.asset('assets/icons/location.png',
-                        height: 160,
+                        height: 150,
                         width: 120,
                       ),
                     ),
@@ -39,14 +39,14 @@ class _ArtboardScreen2State extends State<ArtboardScreen2> {
                     AddText(
                       text: 'Location is key!'.tr,
                       fontWeight: FontWeight.w700,
-                      fontSize: 31,
+                      fontSize: 26,
                     ),
                     addHeight(14),
                     AddText(
                       text: 'We need to access your device\'s location so that we can show you the nearest restaurants and the offers that are most relevant to you'.tr,
                       fontWeight: FontWeight.w400,
-                      fontSize: 12,
-                      height: 1.3,
+                      fontSize: 10,
+                      height: 1.6,
                       color: Colors.black,
                     ),
                   ],

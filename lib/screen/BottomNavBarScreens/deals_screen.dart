@@ -482,10 +482,10 @@ class _DealsScreenState extends State<DealsScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "my meatway's rewards",
+                        "My meatway's rewards",
                         style:  GoogleFonts.poppins(
                           fontWeight: FontWeight.w700,
-                          fontSize: 14,
+                          fontSize: 13,
                           color: Colors.black,
                         ),
                       ),
@@ -496,7 +496,7 @@ class _DealsScreenState extends State<DealsScreen> {
                         child:  Text(
                           'How it works',
                           style: GoogleFonts.poppins(
-                            fontSize: 15,
+                            fontSize: 13,
                             fontWeight: FontWeight.w400,
                             color: const Color(0xFF176397),
                             decoration: TextDecoration.underline,

@@ -21,7 +21,7 @@ class CustomButton extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return SizedBox(
       width: size.width,
-      height: 65,
+      height: 60,
       child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             shape:  RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius)),
@@ -40,7 +40,7 @@ class CustomButton extends StatelessWidget {
               child: Text(
                 title.capitalizeFirst!,
                 style: GoogleFonts.poppins(
-                  fontSize: 17,
+                  fontSize: 15,
                   fontWeight: FontWeight.w400,
                   color: Colors.black,
                 ),
@@ -51,7 +51,7 @@ class CustomButton extends StatelessWidget {
             child: Text(
               title.capitalizeFirst!,
               style: GoogleFonts.poppins(
-                fontSize: 17,
+                fontSize: 15,
                 fontWeight: FontWeight.w400,
                 color: Colors.black,
               ),

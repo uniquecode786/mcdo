@@ -15,6 +15,7 @@ class AddText extends StatelessWidget {
   final TextOverflow? textOverflow;
   final TextDecoration? decoration;
   final Color? color;
+  final Color? decoColor;
   const AddText({
     Key? key,
     required this.text,
@@ -28,6 +29,7 @@ class AddText extends StatelessWidget {
     this.maxLines,
     this.letterSpacing,
     this.wordSpacing,
+    this.decoColor,
   }) : super(key: key);
 
   @override
@@ -41,6 +43,7 @@ class AddText extends StatelessWidget {
           color: color,
           fontSize: fontSize,
           decoration: decoration,
+          decorationColor: decoColor,
           height: height,
           letterSpacing: letterSpacing,
           wordSpacing: wordSpacing,

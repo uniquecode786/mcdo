@@ -43,7 +43,7 @@ class _FoodScreenState extends State<FoodScreen> with TickerProviderStateMixin{
               Image.asset('assets/icons/food_bg.png',
                height: 220,
                 width: Get.width,
-                fit: BoxFit.cover,
+                fit: BoxFit.fill ,
               ),
            Positioned(
                top: 175,
@@ -442,11 +442,20 @@ class _FoodScreenState extends State<FoodScreen> with TickerProviderStateMixin{
                                        onTap: (){
                                          Get.toNamed(SingleFoodScreen.route);
                                        },
-                                       child: Card(
-                                         color: Colors.white,
+                                       child: Container(
                                          margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                                         elevation: 4,
-                                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                                         decoration: BoxDecoration(
+                                           color: Colors.white,
+                                           borderRadius: BorderRadius.circular(12),
+                                           boxShadow: [
+                                             BoxShadow(
+                                               color: Colors.black.withOpacity(0.07),
+                                               blurRadius: 10,
+                                               spreadRadius: 2,
+                                               offset: const Offset(0, 4),
+                                             )
+                                           ],
+                                         ),
                                          child: Stack(
                                            children: [
                                              Container(

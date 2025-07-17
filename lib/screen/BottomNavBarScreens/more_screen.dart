@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mcdo/routers/routers.dart';
 import '../../wigets/addText.dart';
 import '../more_screens/AddressScreen/address_details_screen.dart';
@@ -36,8 +37,8 @@ class _MoreScreenState extends State<MoreScreen> {
                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                    children: [
                      const AddText(text: 'More',
-                     fontWeight: FontWeight.w700,
-                       fontSize: 34,
+                     fontWeight: FontWeight.w500,
+                       fontSize: 16,
                        color: Colors.black,
                      ),
                      Image.asset('assets/icons/burger_more.png',
@@ -196,7 +197,9 @@ class IconTextArrowRow extends StatelessWidget {
                     const SizedBox(width: 10),
                     Text(
                       text.capitalizeFirst!,
-                      style: const TextStyle(fontSize: 16, color: Colors.black),
+                      style: GoogleFonts.poppins(fontSize: 16, color: Colors.black,
+                      fontWeight: FontWeight.w400
+                      ),
                     ),
                   ],
                 ),

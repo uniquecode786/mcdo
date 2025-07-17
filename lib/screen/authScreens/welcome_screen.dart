@@ -38,7 +38,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         alignment: Alignment.centerLeft,
                         child: AddText(
                           text: 'Welcome to the club!',
-                          fontSize: 31,
+                          fontSize: 26,
                           fontWeight: FontWeight.w700,
                           height: 1.3,
                         ),
@@ -48,9 +48,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         alignment: Alignment.centerLeft,
                         child: AddText(
                           text: 'Congrats on signing up. Check out some products for tasty tastiness!',
-                          fontSize: 12,
+                          fontSize: 11,
                           fontWeight: FontWeight.w400,
-                          height: 1.3,
+                          height: 1.5,
                         ),
                       ),
                     ],

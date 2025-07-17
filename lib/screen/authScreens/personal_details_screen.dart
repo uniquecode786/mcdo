@@ -61,15 +61,15 @@ class _PersonalDetailsScreenState extends State<PersonalDetailsScreen> {
                           const AddText(text: 'Personal details',
                             color: Colors.black,
                             fontWeight: FontWeight.w700,
-                            fontSize: 31,
+                            fontSize: 26,
                             height: 1.2,
                           ),
                           addHeight(46),
                           const AddText(
                             text: 'Let us know how to properly address you. Please fill in your details.',
-                            fontSize: 12,
+                            fontSize: 11,
                             fontWeight: FontWeight.w500,
-                            height: 1.4,
+                            height: 1.5,
                             color: Colors.black,
                           ),
                           addHeight(22),
@@ -95,7 +95,7 @@ class _PersonalDetailsScreenState extends State<PersonalDetailsScreen> {
                           addWidth(5),
                           const AddText(
                             text: 'Required information',
-                            fontSize: 14,
+                            fontSize: 12,
                             fontWeight: FontWeight.w400,
                             color: Color(0xFF6B6B6B),
                           )

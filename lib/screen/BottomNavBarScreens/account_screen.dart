@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mcdo/routers/routers.dart';
 import 'package:mcdo/screen/BottomNavBarScreens/password_security.dart';
 import 'package:mcdo/screen/BottomNavBarScreens/personal_details_screen.dart';
@@ -48,27 +49,27 @@ class _AccountScreenState extends State<AccountScreen> {
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.0),
                   child: AddText(text: 'Account',
-                  fontSize: 30,
+                  fontSize: 26,
                     fontWeight: FontWeight.w700,
                     color: Colors.black,
                   ),
                 ),
                 addHeight(51),
-                IconTextArrowRow(
+                IconTextArrowRow1(
                   leadingIcon: 'assets/icons/my_profile.png',
                   text: 'Personal Details',
                   onTap: (){
                     Get.toNamed(PersonalDetailsScreenEdit.route);
                   },
                 ),
-                IconTextArrowRow(
+                IconTextArrowRow1(
                   leadingIcon: 'assets/icons/history.png',
                   text: 'Password & Security',
                   onTap: (){
                     Get.toNamed(PasswordSecurityScreen.route);
                   },
                 ),
-                IconTextArrowRow(
+                IconTextArrowRow1(
                   leadingIcon: 'assets/icons/history.png',
                   text: 'Communication Settings',
                   onTap: (){
@@ -91,6 +92,54 @@ class _AccountScreenState extends State<AccountScreen> {
               ],
             ),
           )),
+    );
+  }
+}
+class IconTextArrowRow1 extends StatelessWidget {
+  final String leadingIcon;
+  final String text;
+  final VoidCallback? onTap;
+
+  const IconTextArrowRow1({
+    Key? key,
+    required this.leadingIcon,
+    required this.text,
+    this.onTap,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        InkWell(
+          onTap: onTap,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Image.asset(leadingIcon, color: Colors.black,width: 16,
+                      height: 20,),
+                    const SizedBox(width: 10),
+                    Text(
+                      text.capitalizeFirst!,
+                      style: GoogleFonts.poppins(fontSize: 14, color: Colors.black,
+                          fontWeight: FontWeight.w400
+                      ),
+                    ),
+                  ],
+                ),
+                const Icon(Icons.arrow_forward_ios, color: Colors.black, size: 16),
+              ],
+            ),
+          ),
+        ),
+        const Divider(height: 1, thickness: 1,
+          color: Color(0xFFC5C5C5),
+        ),
+      ],
     );
   }
 }
