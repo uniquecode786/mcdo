@@ -259,9 +259,25 @@ class _DealsScreenState extends State<DealsScreen> {
                                       crossAxisAlignment: CrossAxisAlignment.center,
                                       mainAxisAlignment: MainAxisAlignment.start,
                                       children: [
-                                        Image.asset('assets/icons/reward_bg.png',
-                                         height: 120,
-                                         width: 120,
+                                        // Image.asset('assets/icons/reward_bg.png',
+                                        //  height: 120,
+                                        //  width: 120,
+                                        // ),
+                                        Container(
+                                          height: 120,
+                                          width: 120,
+                                          decoration: const BoxDecoration(
+                                            image: DecorationImage(image: AssetImage('assets/icons/reward_bg_circle.png'))
+                                          ),
+                                            padding: const EdgeInsets.all(4),
+                                          child: Container(
+                                            height: 90,
+                                            width: 90,
+                                            decoration: const BoxDecoration(
+                                              color: Colors.white,
+                                              shape: BoxShape.circle
+                                            ),
+                                          )
                                         ),
                                         addHeight(12),
 

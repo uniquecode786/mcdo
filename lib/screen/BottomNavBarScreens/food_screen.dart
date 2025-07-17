@@ -15,7 +15,22 @@ class FoodScreen extends StatefulWidget {
   State<FoodScreen> createState() => _FoodScreenState();
 }
 
-class _FoodScreenState extends State<FoodScreen> {
+class _FoodScreenState extends State<FoodScreen> with TickerProviderStateMixin{
+  late TabController _tabController;
+  int cartCount = 1;
+  final List<Tab> tabs = [
+    const Tab(text: "🔥 Offers"),
+    const Tab(text: "Beef"),
+    const Tab(text: "Chicken"),
+    const Tab(text: "Fish"),
+    const Tab(text: "Joy Meals"),
+  ];
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: tabs.length, vsync: this);
+  }
     @override
     Widget build(BuildContext context) {
       return Scaffold(
@@ -293,211 +308,1069 @@ class _FoodScreenState extends State<FoodScreen> {
                top: 400,
                left: 0,
                right: 0,
-               child: SingleChildScrollView(
+               child: DefaultTabController(
+                 length: 5,
                  child: Column(
                    crossAxisAlignment: CrossAxisAlignment.center,
                    mainAxisAlignment: MainAxisAlignment.start,
                    children: [
-                     GestureDetector(
-                       onTap: (){
-                         Get.toNamed(DrawerMenuScreen.route);
-                       },
-                       child: const Padding(
-                         padding: EdgeInsets.symmetric(horizontal: 16.0),
-                         child: Align(
-                           alignment: Alignment.centerLeft,
-                           child: Icon(Icons.menu,
-                           size: 35,
-                           color: Color(0xFFE02020),),
-                         ),
-                       ),
-                     ),
-                     addHeight(52),
                      Row(
-                       mainAxisAlignment: MainAxisAlignment.center,
                        crossAxisAlignment: CrossAxisAlignment.center,
+                       mainAxisAlignment: MainAxisAlignment.start,
                        children: [
-                         Image.asset('assets/icons/home_more.png',
-                         height: 20,
-                         width: 20,
-                         color: const Color(0xFFEAAD21),
+                         GestureDetector(
+                           onTap: () {
+                             Get.toNamed(DrawerMenuScreen.route);
+                           },
+                           child: const Padding(
+                             padding: EdgeInsets.only(left: 16.0),
+                             child: Icon(
+                               Icons.menu,
+                               size: 30,
+                               color: Color(0xFFE02020),
+                             ),
+                           ),
                          ),
-                         addWidth(10),
-                         Text('Offers',
-                           style: GoogleFonts.poppins(
-                               fontWeight: FontWeight.w500,
-                               fontSize: 18,
-                               color: Colors.black
-                           ),),
-                         addWidth(10),
-                         Image.asset('assets/icons/home_more.png',
-                           height: 20,
-                           width: 20,
-                           color: const Color(0xFFEAAD21),
+                         const SizedBox(width: 8),
+                         Expanded(
+                           child: Container(
+                             height: 42,
+                             margin: const EdgeInsets.only(right: 16),
+
+                             child: TabBar(
+                               isScrollable: true,
+                               labelColor: const Color(0xFFE02020),
+                               unselectedLabelColor: const Color(0xFF888888),
+                               indicatorColor: const Color(0xFFE02020),
+                               indicatorWeight: 2.5,
+                               dividerColor: Colors.transparent,
+                               tabAlignment: TabAlignment.start,
+                               indicatorSize: TabBarIndicatorSize.label,
+                               tabs: [
+                                 Tab(
+                                   child: Text(
+                                     "🔥 Offers ",
+                                     style: GoogleFonts.poppins(
+                                       fontSize: 14,
+                                       fontWeight: FontWeight.w600,
+                                     ),
+                                   ),
+                                 ),
+                                 Tab(
+                                   child: Text(
+                                     "Beef",
+                                     style: GoogleFonts.poppins(
+                                       fontSize: 14,
+                                       fontWeight: FontWeight.w600,
+                                     ),
+                                   ),
+                                 ),
+                                 Tab(
+                                   child: Text(
+                                     "Chicken",
+                                     style: GoogleFonts.poppins(
+                                       fontSize: 14,
+                                       fontWeight: FontWeight.w600,
+                                     ),
+                                   ),
+                                 ),
+                                 Tab(
+                                   child: Text(
+                                     "Fish",
+                                     style: GoogleFonts.poppins(
+                                       fontSize: 14,
+                                       fontWeight: FontWeight.w600,
+                                     ),
+                                   ),
+                                 ),
+                                 Tab(
+                                   child: Text(
+                                     "Joy Meals",
+                                     style: GoogleFonts.poppins(
+                                       fontSize: 14,
+                                       fontWeight: FontWeight.w600,
+                                     ),
+                                   ),
+                                 ),
+                               ],
+                             ),
+                           ),
                          ),
                        ],
                      ),
-                     addHeight(32),
-                     ListView.builder(
-                         shrinkWrap: true,
-                         physics: const NeverScrollableScrollPhysics(),
-                         itemCount: 4,
-                         padding: EdgeInsets.zero,
-                         itemBuilder: (context, index) {
-                            return GestureDetector(
-                              onTap: (){
-                                Get.toNamed(SingleFoodScreen.route);
-                              },
-                              child: Card(
-                                color: Colors.white,
-                                margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                                elevation: 4,
-                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                                child: Stack(
-                                  children: [
-                                    Container(
-                                      color: Colors.white,
-                                    ),
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      children: [
-                                        Row(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          children: [
-                                            Expanded(
-                                              child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                children: [
-                                                   Row(
-                                                    children: [
-                                                      Text(
-                                                        '1 x ',
-                                                        style: GoogleFonts.poppins(
-                                                          fontSize: 14,
-                                                          color: const Color(0xFFE02020),
-                                                          fontWeight: FontWeight.w500,
-                                                        ),
-                                                      ),
-                                                      Text(
-                                                        'Fillet Fish',
-                                                        style: GoogleFonts.poppins(
-                                                          fontSize: 14,
-                                                          color: Colors.black,
-                                                          fontWeight: FontWeight.w500,
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                   addHeight(9),
+                     addHeight(10),
+                   Expanded(
+                     child: TabBarView(
+                         children: [
+                           SingleChildScrollView(
+                             physics: const AlwaysScrollableScrollPhysics(),
+                             child: Column(
+                               children: [
+                                 addHeight(30),
+                                 Row(
+                                   mainAxisAlignment: MainAxisAlignment.center,
+                                   crossAxisAlignment: CrossAxisAlignment.center,
+                                   children: [
+                                     Image.asset('assets/icons/home_more.png',
+                                       height: 20,
+                                       width: 20,
+                                       color: const Color(0xFFEAAD21),
+                                     ),
+                                     addWidth(10),
+                                     Text('Offers',
+                                       style: GoogleFonts.poppins(
+                                           fontWeight: FontWeight.w500,
+                                           fontSize: 18,
+                                           color: Colors.black
+                                       ),),
+                                     addWidth(10),
+                                     Image.asset('assets/icons/home_more.png',
+                                       height: 20,
+                                       width: 20,
+                                       color: const Color(0xFFEAAD21),
+                                     ),
+                                   ],
+                                 ),
+                                 addHeight(32),
+                                 ListView.builder(
+                                   shrinkWrap: true,
+                                   physics: const NeverScrollableScrollPhysics(),
+                                   itemCount: 4,
+                                   padding: EdgeInsets.zero,
+                                   itemBuilder: (context, index) {
+                                     return GestureDetector(
+                                       onTap: (){
+                                         Get.toNamed(SingleFoodScreen.route);
+                                       },
+                                       child: Card(
+                                         color: Colors.white,
+                                         margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                                         elevation: 4,
+                                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                                         child: Stack(
+                                           children: [
+                                             Container(
+                                               color: Colors.white,
+                                             ),
+                                             Column(
+                                               crossAxisAlignment: CrossAxisAlignment.start,
+                                               mainAxisAlignment: MainAxisAlignment.start,
+                                               children: [
+                                                 Row(
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
+                                                   mainAxisAlignment: MainAxisAlignment.start,
+                                                   children: [
+                                                     Expanded(
+                                                       child: Column(
+                                                         crossAxisAlignment: CrossAxisAlignment.start,
+                                                         children: [
+                                                           Row(
+                                                             children: [
+                                                               Text(
+                                                                 '1 x ',
+                                                                 style: GoogleFonts.poppins(
+                                                                   fontSize: 14,
+                                                                   color: const Color(0xFFE02020),
+                                                                   fontWeight: FontWeight.w500,
+                                                                 ),
+                                                               ),
+                                                               Text(
+                                                                 'Fillet Fish',
+                                                                 style: GoogleFonts.poppins(
+                                                                   fontSize: 14,
+                                                                   color: Colors.black,
+                                                                   fontWeight: FontWeight.w500,
+                                                                 ),
+                                                               ),
+                                                             ],
+                                                           ),
+                                                           addHeight(9),
+                                                           Text(
+                                                             'Red Hot Twister Sandwich +\nRizo + Coleslaw + Drink.',
+                                                             style: GoogleFonts.poppins(
+                                                                 fontSize: 12,
+                                                                 fontWeight: FontWeight.w500,
+                                                                 color: Colors.black),
+                                                           ),
+                                                           const SizedBox(height: 6),
+                                 
+                                                         ],
+                                                       ).paddingSymmetric(horizontal: 14,vertical: 14),
+                                                     ),
+                                                     Column(
+                                                       crossAxisAlignment: CrossAxisAlignment.end,
+                                                       mainAxisAlignment: MainAxisAlignment.start,
+                                                       children: [
+                                                         Align(
+                                                             alignment: Alignment.topRight,
+                                                             child: Image.asset('assets/icons/fav.png',
+                                                               height: 30,
+                                                               width: 30,
+                                                             )),
+                                                         addHeight(20),
+                                                         Padding(
+                                                           padding: const EdgeInsets.only(right: 20.0),
+                                                           child: Image.asset('assets/icons/burger_img.png',
+                                                             height: 78,
+                                                             width: 100,
+                                                           ),
+                                                         ),
+                                                         addHeight(20),
+                                                       ],
+                                                     ),
+                                                   ],
+                                                 ),
+                                                 addHeight(30),
+                                               ],
+                                             ),
+                                             Positioned(
+                                               bottom: 0,
+                                               left: 0,
+                                               child:  Column(
+                                                 crossAxisAlignment: CrossAxisAlignment.start,
+                                                 mainAxisAlignment: MainAxisAlignment.start,
+                                                 children: [
+                                                   GestureDetector(
+                                                     onTap: () {
+                                                       // Handle customization tap
+                                                     },
+                                                     child:  Row(
+                                                       children: [
+                                                         Text(
+                                                           'Customize',
+                                                           style: GoogleFonts.poppins(
+                                                               color: const Color(0xFF203EE0),
+                                                               fontSize: 12,
+                                                               fontWeight: FontWeight.w600),
+                                                         ),
+                                                         addWidth(9),
+                                                         Image.asset('assets/icons/customize.png',
+                                                           height: 16,
+                                                           width: 16,
+                                                         )
+                                                       ],
+                                                     ),
+                                                   ),
+                                                   const SizedBox(height: 10),
+                                                   Container(
+                                                     color: const Color(0xFFEAEAEA),
+                                                     height: 1,
+                                                     width: Get.width * .52,
+                                                   ),
+                                                   const SizedBox(height: 10),
                                                    Text(
-                                                    'Red Hot Twister Sandwich +\nRizo + Coleslaw + Drink.',
-                                                    style: GoogleFonts.poppins(
-                                                        fontSize: 12,
-                                                        fontWeight: FontWeight.w500,
-                                                        color: Colors.black),
-                                                  ),
-                                                  const SizedBox(height: 6),
+                                                     '470,000 LBP',
+                                                     style: GoogleFonts.poppins(
+                                                         fontWeight: FontWeight.w500,
+                                                         fontSize: 14),
+                                                   )
+                                                 ],
+                                               ).paddingSymmetric(horizontal: 14,vertical: 10),
+                                             ),
+                                             Positioned(
+                                               bottom: 0,
+                                               right: 0,
+                                               child: Container(
+                                                 height: 40,
+                                                 padding: const EdgeInsets.symmetric(horizontal: 25),
+                                                 color: const Color(0xFFFFC732),
+                                                 child: Center(
+                                                   child: Text('Add To Cart',
+                                                     style: GoogleFonts.poppins(
+                                                         color: Colors.black,
+                                                         fontSize: 12,
+                                                         fontWeight: FontWeight.w600
+                                                     ),
+                                                   ),
+                                                 ),
+                                               ),
+                                             ),
+                                           ],
+                                         ),
+                                       ),
+                                     );
+                                   },
+                                 ),
+                                 addHeight(10),
+                               ],
+                             ),
+                           ),
+                           SingleChildScrollView(
+                             physics: const AlwaysScrollableScrollPhysics(),
+                             child: Column(
+                               children: [
+                                 addHeight(30),
+                                 Row(
+                                   mainAxisAlignment: MainAxisAlignment.center,
+                                   crossAxisAlignment: CrossAxisAlignment.center,
+                                   children: [
+                                     Image.asset('assets/icons/home_more.png',
+                                       height: 20,
+                                       width: 20,
+                                       color: const Color(0xFFEAAD21),
+                                     ),
+                                     addWidth(10),
+                                     Text('Beef',
+                                       style: GoogleFonts.poppins(
+                                           fontWeight: FontWeight.w500,
+                                           fontSize: 18,
+                                           color: Colors.black
+                                       ),),
+                                     addWidth(10),
+                                     Image.asset('assets/icons/home_more.png',
+                                       height: 20,
+                                       width: 20,
+                                       color: const Color(0xFFEAAD21),
+                                     ),
+                                   ],
+                                 ),
+                                 addHeight(32),
+                                 ListView.builder(
+                                   shrinkWrap: true,
+                                   physics: const NeverScrollableScrollPhysics(),
+                                   itemCount: 4,
+                                   padding: EdgeInsets.zero,
+                                   itemBuilder: (context, index) {
+                                     return GestureDetector(
+                                       onTap: (){
+                                         Get.toNamed(SingleFoodScreen.route);
+                                       },
+                                       child: Card(
+                                         color: Colors.white,
+                                         margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                                         elevation: 4,
+                                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                                         child: Stack(
+                                           children: [
+                                             Container(
+                                               color: Colors.white,
+                                             ),
+                                             Column(
+                                               crossAxisAlignment: CrossAxisAlignment.start,
+                                               mainAxisAlignment: MainAxisAlignment.start,
+                                               children: [
+                                                 Row(
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
+                                                   mainAxisAlignment: MainAxisAlignment.start,
+                                                   children: [
+                                                     Expanded(
+                                                       child: Column(
+                                                         crossAxisAlignment: CrossAxisAlignment.start,
+                                                         children: [
+                                                           Row(
+                                                             children: [
+                                                               Text(
+                                                                 '1 x ',
+                                                                 style: GoogleFonts.poppins(
+                                                                   fontSize: 14,
+                                                                   color: const Color(0xFFE02020),
+                                                                   fontWeight: FontWeight.w500,
+                                                                 ),
+                                                               ),
+                                                               Text(
+                                                                 'Fillet Fish',
+                                                                 style: GoogleFonts.poppins(
+                                                                   fontSize: 14,
+                                                                   color: Colors.black,
+                                                                   fontWeight: FontWeight.w500,
+                                                                 ),
+                                                               ),
+                                                             ],
+                                                           ),
+                                                           addHeight(9),
+                                                           Text(
+                                                             'Red Hot Twister Sandwich +\nRizo + Coleslaw + Drink.',
+                                                             style: GoogleFonts.poppins(
+                                                                 fontSize: 12,
+                                                                 fontWeight: FontWeight.w500,
+                                                                 color: Colors.black),
+                                                           ),
+                                                           const SizedBox(height: 6),
 
-                                                ],
-                                              ).paddingSymmetric(horizontal: 14,vertical: 14),
-                                            ),
-                                            Column(
-                                              crossAxisAlignment: CrossAxisAlignment.end,
-                                              mainAxisAlignment: MainAxisAlignment.start,
-                                              children: [
-                                                Align(
-                                                    alignment: Alignment.topRight,
-                                                    child: Image.asset('assets/icons/fav.png',
-                                                      height: 30,
-                                                      width: 30,
-                                                    )),
-                                                addHeight(20),
-                                                Padding(
-                                                  padding: const EdgeInsets.only(right: 20.0),
-                                                  child: Image.asset('assets/icons/burger_img.png',
-                                                  height: 78,
-                                                  width: 100,
-                                                  ),
-                                                ),
-                                                addHeight(20),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                        addHeight(30),
-                                      ],
-                                    ),
-                                    Positioned(
-                                      bottom: 0,
-                                      left: 0,
-                                      child:  Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        mainAxisAlignment: MainAxisAlignment.start,
-                                        children: [
-                                          GestureDetector(
-                                            onTap: () {
-                                              // Handle customization tap
-                                            },
-                                            child:  Row(
-                                              children: [
-                                                Text(
-                                                  'Customize',
-                                                  style: GoogleFonts.poppins(
-                                                      color: const Color(0xFF203EE0),
-                                                      fontSize: 12,
-                                                      fontWeight: FontWeight.w600),
-                                                ),
-                                               addWidth(9),
-                                                Image.asset('assets/icons/customize.png',
-                                                height: 16,
-                                                width: 16,
-                                                )
-                                              ],
-                                            ),
-                                          ),
-                                          const SizedBox(height: 10),
-                                          Container(
-                                            color: const Color(0xFFEAEAEA),
-                                            height: 1,
-                                           width: Get.width * .52,
-                                          ),
-                                          const SizedBox(height: 10),
-                                           Text(
-                                            '470,000 LBP',
-                                            style: GoogleFonts.poppins(
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: 14),
-                                          )
-                                        ],
-                                      ).paddingSymmetric(horizontal: 14,vertical: 10),
-                                    ),
-                                    Positioned(
-                                      bottom: 0,
-                                      right: 0,
-                                      child: Container(
-                                        height: 40,
-                                        padding: const EdgeInsets.symmetric(horizontal: 25),
-                                        color: const Color(0xFFFFC732),
-                                        child: Center(
-                                          child: Text('Add To Cart',
-                                          style: GoogleFonts.poppins(
-                                            color: Colors.black,
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.w600
-                                          ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            );
-                         },
+                                                         ],
+                                                       ).paddingSymmetric(horizontal: 14,vertical: 14),
+                                                     ),
+                                                     Column(
+                                                       crossAxisAlignment: CrossAxisAlignment.end,
+                                                       mainAxisAlignment: MainAxisAlignment.start,
+                                                       children: [
+                                                         Align(
+                                                             alignment: Alignment.topRight,
+                                                             child: Image.asset('assets/icons/fav.png',
+                                                               height: 30,
+                                                               width: 30,
+                                                             )),
+                                                         addHeight(20),
+                                                         Padding(
+                                                           padding: const EdgeInsets.only(right: 20.0),
+                                                           child: Image.asset('assets/icons/burger_img.png',
+                                                             height: 78,
+                                                             width: 100,
+                                                           ),
+                                                         ),
+                                                         addHeight(20),
+                                                       ],
+                                                     ),
+                                                   ],
+                                                 ),
+                                                 addHeight(30),
+                                               ],
+                                             ),
+                                             Positioned(
+                                               bottom: 0,
+                                               left: 0,
+                                               child:  Column(
+                                                 crossAxisAlignment: CrossAxisAlignment.start,
+                                                 mainAxisAlignment: MainAxisAlignment.start,
+                                                 children: [
+                                                   GestureDetector(
+                                                     onTap: () {
+                                                       // Handle customization tap
+                                                     },
+                                                     child:  Row(
+                                                       children: [
+                                                         Text(
+                                                           'Customize',
+                                                           style: GoogleFonts.poppins(
+                                                               color: const Color(0xFF203EE0),
+                                                               fontSize: 12,
+                                                               fontWeight: FontWeight.w600),
+                                                         ),
+                                                         addWidth(9),
+                                                         Image.asset('assets/icons/customize.png',
+                                                           height: 16,
+                                                           width: 16,
+                                                         )
+                                                       ],
+                                                     ),
+                                                   ),
+                                                   const SizedBox(height: 10),
+                                                   Container(
+                                                     color: const Color(0xFFEAEAEA),
+                                                     height: 1,
+                                                     width: Get.width * .52,
+                                                   ),
+                                                   const SizedBox(height: 10),
+                                                   Text(
+                                                     '470,000 LBP',
+                                                     style: GoogleFonts.poppins(
+                                                         fontWeight: FontWeight.w500,
+                                                         fontSize: 14),
+                                                   )
+                                                 ],
+                                               ).paddingSymmetric(horizontal: 14,vertical: 10),
+                                             ),
+                                             Positioned(
+                                               bottom: 0,
+                                               right: 0,
+                                               child: Container(
+                                                 height: 40,
+                                                 padding: const EdgeInsets.symmetric(horizontal: 25),
+                                                 color: const Color(0xFFFFC732),
+                                                 child: Center(
+                                                   child: Text('Add To Cart',
+                                                     style: GoogleFonts.poppins(
+                                                         color: Colors.black,
+                                                         fontSize: 12,
+                                                         fontWeight: FontWeight.w600
+                                                     ),
+                                                   ),
+                                                 ),
+                                               ),
+                                             ),
+                                           ],
+                                         ),
+                                       ),
+                                     );
+                                   },
+                                 ),
+                                 addHeight(10),
+                               ],
+                             ),
+                           ),
+                           SingleChildScrollView(
+                             physics: const AlwaysScrollableScrollPhysics(),
+                             child: Column(
+                               children: [
+                                 addHeight(30),
+                                 Row(
+                                   mainAxisAlignment: MainAxisAlignment.center,
+                                   crossAxisAlignment: CrossAxisAlignment.center,
+                                   children: [
+                                     Image.asset('assets/icons/home_more.png',
+                                       height: 20,
+                                       width: 20,
+                                       color: const Color(0xFFEAAD21),
+                                     ),
+                                     addWidth(10),
+                                     Text('Chicken',
+                                       style: GoogleFonts.poppins(
+                                           fontWeight: FontWeight.w500,
+                                           fontSize: 18,
+                                           color: Colors.black
+                                       ),),
+                                     addWidth(10),
+                                     Image.asset('assets/icons/home_more.png',
+                                       height: 20,
+                                       width: 20,
+                                       color: const Color(0xFFEAAD21),
+                                     ),
+                                   ],
+                                 ),
+                                 addHeight(32),
+                                 ListView.builder(
+                                   shrinkWrap: true,
+                                   physics: const NeverScrollableScrollPhysics(),
+                                   itemCount: 4,
+                                   padding: EdgeInsets.zero,
+                                   itemBuilder: (context, index) {
+                                     return GestureDetector(
+                                       onTap: (){
+                                         Get.toNamed(SingleFoodScreen.route);
+                                       },
+                                       child: Card(
+                                         color: Colors.white,
+                                         margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                                         elevation: 4,
+                                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                                         child: Stack(
+                                           children: [
+                                             Container(
+                                               color: Colors.white,
+                                             ),
+                                             Column(
+                                               crossAxisAlignment: CrossAxisAlignment.start,
+                                               mainAxisAlignment: MainAxisAlignment.start,
+                                               children: [
+                                                 Row(
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
+                                                   mainAxisAlignment: MainAxisAlignment.start,
+                                                   children: [
+                                                     Expanded(
+                                                       child: Column(
+                                                         crossAxisAlignment: CrossAxisAlignment.start,
+                                                         children: [
+                                                           Row(
+                                                             children: [
+                                                               Text(
+                                                                 '1 x ',
+                                                                 style: GoogleFonts.poppins(
+                                                                   fontSize: 14,
+                                                                   color: const Color(0xFFE02020),
+                                                                   fontWeight: FontWeight.w500,
+                                                                 ),
+                                                               ),
+                                                               Text(
+                                                                 'Fillet Fish',
+                                                                 style: GoogleFonts.poppins(
+                                                                   fontSize: 14,
+                                                                   color: Colors.black,
+                                                                   fontWeight: FontWeight.w500,
+                                                                 ),
+                                                               ),
+                                                             ],
+                                                           ),
+                                                           addHeight(9),
+                                                           Text(
+                                                             'Red Hot Twister Sandwich +\nRizo + Coleslaw + Drink.',
+                                                             style: GoogleFonts.poppins(
+                                                                 fontSize: 12,
+                                                                 fontWeight: FontWeight.w500,
+                                                                 color: Colors.black),
+                                                           ),
+                                                           const SizedBox(height: 6),
+
+                                                         ],
+                                                       ).paddingSymmetric(horizontal: 14,vertical: 14),
+                                                     ),
+                                                     Column(
+                                                       crossAxisAlignment: CrossAxisAlignment.end,
+                                                       mainAxisAlignment: MainAxisAlignment.start,
+                                                       children: [
+                                                         Align(
+                                                             alignment: Alignment.topRight,
+                                                             child: Image.asset('assets/icons/fav.png',
+                                                               height: 30,
+                                                               width: 30,
+                                                             )),
+                                                         addHeight(20),
+                                                         Padding(
+                                                           padding: const EdgeInsets.only(right: 20.0),
+                                                           child: Image.asset('assets/icons/burger_img.png',
+                                                             height: 78,
+                                                             width: 100,
+                                                           ),
+                                                         ),
+                                                         addHeight(20),
+                                                       ],
+                                                     ),
+                                                   ],
+                                                 ),
+                                                 addHeight(30),
+                                               ],
+                                             ),
+                                             Positioned(
+                                               bottom: 0,
+                                               left: 0,
+                                               child:  Column(
+                                                 crossAxisAlignment: CrossAxisAlignment.start,
+                                                 mainAxisAlignment: MainAxisAlignment.start,
+                                                 children: [
+                                                   GestureDetector(
+                                                     onTap: () {
+                                                       // Handle customization tap
+                                                     },
+                                                     child:  Row(
+                                                       children: [
+                                                         Text(
+                                                           'Customize',
+                                                           style: GoogleFonts.poppins(
+                                                               color: const Color(0xFF203EE0),
+                                                               fontSize: 12,
+                                                               fontWeight: FontWeight.w600),
+                                                         ),
+                                                         addWidth(9),
+                                                         Image.asset('assets/icons/customize.png',
+                                                           height: 16,
+                                                           width: 16,
+                                                         )
+                                                       ],
+                                                     ),
+                                                   ),
+                                                   const SizedBox(height: 10),
+                                                   Container(
+                                                     color: const Color(0xFFEAEAEA),
+                                                     height: 1,
+                                                     width: Get.width * .52,
+                                                   ),
+                                                   const SizedBox(height: 10),
+                                                   Text(
+                                                     '470,000 LBP',
+                                                     style: GoogleFonts.poppins(
+                                                         fontWeight: FontWeight.w500,
+                                                         fontSize: 14),
+                                                   )
+                                                 ],
+                                               ).paddingSymmetric(horizontal: 14,vertical: 10),
+                                             ),
+                                             Positioned(
+                                               bottom: 0,
+                                               right: 0,
+                                               child: Container(
+                                                 height: 40,
+                                                 padding: const EdgeInsets.symmetric(horizontal: 25),
+                                                 color: const Color(0xFFFFC732),
+                                                 child: Center(
+                                                   child: Text('Add To Cart',
+                                                     style: GoogleFonts.poppins(
+                                                         color: Colors.black,
+                                                         fontSize: 12,
+                                                         fontWeight: FontWeight.w600
+                                                     ),
+                                                   ),
+                                                 ),
+                                               ),
+                                             ),
+                                           ],
+                                         ),
+                                       ),
+                                     );
+                                   },
+                                 ),
+                                 addHeight(10),
+                               ],
+                             ),
+                           ),
+                           SingleChildScrollView(
+                             physics: const AlwaysScrollableScrollPhysics(),
+                             child: Column(
+                               children: [
+                                 addHeight(30),
+                                 Row(
+                                   mainAxisAlignment: MainAxisAlignment.center,
+                                   crossAxisAlignment: CrossAxisAlignment.center,
+                                   children: [
+                                     Image.asset('assets/icons/home_more.png',
+                                       height: 20,
+                                       width: 20,
+                                       color: const Color(0xFFEAAD21),
+                                     ),
+                                     addWidth(10),
+                                     Text('Fish',
+                                       style: GoogleFonts.poppins(
+                                           fontWeight: FontWeight.w500,
+                                           fontSize: 18,
+                                           color: Colors.black
+                                       ),),
+                                     addWidth(10),
+                                     Image.asset('assets/icons/home_more.png',
+                                       height: 20,
+                                       width: 20,
+                                       color: const Color(0xFFEAAD21),
+                                     ),
+                                   ],
+                                 ),
+                                 addHeight(32),
+                                 ListView.builder(
+                                   shrinkWrap: true,
+                                   physics: const NeverScrollableScrollPhysics(),
+                                   itemCount: 4,
+                                   padding: EdgeInsets.zero,
+                                   itemBuilder: (context, index) {
+                                     return GestureDetector(
+                                       onTap: (){
+                                         Get.toNamed(SingleFoodScreen.route);
+                                       },
+                                       child: Card(
+                                         color: Colors.white,
+                                         margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                                         elevation: 4,
+                                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                                         child: Stack(
+                                           children: [
+                                             Container(
+                                               color: Colors.white,
+                                             ),
+                                             Column(
+                                               crossAxisAlignment: CrossAxisAlignment.start,
+                                               mainAxisAlignment: MainAxisAlignment.start,
+                                               children: [
+                                                 Row(
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
+                                                   mainAxisAlignment: MainAxisAlignment.start,
+                                                   children: [
+                                                     Expanded(
+                                                       child: Column(
+                                                         crossAxisAlignment: CrossAxisAlignment.start,
+                                                         children: [
+                                                           Row(
+                                                             children: [
+                                                               Text(
+                                                                 '1 x ',
+                                                                 style: GoogleFonts.poppins(
+                                                                   fontSize: 14,
+                                                                   color: const Color(0xFFE02020),
+                                                                   fontWeight: FontWeight.w500,
+                                                                 ),
+                                                               ),
+                                                               Text(
+                                                                 'Fillet Fish',
+                                                                 style: GoogleFonts.poppins(
+                                                                   fontSize: 14,
+                                                                   color: Colors.black,
+                                                                   fontWeight: FontWeight.w500,
+                                                                 ),
+                                                               ),
+                                                             ],
+                                                           ),
+                                                           addHeight(9),
+                                                           Text(
+                                                             'Red Hot Twister Sandwich +\nRizo + Coleslaw + Drink.',
+                                                             style: GoogleFonts.poppins(
+                                                                 fontSize: 12,
+                                                                 fontWeight: FontWeight.w500,
+                                                                 color: Colors.black),
+                                                           ),
+                                                           const SizedBox(height: 6),
+
+                                                         ],
+                                                       ).paddingSymmetric(horizontal: 14,vertical: 14),
+                                                     ),
+                                                     Column(
+                                                       crossAxisAlignment: CrossAxisAlignment.end,
+                                                       mainAxisAlignment: MainAxisAlignment.start,
+                                                       children: [
+                                                         Align(
+                                                             alignment: Alignment.topRight,
+                                                             child: Image.asset('assets/icons/fav.png',
+                                                               height: 30,
+                                                               width: 30,
+                                                             )),
+                                                         addHeight(20),
+                                                         Padding(
+                                                           padding: const EdgeInsets.only(right: 20.0),
+                                                           child: Image.asset('assets/icons/burger_img.png',
+                                                             height: 78,
+                                                             width: 100,
+                                                           ),
+                                                         ),
+                                                         addHeight(20),
+                                                       ],
+                                                     ),
+                                                   ],
+                                                 ),
+                                                 addHeight(30),
+                                               ],
+                                             ),
+                                             Positioned(
+                                               bottom: 0,
+                                               left: 0,
+                                               child:  Column(
+                                                 crossAxisAlignment: CrossAxisAlignment.start,
+                                                 mainAxisAlignment: MainAxisAlignment.start,
+                                                 children: [
+                                                   GestureDetector(
+                                                     onTap: () {
+                                                       // Handle customization tap
+                                                     },
+                                                     child:  Row(
+                                                       children: [
+                                                         Text(
+                                                           'Customize',
+                                                           style: GoogleFonts.poppins(
+                                                               color: const Color(0xFF203EE0),
+                                                               fontSize: 12,
+                                                               fontWeight: FontWeight.w600),
+                                                         ),
+                                                         addWidth(9),
+                                                         Image.asset('assets/icons/customize.png',
+                                                           height: 16,
+                                                           width: 16,
+                                                         )
+                                                       ],
+                                                     ),
+                                                   ),
+                                                   const SizedBox(height: 10),
+                                                   Container(
+                                                     color: const Color(0xFFEAEAEA),
+                                                     height: 1,
+                                                     width: Get.width * .52,
+                                                   ),
+                                                   const SizedBox(height: 10),
+                                                   Text(
+                                                     '470,000 LBP',
+                                                     style: GoogleFonts.poppins(
+                                                         fontWeight: FontWeight.w500,
+                                                         fontSize: 14),
+                                                   )
+                                                 ],
+                                               ).paddingSymmetric(horizontal: 14,vertical: 10),
+                                             ),
+                                             Positioned(
+                                               bottom: 0,
+                                               right: 0,
+                                               child: Container(
+                                                 height: 40,
+                                                 padding: const EdgeInsets.symmetric(horizontal: 25),
+                                                 color: const Color(0xFFFFC732),
+                                                 child: Center(
+                                                   child: Text('Add To Cart',
+                                                     style: GoogleFonts.poppins(
+                                                         color: Colors.black,
+                                                         fontSize: 12,
+                                                         fontWeight: FontWeight.w600
+                                                     ),
+                                                   ),
+                                                 ),
+                                               ),
+                                             ),
+                                           ],
+                                         ),
+                                       ),
+                                     );
+                                   },
+                                 ),
+                                 addHeight(10),
+                               ],
+                             ),
+                           ),
+                           SingleChildScrollView(
+                             physics: const AlwaysScrollableScrollPhysics(),
+                             child: Column(
+                               children: [
+                                 addHeight(30),
+                                 Row(
+                                   mainAxisAlignment: MainAxisAlignment.center,
+                                   crossAxisAlignment: CrossAxisAlignment.center,
+                                   children: [
+                                     Image.asset('assets/icons/home_more.png',
+                                       height: 20,
+                                       width: 20,
+                                       color: const Color(0xFFEAAD21),
+                                     ),
+                                     addWidth(10),
+                                     Text('Joy Meals',
+                                       style: GoogleFonts.poppins(
+                                           fontWeight: FontWeight.w500,
+                                           fontSize: 18,
+                                           color: Colors.black
+                                       ),),
+                                     addWidth(10),
+                                     Image.asset('assets/icons/home_more.png',
+                                       height: 20,
+                                       width: 20,
+                                       color: const Color(0xFFEAAD21),
+                                     ),
+                                   ],
+                                 ),
+                                 addHeight(32),
+                                 ListView.builder(
+                                   shrinkWrap: true,
+                                   physics: const NeverScrollableScrollPhysics(),
+                                   itemCount: 4,
+                                   padding: EdgeInsets.zero,
+                                   itemBuilder: (context, index) {
+                                     return GestureDetector(
+                                       onTap: (){
+                                         Get.toNamed(SingleFoodScreen.route);
+                                       },
+                                       child: Card(
+                                         color: Colors.white,
+                                         margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                                         elevation: 4,
+                                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                                         child: Stack(
+                                           children: [
+                                             Container(
+                                               color: Colors.white,
+                                             ),
+                                             Column(
+                                               crossAxisAlignment: CrossAxisAlignment.start,
+                                               mainAxisAlignment: MainAxisAlignment.start,
+                                               children: [
+                                                 Row(
+                                                   crossAxisAlignment: CrossAxisAlignment.start,
+                                                   mainAxisAlignment: MainAxisAlignment.start,
+                                                   children: [
+                                                     Expanded(
+                                                       child: Column(
+                                                         crossAxisAlignment: CrossAxisAlignment.start,
+                                                         children: [
+                                                           Row(
+                                                             children: [
+                                                               Text(
+                                                                 '1 x ',
+                                                                 style: GoogleFonts.poppins(
+                                                                   fontSize: 14,
+                                                                   color: const Color(0xFFE02020),
+                                                                   fontWeight: FontWeight.w500,
+                                                                 ),
+                                                               ),
+                                                               Text(
+                                                                 'Fillet Fish',
+                                                                 style: GoogleFonts.poppins(
+                                                                   fontSize: 14,
+                                                                   color: Colors.black,
+                                                                   fontWeight: FontWeight.w500,
+                                                                 ),
+                                                               ),
+                                                             ],
+                                                           ),
+                                                           addHeight(9),
+                                                           Text(
+                                                             'Red Hot Twister Sandwich +\nRizo + Coleslaw + Drink.',
+                                                             style: GoogleFonts.poppins(
+                                                                 fontSize: 12,
+                                                                 fontWeight: FontWeight.w500,
+                                                                 color: Colors.black),
+                                                           ),
+                                                           const SizedBox(height: 6),
+
+                                                         ],
+                                                       ).paddingSymmetric(horizontal: 14,vertical: 14),
+                                                     ),
+                                                     Column(
+                                                       crossAxisAlignment: CrossAxisAlignment.end,
+                                                       mainAxisAlignment: MainAxisAlignment.start,
+                                                       children: [
+                                                         Align(
+                                                             alignment: Alignment.topRight,
+                                                             child: Image.asset('assets/icons/fav.png',
+                                                               height: 30,
+                                                               width: 30,
+                                                             )),
+                                                         addHeight(20),
+                                                         Padding(
+                                                           padding: const EdgeInsets.only(right: 20.0),
+                                                           child: Image.asset('assets/icons/burger_img.png',
+                                                             height: 78,
+                                                             width: 100,
+                                                           ),
+                                                         ),
+                                                         addHeight(20),
+                                                       ],
+                                                     ),
+                                                   ],
+                                                 ),
+                                                 addHeight(30),
+                                               ],
+                                             ),
+                                             Positioned(
+                                               bottom: 0,
+                                               left: 0,
+                                               child:  Column(
+                                                 crossAxisAlignment: CrossAxisAlignment.start,
+                                                 mainAxisAlignment: MainAxisAlignment.start,
+                                                 children: [
+                                                   GestureDetector(
+                                                     onTap: () {
+                                                       // Handle customization tap
+                                                     },
+                                                     child:  Row(
+                                                       children: [
+                                                         Text(
+                                                           'Customize',
+                                                           style: GoogleFonts.poppins(
+                                                               color: const Color(0xFF203EE0),
+                                                               fontSize: 12,
+                                                               fontWeight: FontWeight.w600),
+                                                         ),
+                                                         addWidth(9),
+                                                         Image.asset('assets/icons/customize.png',
+                                                           height: 16,
+                                                           width: 16,
+                                                         )
+                                                       ],
+                                                     ),
+                                                   ),
+                                                   const SizedBox(height: 10),
+                                                   Container(
+                                                     color: const Color(0xFFEAEAEA),
+                                                     height: 1,
+                                                     width: Get.width * .52,
+                                                   ),
+                                                   const SizedBox(height: 10),
+                                                   Text(
+                                                     '470,000 LBP',
+                                                     style: GoogleFonts.poppins(
+                                                         fontWeight: FontWeight.w500,
+                                                         fontSize: 14),
+                                                   )
+                                                 ],
+                                               ).paddingSymmetric(horizontal: 14,vertical: 10),
+                                             ),
+                                             Positioned(
+                                               bottom: 0,
+                                               right: 0,
+                                               child: Container(
+                                                 height: 40,
+                                                 padding: const EdgeInsets.symmetric(horizontal: 25),
+                                                 color: const Color(0xFFFFC732),
+                                                 child: Center(
+                                                   child: Text('Add To Cart',
+                                                     style: GoogleFonts.poppins(
+                                                         color: Colors.black,
+                                                         fontSize: 12,
+                                                         fontWeight: FontWeight.w600
+                                                     ),
+                                                   ),
+                                                 ),
+                                               ),
+                                             ),
+                                           ],
+                                         ),
+                                       ),
+                                     );
+                                   },
+                                 ),
+                                 addHeight(10),
+                               ],
+                             ),
+                           ),
+                         ]
                      ),
-                     addHeight(60),
+                   ),
+
              Image.asset('assets/icons/app_logos.png',
                height: 40,
                width: 110,
