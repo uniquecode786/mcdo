@@ -76,22 +76,49 @@ class _AccountScreenState extends State<AccountScreen> {
                     Get.toNamed(CommunicationSettingsScreen.route);
                   },
                 ),
-                // IconTextArrowRow(
-                //   leadingIcon: 'assets/icons/home.png',
-                //   text: 'Delete account',
-                //   onTap: (){
-                //     Get.toNamed(DeleteAccountScreen.route);
-                //   },
-                // ),
-                // IconTextArrowRow(
-                //   leadingIcon: 'assets/icons/home.png',
-                //   text: 'log out',
-                //   onTap: (){},
-                // ),
+                IconTextArrowRow1(
+                  leadingIcon: 'assets/icons/delete.png',
+                  text: 'Delete account',
+                  onTap: (){
+                    Get.toNamed(DeleteAccountScreen.route);
+                  },
+                ),
+                IconTextArrowRow1(
+                  leadingIcon: 'assets/icons/log_new.png',
+                  text: 'log out',
+                  onTap: (){
+                    showSignOutPopup(context);
+                  },
+                ),
 
               ],
             ),
           )),
+    );
+  }
+  void showSignOutPopup(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        backgroundColor: Colors.white,
+        title:  const AddText(text:'Log out',
+        fontSize: 20,
+        fontWeight: FontWeight.w500,),
+        content: const Text('Are you sure you want to sign out?'),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+              // Add sign-out logic here
+            },
+            child: const Text('Yes'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('No'),
+          ),
+        ],
+      ),
     );
   }
 }

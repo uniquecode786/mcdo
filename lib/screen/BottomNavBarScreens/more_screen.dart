@@ -54,7 +54,7 @@ class _MoreScreenState extends State<MoreScreen> {
                   onTap: (){},
                 ),
                 IconTextArrowRow(
-                 leadingIcon: 'assets/icons/menu.png',
+                 leadingIcon: 'assets/icons/menu_more.png',
                   text: 'menu',
                   onTap: (){
 
@@ -88,13 +88,40 @@ class _MoreScreenState extends State<MoreScreen> {
                    Get.toNamed(SupportScreen.route);
                   },
                 ),
+                Column(
+                  children: [
+                    InkWell(
+                      onTap: (){
+                        Get.toNamed(FavouritesScreen.route);
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 20),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                              const Icon(Icons.favorite_border,color: Colors.black,size: 22,),
+                                const SizedBox(width: 10),
+                                Text(
+                                  'favorites'.capitalizeFirst!,
+                                  style: GoogleFonts.poppins(fontSize: 16, color: Colors.black,
+                                      fontWeight: FontWeight.w400
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const Icon(Icons.arrow_forward_ios, color: Colors.black, size: 16),
+                          ],
+                        ),
+                      ),
+                    ),
+                    const Divider(height: 1, thickness: 1,
+                      color: Color(0xFFC5C5C5),
+                    ),
+                  ],
+                ),
                 IconTextArrowRow(
-                 leadingIcon: 'assets/icons/favorites.png',
-                  text: 'favorites',
-                  onTap: (){
-                   Get.toNamed(FavouritesScreen.route);
-                  },
-                ),   IconTextArrowRow(
                  leadingIcon: 'assets/icons/about_app.png',
                   text: 'about app',
                   onTap: (){

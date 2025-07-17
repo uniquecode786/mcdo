@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mcdo/routers/routers.dart';
 import 'package:mcdo/screen/BottomNavBarScreens/single_food_screen.dart';
 
+import '../../controller/bottom_controller.dart';
 import '../../wigets/custom_button.dart';
 import 'drawer_menu_Screen.dart';
 
@@ -31,20 +32,34 @@ class _FoodScreenState extends State<FoodScreen> with TickerProviderStateMixin{
     super.initState();
     _tabController = TabController(length: tabs.length, vsync: this);
   }
+  final bottomController = Get.put(BottomNavBarController());
     @override
     Widget build(BuildContext context) {
       return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: const Color(0xFFf5f5f5),
        body: Stack(
          children: [
            Container(
-             color: Colors.white,
+             color: const Color(0xFFf5f5f5)
            ),
               Image.asset('assets/icons/food_bg.png',
                height: 220,
                 width: Get.width,
                 fit: BoxFit.fill ,
               ),
+           Positioned(
+               top: 40,
+               left: 20,
+               child: GestureDetector(
+                 onTap: (){
+                   bottomController.pageIndex.value = 0;
+                 },
+                 child: Image.asset('assets/icons/arrow_back_white.png',
+                       height: 38,
+                   width: 38,
+                 ),
+               )
+           ),
            Positioned(
                top: 175,
                left: 0,
@@ -59,13 +74,13 @@ class _FoodScreenState extends State<FoodScreen> with TickerProviderStateMixin{
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(8),
-                          boxShadow: [
-                            BoxShadow(
-                              color: const Color(0xFF0A0D120A).withOpacity(0.1),
-                              offset: const Offset(0.0, 2.0),
-                              blurRadius: 5,
-                            ),
-                          ],
+                          // boxShadow: [
+                          //   BoxShadow(
+                          //     color: const Color(0xFF0A0D120A).withOpacity(0.1),
+                          //     offset: const Offset(0.0, 2.0),
+                          //     blurRadius: 5,
+                          //   ),
+                          // ],
                         ),
                         padding: const EdgeInsets.symmetric(horizontal: 18,vertical: 10),
                         child: Column(
@@ -219,13 +234,13 @@ class _FoodScreenState extends State<FoodScreen> with TickerProviderStateMixin{
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(8),
-                          boxShadow: [
-                            BoxShadow(
-                              color: const Color(0xFF0A0D120A).withOpacity(0.1),
-                              offset: const Offset(0.0, 2.0),
-                              blurRadius: 5,
-                            ),
-                          ],
+                          // boxShadow: [
+                          //   BoxShadow(
+                          //     color: const Color(0xFF0A0D120A).withOpacity(0.1),
+                          //     offset: const Offset(0.0, 2.0),
+                          //     blurRadius: 5,
+                          //   ),
+                          // ],
                         ),
                         padding: const EdgeInsets.symmetric(horizontal: 18,vertical: 15),
                         child: Row(
@@ -237,13 +252,13 @@ class _FoodScreenState extends State<FoodScreen> with TickerProviderStateMixin{
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Image.asset('assets/icons/bike.png',
-                                  height: 21,
-                                    width: 21,
+                                  height: 18,
+                                    width: 18,
                                   ),
                                   addWidth(5),
-                                  Text('Delivery',
+                                  Text('Delivery'.toUpperCase(),
                                     style: GoogleFonts.poppins(
-                                        fontSize: 14,
+                                        fontSize: 12,
                                         fontWeight: FontWeight.w600,
                                         color: const Color(0xFFD42216)
                                     ),),
@@ -260,13 +275,13 @@ class _FoodScreenState extends State<FoodScreen> with TickerProviderStateMixin{
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Image.asset('assets/icons/car.png',
-                                    height: 21,
-                                    width: 21,
+                                    height: 18,
+                                    width: 18,
                                   ),
                                   addWidth(5),
-                                  Text('Pickup',
+                                  Text('Pickup'.toUpperCase(),
                                     style: GoogleFonts.poppins(
-                                        fontSize: 14,
+                                        fontSize: 12,
                                         fontWeight: FontWeight.w600,
                                         color: const Color(0xFFD42216)
                                     ),),
@@ -283,13 +298,13 @@ class _FoodScreenState extends State<FoodScreen> with TickerProviderStateMixin{
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Image.asset('assets/icons/dine_in.png',
-                                    height: 21,
-                                    width: 21,
+                                    height: 18,
+                                    width: 18,
                                   ),
                                   addWidth(5),
-                                  Text('Dine-in',
+                                  Text('Dine-in'.toUpperCase(),
                                   style: GoogleFonts.poppins(
-                                    fontSize: 14,
+                                    fontSize: 12,
                                     fontWeight: FontWeight.w600,
                                     color: const Color(0xFFD42216)
                                   ),
@@ -322,13 +337,12 @@ class _FoodScreenState extends State<FoodScreen> with TickerProviderStateMixin{
                            onTap: () {
                              Get.toNamed(DrawerMenuScreen.route);
                            },
-                           child: const Padding(
-                             padding: EdgeInsets.only(left: 16.0),
-                             child: Icon(
-                               Icons.menu,
-                               size: 30,
-                               color: Color(0xFFE02020),
-                             ),
+                           child:  Padding(
+                             padding: const EdgeInsets.only(left: 16.0),
+                             child: Image.asset('assets/icons/drawer.png',
+                              height: 20,
+                              width: 20,
+                             )
                            ),
                          ),
                          const SizedBox(width: 8),
@@ -352,7 +366,7 @@ class _FoodScreenState extends State<FoodScreen> with TickerProviderStateMixin{
                                      "🔥 Offers ",
                                      style: GoogleFonts.poppins(
                                        fontSize: 14,
-                                       fontWeight: FontWeight.w600,
+                                       fontWeight: FontWeight.w500,
                                      ),
                                    ),
                                  ),
@@ -361,7 +375,7 @@ class _FoodScreenState extends State<FoodScreen> with TickerProviderStateMixin{
                                      "Beef",
                                      style: GoogleFonts.poppins(
                                        fontSize: 14,
-                                       fontWeight: FontWeight.w600,
+                                       fontWeight: FontWeight.w500,
                                      ),
                                    ),
                                  ),
@@ -370,7 +384,7 @@ class _FoodScreenState extends State<FoodScreen> with TickerProviderStateMixin{
                                      "Chicken",
                                      style: GoogleFonts.poppins(
                                        fontSize: 14,
-                                       fontWeight: FontWeight.w600,
+                                       fontWeight: FontWeight.w500,
                                      ),
                                    ),
                                  ),
@@ -379,7 +393,7 @@ class _FoodScreenState extends State<FoodScreen> with TickerProviderStateMixin{
                                      "Fish",
                                      style: GoogleFonts.poppins(
                                        fontSize: 14,
-                                       fontWeight: FontWeight.w600,
+                                       fontWeight: FontWeight.w500,
                                      ),
                                    ),
                                  ),
@@ -388,7 +402,7 @@ class _FoodScreenState extends State<FoodScreen> with TickerProviderStateMixin{
                                      "Joy Meals",
                                      style: GoogleFonts.poppins(
                                        fontSize: 14,
-                                       fontWeight: FontWeight.w600,
+                                       fontWeight: FontWeight.w500,
                                      ),
                                    ),
                                  ),
@@ -419,7 +433,7 @@ class _FoodScreenState extends State<FoodScreen> with TickerProviderStateMixin{
                                      addWidth(10),
                                      Text('Offers',
                                        style: GoogleFonts.poppins(
-                                           fontWeight: FontWeight.w500,
+                                           fontWeight: FontWeight.w400,
                                            fontSize: 18,
                                            color: Colors.black
                                        ),),
@@ -447,14 +461,14 @@ class _FoodScreenState extends State<FoodScreen> with TickerProviderStateMixin{
                                          decoration: BoxDecoration(
                                            color: Colors.white,
                                            borderRadius: BorderRadius.circular(12),
-                                           boxShadow: [
-                                             BoxShadow(
-                                               color: Colors.black.withOpacity(0.07),
-                                               blurRadius: 10,
-                                               spreadRadius: 2,
-                                               offset: const Offset(0, 4),
-                                             )
-                                           ],
+                                           // boxShadow: [
+                                           //   BoxShadow(
+                                           //     color: Colors.black.withOpacity(0.07),
+                                           //     blurRadius: 10,
+                                           //     spreadRadius: 2,
+                                           //     offset: const Offset(0, 4),
+                                           //   )
+                                           // ],
                                          ),
                                          child: Stack(
                                            children: [
@@ -498,11 +512,11 @@ class _FoodScreenState extends State<FoodScreen> with TickerProviderStateMixin{
                                                              'Red Hot Twister Sandwich +\nRizo + Coleslaw + Drink.',
                                                              style: GoogleFonts.poppins(
                                                                  fontSize: 12,
-                                                                 fontWeight: FontWeight.w500,
+                                                                 fontWeight: FontWeight.w400,
                                                                  color: Colors.black),
                                                            ),
                                                            const SizedBox(height: 6),
-                                 
+
                                                          ],
                                                        ).paddingSymmetric(horizontal: 14,vertical: 14),
                                                      ),
@@ -621,7 +635,7 @@ class _FoodScreenState extends State<FoodScreen> with TickerProviderStateMixin{
                                      addWidth(10),
                                      Text('Beef',
                                        style: GoogleFonts.poppins(
-                                           fontWeight: FontWeight.w500,
+                                           fontWeight: FontWeight.w400,
                                            fontSize: 18,
                                            color: Colors.black
                                        ),),
@@ -644,11 +658,20 @@ class _FoodScreenState extends State<FoodScreen> with TickerProviderStateMixin{
                                        onTap: (){
                                          Get.toNamed(SingleFoodScreen.route);
                                        },
-                                       child: Card(
-                                         color: Colors.white,
+                                       child: Container(
                                          margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                                         elevation: 4,
-                                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                                         decoration: BoxDecoration(
+                                           color: Colors.white,
+                                           borderRadius: BorderRadius.circular(12),
+                                           // boxShadow: [
+                                           //   BoxShadow(
+                                           //     color: Colors.black.withOpacity(0.07),
+                                           //     blurRadius: 10,
+                                           //     spreadRadius: 2,
+                                           //     offset: const Offset(0, 4),
+                                           //   )
+                                           // ],
+                                         ),
                                          child: Stack(
                                            children: [
                                              Container(
@@ -691,7 +714,7 @@ class _FoodScreenState extends State<FoodScreen> with TickerProviderStateMixin{
                                                              'Red Hot Twister Sandwich +\nRizo + Coleslaw + Drink.',
                                                              style: GoogleFonts.poppins(
                                                                  fontSize: 12,
-                                                                 fontWeight: FontWeight.w500,
+                                                                 fontWeight: FontWeight.w400,
                                                                  color: Colors.black),
                                                            ),
                                                            const SizedBox(height: 6),
@@ -814,7 +837,7 @@ class _FoodScreenState extends State<FoodScreen> with TickerProviderStateMixin{
                                      addWidth(10),
                                      Text('Chicken',
                                        style: GoogleFonts.poppins(
-                                           fontWeight: FontWeight.w500,
+                                           fontWeight: FontWeight.w400,
                                            fontSize: 18,
                                            color: Colors.black
                                        ),),
@@ -837,11 +860,20 @@ class _FoodScreenState extends State<FoodScreen> with TickerProviderStateMixin{
                                        onTap: (){
                                          Get.toNamed(SingleFoodScreen.route);
                                        },
-                                       child: Card(
-                                         color: Colors.white,
+                                       child: Container(
                                          margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                                         elevation: 4,
-                                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                                         decoration: BoxDecoration(
+                                           color: Colors.white,
+                                           borderRadius: BorderRadius.circular(12),
+                                           // boxShadow: [
+                                           //   BoxShadow(
+                                           //     color: Colors.black.withOpacity(0.07),
+                                           //     blurRadius: 10,
+                                           //     spreadRadius: 2,
+                                           //     offset: const Offset(0, 4),
+                                           //   )
+                                           // ],
+                                         ),
                                          child: Stack(
                                            children: [
                                              Container(
@@ -884,7 +916,7 @@ class _FoodScreenState extends State<FoodScreen> with TickerProviderStateMixin{
                                                              'Red Hot Twister Sandwich +\nRizo + Coleslaw + Drink.',
                                                              style: GoogleFonts.poppins(
                                                                  fontSize: 12,
-                                                                 fontWeight: FontWeight.w500,
+                                                                 fontWeight: FontWeight.w400,
                                                                  color: Colors.black),
                                                            ),
                                                            const SizedBox(height: 6),
@@ -1007,7 +1039,7 @@ class _FoodScreenState extends State<FoodScreen> with TickerProviderStateMixin{
                                      addWidth(10),
                                      Text('Fish',
                                        style: GoogleFonts.poppins(
-                                           fontWeight: FontWeight.w500,
+                                           fontWeight: FontWeight.w400,
                                            fontSize: 18,
                                            color: Colors.black
                                        ),),
@@ -1030,11 +1062,20 @@ class _FoodScreenState extends State<FoodScreen> with TickerProviderStateMixin{
                                        onTap: (){
                                          Get.toNamed(SingleFoodScreen.route);
                                        },
-                                       child: Card(
-                                         color: Colors.white,
+                                       child: Container(
                                          margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                                         elevation: 4,
-                                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                                         decoration: BoxDecoration(
+                                           color: Colors.white,
+                                           borderRadius: BorderRadius.circular(12),
+                                           // boxShadow: [
+                                           //   BoxShadow(
+                                           //     color: Colors.black.withOpacity(0.07),
+                                           //     blurRadius: 10,
+                                           //     spreadRadius: 2,
+                                           //     offset: const Offset(0, 4),
+                                           //   )
+                                           // ],
+                                         ),
                                          child: Stack(
                                            children: [
                                              Container(
@@ -1077,7 +1118,7 @@ class _FoodScreenState extends State<FoodScreen> with TickerProviderStateMixin{
                                                              'Red Hot Twister Sandwich +\nRizo + Coleslaw + Drink.',
                                                              style: GoogleFonts.poppins(
                                                                  fontSize: 12,
-                                                                 fontWeight: FontWeight.w500,
+                                                                 fontWeight: FontWeight.w400,
                                                                  color: Colors.black),
                                                            ),
                                                            const SizedBox(height: 6),
@@ -1200,7 +1241,7 @@ class _FoodScreenState extends State<FoodScreen> with TickerProviderStateMixin{
                                      addWidth(10),
                                      Text('Joy Meals',
                                        style: GoogleFonts.poppins(
-                                           fontWeight: FontWeight.w500,
+                                           fontWeight: FontWeight.w400,
                                            fontSize: 18,
                                            color: Colors.black
                                        ),),
@@ -1223,11 +1264,20 @@ class _FoodScreenState extends State<FoodScreen> with TickerProviderStateMixin{
                                        onTap: (){
                                          Get.toNamed(SingleFoodScreen.route);
                                        },
-                                       child: Card(
-                                         color: Colors.white,
+                                       child: Container(
                                          margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                                         elevation: 4,
-                                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                                         decoration: BoxDecoration(
+                                           color: Colors.white,
+                                           borderRadius: BorderRadius.circular(12),
+                                           // boxShadow: [
+                                           //   BoxShadow(
+                                           //     color: Colors.black.withOpacity(0.07),
+                                           //     blurRadius: 10,
+                                           //     spreadRadius: 2,
+                                           //     offset: const Offset(0, 4),
+                                           //   )
+                                           // ],
+                                         ),
                                          child: Stack(
                                            children: [
                                              Container(
@@ -1270,7 +1320,7 @@ class _FoodScreenState extends State<FoodScreen> with TickerProviderStateMixin{
                                                              'Red Hot Twister Sandwich +\nRizo + Coleslaw + Drink.',
                                                              style: GoogleFonts.poppins(
                                                                  fontSize: 12,
-                                                                 fontWeight: FontWeight.w500,
+                                                                 fontWeight: FontWeight.w400,
                                                                  color: Colors.black),
                                                            ),
                                                            const SizedBox(height: 6),

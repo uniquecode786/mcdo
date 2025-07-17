@@ -246,9 +246,9 @@ class _DealsScreenState extends State<DealsScreen> {
                                   borderRadius: BorderRadius.circular(10),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: const Color(0xFF0A0D120A).withOpacity(0.20),
+                                      color: const Color(0xFF0A0D120A).withOpacity(0.10),
                                       offset: const Offset(0.0, 2.0),
-                                      blurRadius: 5,
+                                      blurRadius: 9,
                                     ),
                                   ],
                                 ),
@@ -269,7 +269,7 @@ class _DealsScreenState extends State<DealsScreen> {
                                           decoration: const BoxDecoration(
                                             image: DecorationImage(image: AssetImage('assets/icons/reward_bg_circle.png'))
                                           ),
-                                            padding: const EdgeInsets.all(4),
+                                            padding: const EdgeInsets.all(7),
                                           child: Container(
                                             height: 90,
                                             width: 90,
