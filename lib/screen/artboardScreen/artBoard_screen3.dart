@@ -46,7 +46,7 @@ class _ArtboardScreen3State extends State<ArtboardScreen3> {
                   AddText(
                     text: 'We would like to send you a notification every now and tehn to let you know when new offers are available'.tr,
                     fontWeight: FontWeight.w400,
-                    fontSize: 10,
+                    fontSize: 12,
                     height: 1.6,
                     color: Colors.black,
                   ),

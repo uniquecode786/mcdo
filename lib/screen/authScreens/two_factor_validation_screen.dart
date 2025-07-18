@@ -70,8 +70,8 @@ class _TwoFactorValidationScreenState extends State<TwoFactorValidationScreen> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const Expanded(
-                              child: AddText(text: 'Check your email',
+                             Expanded(
+                              child: AddText(text: 'Check your email'.capitalizeFirst,
                                 color: Colors.black,
                                 fontWeight: FontWeight.w700,
                                 fontSize: 26,
@@ -88,7 +88,7 @@ class _TwoFactorValidationScreenState extends State<TwoFactorValidationScreen> {
                         addHeight(35),
                         const AddText(
                           text: 'We\'ve sent an email to fatima.srour11@icloud.com with a 6 digit code. This can take several minutes to receive. Please enter the code below or tap the link in the email.',
-                          fontSize: 11,
+                          fontSize: 12,
                           fontWeight: FontWeight.w400,
                           color: Colors.black,
                           height: 1.6,
@@ -96,7 +96,7 @@ class _TwoFactorValidationScreenState extends State<TwoFactorValidationScreen> {
                         addHeight(20),
                         const AddText(
                           text: '6 digit code',
-                          fontSize: 11,
+                          fontSize: 12,
                           fontWeight: FontWeight.w400,
                           color: Color(0xFF6B6B6B),
                         ),

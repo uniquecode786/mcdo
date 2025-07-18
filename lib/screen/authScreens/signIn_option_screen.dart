@@ -47,7 +47,7 @@ class _SignInOptionScreenState extends State<SignInOptionScreen> {
                   AddText(
                     text: 'Become a member to order and pay in the app, receive tasty deals and collect points on your purchases.'.tr,
                     fontWeight: FontWeight.w400,
-                    fontSize: 10,
+                    fontSize: 12,
                     height: 1.6,
                     color: Colors.black,
                   ),
@@ -63,7 +63,7 @@ class _SignInOptionScreenState extends State<SignInOptionScreen> {
                        Get.toNamed(TermsConditionsScreen.route);
                      },
                      child: Container(
-                       height: 75,
+                       height: 60,
                        decoration: BoxDecoration(
                          color: Colors.transparent,
                          border: Border.all(color: const Color(0xFFD3D3D3))
@@ -71,7 +71,7 @@ class _SignInOptionScreenState extends State<SignInOptionScreen> {
                        child:  Center(
                          child: AddText(text: 'Log in'.tr,
                          color: Colors.black,
-                           fontSize: 17,
+                           fontSize: 15,
                            fontWeight: FontWeight.w400,
                          ),
                        ),
@@ -84,12 +84,12 @@ class _SignInOptionScreenState extends State<SignInOptionScreen> {
                       Get.toNamed(TermsConditionsScreen.route);
                     },
                     child: Container(
-                     height: 75,
+                     height: 60,
                      color: const Color(0xFFFEBB0A),
                      child:  Center(
                        child: AddText(text: 'Sign up'.tr,
                          color: Colors.black,
-                         fontSize: 17,
+                         fontSize: 15,
                          fontWeight: FontWeight.w400,
                        ),
                      )),

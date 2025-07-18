@@ -86,9 +86,9 @@ class _HomePageScreenState extends State<HomePageScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 18.0),
                   child: Text('Life deserves a break and ... a burger.',
                   style: GoogleFonts.poppins(
-                    fontSize: 26,
+                    fontSize: 27,
                     height: 1.4,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w600,
                     color: const Color(0xFF17648E)
                   ),
                     textAlign: TextAlign.center,

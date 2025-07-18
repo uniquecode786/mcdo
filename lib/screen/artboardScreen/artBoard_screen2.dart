@@ -45,7 +45,7 @@ class _ArtboardScreen2State extends State<ArtboardScreen2> {
                     AddText(
                       text: 'We need to access your device\'s location so that we can show you the nearest restaurants and the offers that are most relevant to you'.tr,
                       fontWeight: FontWeight.w400,
-                      fontSize: 10,
+                      fontSize: 12,
                       height: 1.6,
                       color: Colors.black,
                     ),

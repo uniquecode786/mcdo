@@ -48,9 +48,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         alignment: Alignment.centerLeft,
                         child: AddText(
                           text: 'Congrats on signing up. Check out some products for tasty tastiness!',
-                          fontSize: 11,
+                          fontSize: 12,
                           fontWeight: FontWeight.w400,
-                          height: 1.5,
+                          height: 1.6,
                         ),
                       ),
                     ],

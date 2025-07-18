@@ -76,7 +76,7 @@ class _GenderDateBirthScreenState extends State<GenderDateBirthScreen> {
                           addHeight(4),
                           const AddText(
                             text: 'Share your personal data so we can prepare some personal deals just for you.',
-                            fontSize: 11,
+                            fontSize: 12,
                             height: 1.5,
                             fontWeight: FontWeight.w400,
                             color: Color(0xFF6B6B6B),
@@ -120,7 +120,7 @@ class _GenderDateBirthScreenState extends State<GenderDateBirthScreen> {
                         Get.toNamed(WelcomeScreen.route);
                       },
                       child: Container(
-                        height: 75,
+                        height: 60,
                         decoration: BoxDecoration(
                             color: Colors.transparent,
                             border: Border.all(color: const Color(0xFFD3D3D3))
@@ -141,7 +141,7 @@ class _GenderDateBirthScreenState extends State<GenderDateBirthScreen> {
                       Get.toNamed(WelcomeScreen.route);
                     },
                     child: Container(
-                        height: 75,
+                        height: 60,
                         color: const Color(0xFFFEBB0A),
                         child:  Center(
                           child: AddText(text: 'Continue'.tr,

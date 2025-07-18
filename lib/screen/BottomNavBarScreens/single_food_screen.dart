@@ -45,23 +45,20 @@ class _SingleFoodScreenState extends State<SingleFoodScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Stack(
-        children: [
-          Container(
-            color: const Color(0xFFf5f5f5),
-          ),
-          Container(
-            color: const Color(0xFFe3e3e3),
-            height: 320,
-            width: Get.width,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                addHeight(60),
-                Padding(
-                  padding: const EdgeInsets.only(left: 8.0),
-                  child: GestureDetector(
+      backgroundColor: const Color(0xFFf5f5f5),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(horizontal: 15),
+        child: Column(
+          children: [
+
+            Container(
+              color: const Color(0xFFf5f5f5),
+              width: Get.width,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  addHeight(60),
+                  GestureDetector(
                     onTap: () {
                       Get.back();
                     },
@@ -76,228 +73,197 @@ class _SingleFoodScreenState extends State<SingleFoodScreen> {
                       child: const Icon(Icons.close, color:Color(0xFF333333)),
                     ),
                   ),
-                ),
-                Center(
-                  child: Image.asset("assets/icons/burger_single.png",
-                    height: 150,
-                  ),
-                ),
-              ],
-            ),
-          ),
-
-          Positioned(
-            top: 230,
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: SingleChildScrollView(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children:  [
-                  addHeight(30),
-                  Container(
-                    padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(8),
-                      // boxShadow: [
-                      //   BoxShadow(
-                      //     color: Colors.grey.withOpacity(0.2),
-                      //     blurRadius: 8,
-                      //     spreadRadius: 2,
-                      //     offset: const Offset(0, 4), // Shadow position
-                      //   ),
-                      // ],
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const AddText(
-                          text: 'Fillet Fish',
-                          fontWeight: FontWeight.w500,
-                          fontSize: 18,
-                          color: Color(0xFF333333),
-                        ),
-                        addHeight(10),
-                        const AddText(
-                          text: 'Red Hot Twister Sandwich + Rizo + Coleslaw + Drink',
-                          fontWeight: FontWeight.w500,
-                          fontSize: 14,
-                          height: 1.5,
-                          color: Color(0xFF333333),
-                        ),
-                        addHeight(40),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const AddText(
-                              text: '470,000 LBP',
-                              fontWeight: FontWeight.w700,
-                              fontSize: 16,
-                              color: Color(0xFF333333),
-                            ),
-                            GestureDetector(
-                              onTap: _toggleCounter,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(6.0),
-                                ),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    InkWell(
-                                      onTap: _decrement,
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 8.0),
-                                        child: Container(
-                                          height: 32,
-                                          width: 32,
-                                          decoration: BoxDecoration(
-                                            color: const Color(0xFFE1E1E1),
-                                            borderRadius: BorderRadius.circular(2),
-                                          ),
-                                          child: const Icon(Icons.remove, color: Colors.white),
-                                        ),
-                                      ),
-                                    ),
-                                    addWidth(4),
-                                    Text(
-                                      _ticketCount.toString(),
-                                      style: GoogleFonts.poppins(
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 14,
-                                        color: Colors.black,
-                                      ),
-                                    ),
-                                    addWidth(4),
-                                    InkWell(
-                                      onTap: _increment,
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 8.0),
-                                        child: Container(
-                                          height: 32,
-                                          width: 32,
-                                          decoration: BoxDecoration(
-                                            color: const Color(0xFFFFC732),
-                                            borderRadius: BorderRadius.circular(2),
-                                          ),
-                                          child: const Icon(Icons.add, color: Colors.white),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        addHeight(0),
-                      ],
-                    ),
-                  ),
-                  addHeight(20),
-                  Container(
-                    padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(8),
-                      // boxShadow: [
-                      //   BoxShadow(
-                      //     color: Colors.grey.withOpacity(0.2),
-                      //     blurRadius: 8,
-                      //     spreadRadius: 2,
-                      //     offset: const Offset(0, 4), // Shadow position
-                      //   ),
-                      // ],
-                    ),
-                    child:  buildSection(
-                      title : "Choice of Fish",
-                      options: ["Fish Pc - Original", "Fish Pc - Spicy"],
-                      selectedIndex: selectedIndex,
-                      onOptionSelected: (index) {
-                        setState(() {
-                          selectedIndex = index;
-                        });
-                      },
-                    ),
-                  ),
-                  addHeight(20),
-                  Container(
-                    padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(8),
-                      // boxShadow: [
-                      //   BoxShadow(
-                      //     color: Colors.grey.withOpacity(0.2),
-                      //     blurRadius: 8,
-                      //     spreadRadius: 2,
-                      //     offset: const Offset(0, 4), // Shadow position
-                      //   ),
-                      // ],
-                    ),
-                    child:    buildSection(
-                     title: "Choice of Side Items",
-                     options:  [
-                      "Fries - Big Size (+LBP 50,000)",
-                      "Coleslaw Salad Large",
-                      "Fries"
-                    ],
-                      selectedIndex: selectedIndex1,
-                      onOptionSelected: (index) {
-                        setState(() {
-                          selectedIndex1 = index;
-                        });
-                      },
-                    ),
-                  ),
-                  addHeight(20),
-                  Container(
-                    padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(8),
-                      // boxShadow: [
-                      //   BoxShadow(
-                      //     color: Colors.grey.withOpacity(0.2),
-                      //     blurRadius: 8,
-                      //     spreadRadius: 2,
-                      //     offset: const Offset(0, 4), // Shadow position
-                      //   ),
-                      // ],
-                    ),
-                    child: buildSection(
-                      title: "Choice of Beverages",
-                      options:   [
-                      "Pepsi 500ML",
-                      "Mirinda 500ML",
-                      "7UP 500ML",
-                      "Diet Pepsi 500ML"],
-                    selectedIndex: selectedIndex2,
-                    onOptionSelected: (p0) {
-                      setState(() {
-                        selectedIndex2 = p0;
-                      });
-                    },
-                    ),
-                  ),
-                  addHeight(80),
                   Center(
-                    child: Image.asset('assets/icons/app_logos.png',
-                      height: 40,
-                      width: 110,
+                    child: Image.asset("assets/icons/burger_single.png",
+                      height: 150,
                     ),
                   ),
-                  addHeight(120)
                 ],
               ),
             ),
-          ),
-        ],
+            addHeight(30),
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(8),
+                // boxShadow: [
+                //   BoxShadow(
+                //     color: Colors.grey.withOpacity(0.2),
+                //     blurRadius: 8,
+                //     spreadRadius: 2,
+                //     offset: const Offset(0, 4), // Shadow position
+                //   ),
+                // ],
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const AddText(
+                    text: 'Fillet Fish',
+                    fontWeight: FontWeight.w500,
+                    fontSize: 18,
+                    color: Color(0xFF333333),
+                  ),
+                  addHeight(10),
+                  const AddText(
+                    text: 'Red Hot Twister Sandwich + Rizo + Coleslaw + Drink',
+                    fontWeight: FontWeight.w500,
+                    fontSize: 14,
+                    height: 1.5,
+                    color: Color(0xFF333333),
+                  ),
+                  addHeight(40),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const AddText(
+                        text: '470,000 LBP',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 16,
+                        color: Color(0xFF333333),
+                      ),
+                      GestureDetector(
+                        onTap: _toggleCounter,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(6.0),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              InkWell(
+                                onTap: _decrement,
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 8.0),
+                                  child: Container(
+                                    height: 32,
+                                    width: 32,
+                                    decoration: BoxDecoration(
+                                      color: const Color(0xFFE1E1E1),
+                                      borderRadius: BorderRadius.circular(2),
+                                    ),
+                                    child: const Icon(Icons.remove, color: Colors.white),
+                                  ),
+                                ),
+                              ),
+                              addWidth(4),
+                              Text(
+                                _ticketCount.toString(),
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 14,
+                                  color: Colors.black,
+                                ),
+                              ),
+                              addWidth(4),
+                              InkWell(
+                                onTap: _increment,
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 8.0),
+                                  child: Container(
+                                    height: 32,
+                                    width: 32,
+                                    decoration: BoxDecoration(
+                                      color: const Color(0xFFFFC732),
+                                      borderRadius: BorderRadius.circular(2),
+                                    ),
+                                    child: const Icon(Icons.add, color: Colors.white),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  addHeight(0),
+                ],
+              ),
+            ),
+            addHeight(20),
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(8),
+                // boxShadow: [
+                //   BoxShadow(
+                //     color: Colors.grey.withOpacity(0.2),
+                //     blurRadius: 8,
+                //     spreadRadius: 2,
+                //     offset: const Offset(0, 4), // Shadow position
+                //   ),
+                // ],
+              ),
+              child:  buildSection(
+                title : "Choice of Fish",
+                options: ["Fish Pc - Original", "Fish Pc - Spicy"],
+                selectedIndex: selectedIndex,
+                onOptionSelected: (index) {
+                  setState(() {
+                    selectedIndex = index;
+                  });
+                },
+              ),
+            ),
+            addHeight(20),
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child:    buildSection(
+               title: "Choice of Side Items",
+               options:  [
+                "Fries - Big Size (+LBP 50,000)",
+                "Coleslaw Salad Large",
+                "Fries"
+              ],
+                selectedIndex: selectedIndex1,
+                onOptionSelected: (index) {
+                  setState(() {
+                    selectedIndex1 = index;
+                  });
+                },
+              ),
+            ),
+            addHeight(20),
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: buildSection(
+                title: "Choice of Beverages",
+                options:   [
+                "Pepsi 500ML",
+                "Mirinda 500ML",
+                "7UP 500ML",
+                "Diet Pepsi 500ML"],
+              selectedIndex: selectedIndex2,
+              onOptionSelected: (p0) {
+                setState(() {
+                  selectedIndex2 = p0;
+                });
+              },
+              ),
+            ),
+            addHeight(80),
+            Center(
+              child: Image.asset('assets/icons/app_logos.png',
+                height: 40,
+                width: 110,
+              ),
+            ),
+            addHeight(120),
+          ],
+        ),
       ),
       bottomSheet: CustomBottomBar(
         title: 'View Basket',

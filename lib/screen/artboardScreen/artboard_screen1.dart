@@ -46,7 +46,7 @@ class _ArtboardScreen1State extends State<ArtboardScreen1> {
                 AddText(
                   text: 'thanks for choosing to use the McDonald\'s app in Lebanon. we\'re really excited to show you what\'s on available...'.tr,
                   fontWeight: FontWeight.w400,
-                  fontSize: 10,
+                  fontSize: 12,
                   height: 1.6,
                 ),
               ],

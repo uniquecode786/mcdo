@@ -37,8 +37,8 @@ class _MoreScreenState extends State<MoreScreen> {
                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                    children: [
                      const AddText(text: 'More',
-                     fontWeight: FontWeight.w500,
-                       fontSize: 16,
+                     fontWeight: FontWeight.w400,
+                       fontSize: 15,
                        color: Colors.black,
                      ),
                      Image.asset('assets/icons/burger_more.png',
@@ -222,12 +222,12 @@ class IconTextArrowRow extends StatelessWidget {
                     Image.asset(leadingIcon, color: Colors.black,width: 20,
                     height: 20,),
                     const SizedBox(width: 10),
-                    Text(
-                      text.capitalizeFirst!,
-                      style: GoogleFonts.poppins(fontSize: 16, color: Colors.black,
-                      fontWeight: FontWeight.w400
-                      ),
+                    AddText(text: text.capitalizeFirst!,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 15,
+                      color: Colors.black,
                     ),
+
                   ],
                 ),
                 const Icon(Icons.arrow_forward_ios, color: Colors.black, size: 16),
