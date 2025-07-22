@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mcdo/apiUrlls/api_url.dart';
 import 'package:mcdo/routers/routers.dart';
 import 'package:mcdo/screen/authScreens/personal_details_screen.dart';
 import 'package:mcdo/screen/authScreens/signIn_option_screen.dart';
@@ -236,6 +237,13 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                 radius: 0,
                 title: 'continue'.tr,
                 onPressed: () {
+                  if (!switchValue) {
+                    showToast('You must confirm that you are aged 16 or over and agree to the Terms to proceed.',
+                    center: true
+                    );
+
+                    return;
+                  }
                   Get.toNamed(PersonalDetailsScreen.route);
                 },
               ),

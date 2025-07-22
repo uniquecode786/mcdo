@@ -2,8 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mcdo/screen/authScreens/personal_details_screen.dart';
-import 'package:mcdo/screen/authScreens/two_factor_validation_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../apiUrlls/api_url.dart';
 import '../../controller/signup_controller.dart';
@@ -12,40 +11,37 @@ import '../../repo/repository.dart';
 import '../../routers/routers.dart';
 import '../../wigets/addText.dart';
 import '../../wigets/common_button.dart';
+import '../authScreens/personal_details_screen.dart';
 
 
-class CreateAccountScreen extends StatefulWidget {
-  const CreateAccountScreen({super.key});
-  static String route = '/CreateAccountScreen';
+class ChangePassword extends StatefulWidget {
+  const ChangePassword({super.key});
+  static String route = '/ChangePassword';
   @override
-  State<CreateAccountScreen> createState() => _CreateAccountScreenState();
+  State<ChangePassword> createState() => _ChangePasswordState();
 }
 
-class _CreateAccountScreenState extends State<CreateAccountScreen> {
+class _ChangePasswordState extends State<ChangePassword> {
 
   final Repositories repositories = Repositories();
   final signUpController = Get.put(SignUpController());
+  TextEditingController oldPasswordController = TextEditingController();
+  TextEditingController newPasswordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
-  addNameApi() {
+  changePasswordApi() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    String? cookie =  pref.getString('token');
     if (formKey.currentState!.validate()) {
       repositories.postApi(mapData: {
-        "first_name": signUpController.nameController.text.trim().toString(),
-        "last_name":  signUpController.lastNameController.text.trim().toString(),
-        "email":      signUpController.emailController.text.trim().toString(),
-        "password":   signUpController.passwordController.text.trim().toString(),
-        "is_over_16_and_agreed": "1",
-        "receive_news_email": "1",
-        "receive_news_sms": "1"
-      }, url: ApiUrls.signUpUrl, context: context,showResponse: true)
+        'cookie' : cookie.toString(),
+        "old_password":   oldPasswordController.text.trim().toString(),
+        "new_password":   newPasswordController.text.trim().toString(),
+      }, url: ApiUrls.changePasswordUrl, context: context,showResponse: true)
           .then((value) {
         CommonModel response = CommonModel.fromJson(jsonDecode(value));
         showToast(response.message.toString(),center: true);
         if (response.status == true) {
-          Get.toNamed(TwoFactorValidationScreen.route);
-          // signUpController.nameController.clear();
-          // signUpController.lastNameController.clear();
-          // signUpController.emailController.clear();
-          // signUpController.passwordController.clear();
+         Get.back();
         }else{
           showToast(response.message.toString(),center: true);
         }
@@ -94,7 +90,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                             ),
                             addHeight(30),
                             const FittedBox(
-                              child: AddText(text: 'Create your account',
+                              child: AddText(text: 'Change password',
                                 color: Colors.black,
                                 fontWeight: FontWeight.w700,
                                 fontSize: 26,
@@ -102,33 +98,33 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                               ),
                             ),
                             addHeight(46),
-                            const AddText(
-                              text: 'Please fill in your login details.',
-                              fontSize: 11,
-                              fontWeight: FontWeight.w500,
-                              height: 1.4,
-                              color: Colors.black,
-                            ),
-                            addHeight(24),
                             ...fieldWithName(
-                                title: 'Email',
-                                hintText: 'Enter email',
-                                controller: signUpController.emailController,
-                                validator: (value) {
-                                  if (value == null || value.trim().isEmpty) {
-                                    return 'Email is required';
-                                  }
-                                  final regex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
-                                  if (!regex.hasMatch(value.trim())) {
-                                    return 'Enter a valid email address';
-                                  }
-                                  return null;
-                                },
+                              title: 'Old password',
+                              hintText: 'Enter old password',
+                              controller: oldPasswordController,
+                              validator: (value) {
+                                if (value == null || value.trim().isEmpty) {
+                                  return 'Password is required';
+                                }
+                                if (value.length < 8) {
+                                  return 'Must be at least 8 characters';
+                                }
+                                if (!RegExp(r'[A-Z]').hasMatch(value)) {
+                                  return 'Must include at least one uppercase letter';
+                                }
+                                if (!RegExp(r'[a-z]').hasMatch(value)) {
+                                  return 'Must include at least one lowercase letter';
+                                }
+                                if (!RegExp(r'[0-9]').hasMatch(value)) {
+                                  return 'Must include at least one number';
+                                }
+                                return null;
+                              }
                             ),
                             ...fieldWithName(
-                              title: 'Password',
-                              hintText: 'Enter password',
-                              controller: signUpController.passwordController,
+                                title: 'New password',
+                                hintText: 'Enter new password',
+                                controller: newPasswordController,
                                 validator: (value) {
                                   if (value == null || value.trim().isEmpty) {
                                     return 'Password is required';
@@ -216,9 +212,9 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                 visible: MediaQuery.of(context).viewInsets.bottom == 0,
                 child: CustomButton(
                   radius: 0,
-                  title: 'create account'.tr,
+                  title: 'Change password'.tr,
                   onPressed: () {
-                    addNameApi();
+                    changePasswordApi();
                   },
                 ),
               ),

@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import '../../routers/routers.dart';
 import '../../wigets/addText.dart';
+import '../more_screens/change_password.dart';
 
 
 class PasswordSecurityScreen extends StatefulWidget {
@@ -77,7 +78,10 @@ class _PasswordSecurityScreenState extends State<PasswordSecurityScreen> {
                 ),
                 addHeight(29),
                 GestureDetector(
-                  onTap: (){},
+                  behavior: HitTestBehavior.translucent,
+                  onTap: (){
+                    Get.toNamed(ChangePassword.route);
+                  },
                   child: Container(
                     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
                     decoration: BoxDecoration(

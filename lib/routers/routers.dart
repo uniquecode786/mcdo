@@ -28,6 +28,7 @@ import '../screen/more_screens/AddressScreen/delivery_location_screen.dart';
 import '../screen/more_screens/AddressScreen/edit_address_screen.dart';
 import '../screen/more_screens/AddressScreen/support_screen.dart';
 import '../screen/more_screens/about_screen.dart';
+import '../screen/more_screens/change_password.dart';
 import '../screen/more_screens/contact_us.dart';
 import '../screen/more_screens/favourites_screen.dart';
 import '../screen/more_screens/privacy_statement.dart';
@@ -73,6 +74,7 @@ class MyRouters {
     GetPage(name: SingleFoodScreen.route, page: () =>  const SingleFoodScreen()),
     GetPage(name: BasketScreen.route, page: () =>  const BasketScreen()),
     GetPage(name: CheckoutScreen.route, page: () =>  const CheckoutScreen()),
+    GetPage(name: ChangePassword.route, page: () =>  const ChangePassword()),
 
   ];
 }
