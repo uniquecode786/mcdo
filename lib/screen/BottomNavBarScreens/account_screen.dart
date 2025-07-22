@@ -78,14 +78,14 @@ class _AccountScreenState extends State<AccountScreen> {
                 ),
                 IconTextArrowRow1(
                   leadingIcon: 'assets/icons/delete.png',
-                  text: 'Delete account',
+                  text: 'Delete Account',
                   onTap: (){
                     Get.toNamed(DeleteAccountScreen.route);
                   },
                 ),
                 IconTextArrowRow1(
                   leadingIcon: 'assets/icons/log_new.png',
-                  text: 'log out',
+                  text: 'Log Out',
                   onTap: (){
                     showSignOutPopup(context);
                   },
@@ -101,7 +101,7 @@ class _AccountScreenState extends State<AccountScreen> {
       context: context,
       builder: (context) => AlertDialog(
         backgroundColor: Colors.white,
-        title:  const AddText(text:'Log out',
+        title:  const AddText(text:'Log Out',
         fontSize: 20,
         fontWeight: FontWeight.w500,),
         content: const Text('Are you sure you want to sign out?'),
@@ -151,7 +151,7 @@ class IconTextArrowRow1 extends StatelessWidget {
                       height: 20,),
                     const SizedBox(width: 10),
                     Text(
-                      text.capitalizeFirst!,
+                      text,
                       style: GoogleFonts.poppins(fontSize: 14, color: Colors.black,
                           fontWeight: FontWeight.w400
                       ),

@@ -64,7 +64,8 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                       ),
                       addWidth(20)
                     ],
-                  ).paddingOnly(left: 10),
+                  ),
+                      // .paddingOnly(left: 10),
                   addHeight(42),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -101,9 +102,9 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                             const Expanded(
                               child: AddText(
                                 text: 'I am aged 16 or over and agree to the Terms',
-                                fontSize: 11,
                                 fontWeight: FontWeight.w400,
-                                height: 1.2,
+                                fontSize: 12,
+                                height: 1.6,
                                 color: Colors.black,
                               ),
                             )
@@ -126,16 +127,17 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      addWidth(20),
+                      addWidth(15),
                       const Expanded(
                         child: AddText(
                           text: 'I\'d like to receive news, updates and promotions from McDonald\'s via email',
-                          fontSize: 11,
-                          height: 1.6,
                           fontWeight: FontWeight.w400,
+                          fontSize: 12,
+                          height: 1.6,
                           color: Colors.black,
                         ),
                       ),
+                      addWidth(2),
                       CupertinoSwitch(
                         value: switchValue1,
                         activeColor: const Color(0xFFFEBB0A),
@@ -152,16 +154,17 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      addWidth(20),
+                      addWidth(15),
                       const Expanded(
                         child: AddText(
                           text: 'I\'d like to receive news, updates and promotions from McDonald\'s via sMS',
-                          fontSize: 11,
-                          height: 1.6,
                           fontWeight: FontWeight.w400,
+                          fontSize: 12,
+                          height: 1.6,
                           color: Colors.black,
                         ),
                       ),
+                      addWidth(2),
                       CupertinoSwitch(
                         value: switchValue2,
                         activeColor: const Color(0xFFFEBB0A),
@@ -178,7 +181,7 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      addWidth(20),
+                      // addWidth(20),
                      const AddText(
                         text: 'Terms & Conditions',
                         fontSize: 11,
@@ -203,7 +206,7 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        addWidth(20),
+                        // addWidth(20),
                        const AddText(
                           text: 'Privacy Statement',
                           fontSize: 11,
@@ -221,20 +224,17 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                                        ),
                    ),
                   addHeight(36),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 20.0),
-                    child: AddText(text: 'The purpose of this app is to provide you with offers based on your preferences and app usage. If you do not want McDonald\'s to use your preferences and app usage in this way then you should not proceed to registration.',
-                    fontWeight: FontWeight.w400,
-                    fontSize: 9,
-                    height: 1.6,
-                    color: Color(0xFF6B6B6B),),
-                  ),
+                  const AddText(text: 'The purpose of this app is to provide you with offers based on your preferences and app usage. If you do not want McDonald\'s to use your preferences and app usage in this way then you should not proceed to registration.',
+                  fontWeight: FontWeight.w400,
+                  fontSize: 9,
+                  height: 1.6,
+                  color: Color(0xFF6B6B6B),),
                   addHeight(66),
                 ],
-              ).paddingSymmetric(horizontal: 10),
+              ).paddingSymmetric(horizontal: 16),
               CustomButton(
                 radius: 0,
-                title: 'continue'.tr,
+                title: 'Continue'.tr,
                 onPressed: () {
                   Get.toNamed(PersonalDetailsScreen.route);
                 },

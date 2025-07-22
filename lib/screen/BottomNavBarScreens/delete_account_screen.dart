@@ -47,9 +47,9 @@ class _DeleteAccountScreenState extends State<DeleteAccountScreen> {
             addHeight(57),
             const AddText(
               text: 'Deleting ipsum dolor sit amet, consectetur adipis cing elit. nunc elementum quis urna laoreet luctus. cras consequat eleifend.',
-              fontSize: 11,
+              fontWeight: FontWeight.w400,
+              fontSize: 12,
               height: 1.6,
-              fontWeight: FontWeight.w500,
               color: Color(0xFF6B6B6B),
             ),
             addHeight(23),

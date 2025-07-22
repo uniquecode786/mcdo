@@ -61,7 +61,7 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                     color: const Color(0xFFEAAD21),
                   ),
                   addWidth(10),
-                  Text('add Address',
+                  Text('Add Address',
                     style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w400,
                         fontSize: 18,

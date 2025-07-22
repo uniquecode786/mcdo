@@ -108,9 +108,9 @@ class _SingleFoodScreenState extends State<SingleFoodScreen> {
                   addHeight(10),
                   const AddText(
                     text: 'Red Hot Twister Sandwich + Rizo + Coleslaw + Drink',
-                    fontWeight: FontWeight.w500,
-                    fontSize: 14,
-                    height: 1.5,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12,
+                    height: 1.6,
                     color: Color(0xFF333333),
                   ),
                   addHeight(40),
@@ -287,15 +287,15 @@ class _SingleFoodScreenState extends State<SingleFoodScreen> {
         AddText(
           text: title,
           color: const Color(0xFF333333),
-          fontSize: 14,
-          fontWeight: FontWeight.w600,
+          fontWeight: FontWeight.w400,
+          fontSize: 12,
         ),
         addHeight(9),
         const AddText(
           text: 'Choose 1',
           color: Color(0xFF333333),
-          fontSize: 14,
-          fontWeight: FontWeight.w500,
+          fontWeight: FontWeight.w400,
+          fontSize: 12,
         ),
         const SizedBox(height: 8),
         ListView.separated(
@@ -312,8 +312,8 @@ class _SingleFoodScreenState extends State<SingleFoodScreen> {
                 title: AddText(
                   text: options[index],
                   color: const Color(0xFF333333),
-                  fontSize: 14,
                   fontWeight: FontWeight.w400,
+                  fontSize: 12,
                 ),
                 trailing: Icon(
                   selectedIndex == index

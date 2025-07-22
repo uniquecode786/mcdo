@@ -98,7 +98,7 @@ class _GenderDateBirthScreenState extends State<GenderDateBirthScreen> {
                           ),
                           addHeight(20)
                         ],
-                      ).paddingSymmetric(horizontal: 28),
+                      ).paddingSymmetric(horizontal: 16),
                       const AddText(
                         text: 'yyyy-mm-dd',
                         fontSize: 12,
@@ -126,7 +126,7 @@ class _GenderDateBirthScreenState extends State<GenderDateBirthScreen> {
                             border: Border.all(color: const Color(0xFFD3D3D3))
                         ),
                         child:  Center(
-                          child: AddText(text: 'Maybe later'.tr,
+                          child: AddText(text: 'Maybe Later'.tr,
                             color: Colors.black,
                             fontSize: 15,
                             fontWeight: FontWeight.w500,

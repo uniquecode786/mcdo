@@ -64,12 +64,12 @@ class _PersonalDetailsScreenState extends State<PersonalDetailsScreen> {
                             fontSize: 26,
                             height: 1.2,
                           ),
-                          addHeight(46),
+                          addHeight(30),
                           const AddText(
                             text: 'Let us know how to properly address you. Please fill in your details.',
-                            fontSize: 11,
-                            fontWeight: FontWeight.w500,
-                            height: 1.5,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 12,
+                            height: 1.6,
                             color: Colors.black,
                           ),
                           addHeight(22),
@@ -81,9 +81,9 @@ class _PersonalDetailsScreenState extends State<PersonalDetailsScreen> {
                               title: 'Last name',
                               hintText: 'Last name',
                               controller: lastNameController),
-                          addHeight(37),
+                          addHeight(30),
                         ],
-                      ).paddingSymmetric(horizontal: 30),
+                      ).paddingSymmetric(horizontal: 16),
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -110,7 +110,7 @@ class _PersonalDetailsScreenState extends State<PersonalDetailsScreen> {
               visible: MediaQuery.of(context).viewInsets.bottom == 0,
               child: CustomButton(
                 radius: 0,
-                title: 'continue'.tr,
+                title: 'Continue'.tr,
                 onPressed: () {
                   Get.toNamed(CreateAccountScreen.route);
                 },

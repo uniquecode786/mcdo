@@ -33,7 +33,7 @@ class _TwoFactorValidationScreenState extends State<TwoFactorValidationScreen> {
                   children: [
                     addHeight(25),
                     Padding(
-                      padding: const EdgeInsets.only(left: 20.0),
+                      padding: const EdgeInsets.only(left: 16.0),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -159,7 +159,7 @@ class _TwoFactorValidationScreenState extends State<TwoFactorValidationScreen> {
                         ),
                         ),
                       ],
-                    ).paddingSymmetric(horizontal: 28),
+                    ).paddingSymmetric(horizontal: 16),
                   ],
                 )
             ),
@@ -167,7 +167,7 @@ class _TwoFactorValidationScreenState extends State<TwoFactorValidationScreen> {
               visible: MediaQuery.of(context).viewInsets.bottom == 0,
               child: CustomButton(
                 radius: 0,
-                title: 'submit'.tr,
+                title: 'Submit'.tr,
                 onPressed: () {
                   Get.toNamed(GenderDateBirthScreen.route);
                 },

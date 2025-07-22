@@ -211,7 +211,7 @@ class _ArtboardScreenState extends State<ArtboardScreen> {
           addHeight(41),
           CustomButton(
             radius: 4,
-            title: 'continue'.tr,
+            title: 'Continue'.tr,
             onPressed: () {
                Get.toNamed(ArtboardScreen1.route);
             },

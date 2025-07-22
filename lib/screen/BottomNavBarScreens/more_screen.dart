@@ -50,40 +50,40 @@ class _MoreScreenState extends State<MoreScreen> {
                 addHeight(78),
                 IconTextArrowRow(
                  leadingIcon: 'assets/icons/home_more.png',
-                  text: 'home',
+                  text: 'Home',
                   onTap: (){},
                 ),
                 IconTextArrowRow(
                  leadingIcon: 'assets/icons/menu_more.png',
-                  text: 'menu',
+                  text: 'Menu',
                   onTap: (){
 
                   },
                 ),
                 IconTextArrowRow(
                  leadingIcon: 'assets/icons/history.png',
-                  text: 'history',
+                  text: 'History',
                   onTap: (){
                    Get.toNamed(HistoryScreen.route);
                   },
                 ),
                 IconTextArrowRow(
                  leadingIcon: 'assets/icons/my_profile.png',
-                  text: 'my profile',
+                  text: 'My profile',
                   onTap: (){
                     Get.toNamed(AccountScreen.route);
                   },
                 ),
                 IconTextArrowRow(
                  leadingIcon: 'assets/icons/addresses.png',
-                  text: 'addresses',
+                  text: 'Addresses',
                   onTap: (){
                    Get.toNamed(AddressScreen.route);
                   },
                 ),
                 IconTextArrowRow(
                  leadingIcon: 'assets/icons/support.png',
-                  text: 'support',
+                  text: 'Support',
                   onTap: (){
                    Get.toNamed(SupportScreen.route);
                   },
@@ -104,7 +104,7 @@ class _MoreScreenState extends State<MoreScreen> {
                               const Icon(Icons.favorite_border,color: Colors.black,size: 22,),
                                 const SizedBox(width: 10),
                                 Text(
-                                  'favorites'.capitalizeFirst!,
+                                  'Favorites',
                                   style: GoogleFonts.poppins(fontSize: 16, color: Colors.black,
                                       fontWeight: FontWeight.w400
                                   ),
@@ -123,21 +123,21 @@ class _MoreScreenState extends State<MoreScreen> {
                 ),
                 IconTextArrowRow(
                  leadingIcon: 'assets/icons/about_app.png',
-                  text: 'about app',
+                  text: 'About App',
                   onTap: (){
                    Get.toNamed(AboutScreen.route);
                   },
                 ),
                 IconTextArrowRow(
                  leadingIcon: 'assets/icons/terms.png',
-                  text: 'terms & conditions',
+                  text: 'Terms & Conditions',
                   onTap: (){
                    Get.toNamed(TermsConditionScreen.route);
                   },
                 ),
                 IconTextArrowRow(
                  leadingIcon: 'assets/icons/delete_user.png',
-                  text: 'delete user',
+                  text: 'Delete User',
                   onTap: (){
                    Get.toNamed(DeleteAccountScreen.route);
                     // showDeleteAccountPopup(context);
@@ -145,19 +145,19 @@ class _MoreScreenState extends State<MoreScreen> {
                 ),
                 IconTextArrowRow(
                  leadingIcon: 'assets/icons/share.png',
-                  text: 'share the app',
+                  text: 'Share The App',
                   onTap: (){},
                 ),
                 IconTextArrowRow(
                  leadingIcon: 'assets/icons/sign_out.png',
-                  text: 'sign out',
+                  text: 'Sign Out',
                   onTap: (){
                     showSignOutPopup(context);
                   },
                 ),
                 IconTextArrowRow(
                  leadingIcon: 'assets/icons/world.png',
-                  text: 'religion & language',
+                  text: 'Region & Language',
                   onTap: (){
                    Get.toNamed( SelectReligionScreen.route);
                   },
@@ -222,7 +222,7 @@ class IconTextArrowRow extends StatelessWidget {
                     Image.asset(leadingIcon, color: Colors.black,width: 20,
                     height: 20,),
                     const SizedBox(width: 10),
-                    AddText(text: text.capitalizeFirst!,
+                    AddText(text: text,
                       fontWeight: FontWeight.w400,
                       fontSize: 15,
                       color: Colors.black,

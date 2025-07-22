@@ -71,9 +71,9 @@ class _AboutScreenState extends State<AboutScreen> {
             Text('The Meatway App Is A Mobile Application Designed For The Customers Of The Meatway Restaurant. The App Allows Customers To Order Fried Chicken And Other Food Items From The Restaurant And Have Them Delivered To Their Doorstep.The App Is Easy To Use And Provides Customers With A Seamless Ordering Experience. Customers Can Browse The Menu, Select Their Preferred Food Items, Add Them To The Cart, And Pay For The Order Using A Variety Of Payment Options Available On The App.The Meatway App Is Available For Both Ios And Android Devices And Can Be Downloaded For Free From The Apple App Store And Google Play Store Respectively.With The Meatway App, Customers Can Enjoy The Convenience Of Ordering Their Favorite Fried Chicken And Other Food Items From The Comfort Of Their Homes Or Offices. The App Is Designed To Offer A Hassle-Free Food Delivery Service To The Customers Of The Meatway Restaurant.If You Have Any Questions Or Feedback About The Meatway App, Please Contact Us At [Insert Contact Email].',
               style: GoogleFonts.poppins(
                   color: Colors.black,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 11,
-                  height: 1.6
+                fontWeight: FontWeight.w400,
+                fontSize: 12,
+                height: 1.6,
               ),
             )
           ],

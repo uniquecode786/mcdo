@@ -68,9 +68,9 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                           addHeight(46),
                           const AddText(
                             text: 'Please fill in your login details.',
-                            fontSize: 11,
-                            fontWeight: FontWeight.w500,
-                            height: 1.4,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 12,
+                            height: 1.6,
                             color: Colors.black,
                           ),
                           addHeight(24),
@@ -125,7 +125,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
 
                           addHeight(37),
                         ],
-                      ).paddingSymmetric(horizontal: 30),
+                      ).paddingSymmetric(horizontal: 16),
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -151,7 +151,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
               visible: MediaQuery.of(context).viewInsets.bottom == 0,
               child: CustomButton(
                 radius: 0,
-                title: 'create account'.tr,
+                title: 'Create Account'.tr,
                 onPressed: () {
                   Get.toNamed(TwoFactorValidationScreen.route);
                 },

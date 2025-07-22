@@ -38,7 +38,7 @@ class CustomButton extends StatelessWidget {
             width: double.maxFinite,
             child: Center(
               child: Text(
-                title.capitalizeFirst!,
+                title,
                 style: GoogleFonts.poppins(
                   fontSize: 15,
                   fontWeight: FontWeight.w400,
@@ -49,7 +49,7 @@ class CustomButton extends StatelessWidget {
           )
               : FittedBox(
             child: Text(
-              title.capitalizeFirst!,
+              title,
               style: GoogleFonts.poppins(
                 fontSize: 15,
                 fontWeight: FontWeight.w400,
@@ -101,7 +101,7 @@ class CustomOutlinedButton extends StatelessWidget {
             child: Text(
               title,
               style: GoogleFonts.poppins(
-                fontSize: 17,
+                fontSize: 15,
                 fontWeight: FontWeight.w400,
                 color: textColor ?? const Color(0xFFFEBB0A),
               ),
@@ -112,7 +112,7 @@ class CustomOutlinedButton extends StatelessWidget {
           child: Text(
             title,
             style: GoogleFonts.poppins(
-              fontSize: 17,
+              fontSize: 15,
               fontWeight: FontWeight.w400,
               color: textColor ?? const Color(0xFFFEBB0A),
             ),

@@ -261,17 +261,19 @@ class _FoodScreenState extends State<FoodScreen>{
                                                 Text(
                                                   '1 x ',
                                                   style: GoogleFonts.poppins(
-                                                    fontSize: 14,
+                                                    fontWeight: FontWeight.w400,
+                                                    fontSize: 12,
+                                                    height: 1.6,
                                                     color: const Color(0xFFE02020),
-                                                    fontWeight: FontWeight.w500,
                                                   ),
                                                 ),
                                                 Text(
                                                   'Fillet Fish',
                                                   style: GoogleFonts.poppins(
-                                                    fontSize: 14,
+                                                    fontWeight: FontWeight.w400,
+                                                    fontSize: 12,
+                                                    height: 1.6,
                                                     color: Colors.black,
-                                                    fontWeight: FontWeight.w500,
                                                   ),
                                                 ),
                                               ],
@@ -467,8 +469,9 @@ class _FoodScreenState extends State<FoodScreen>{
                             child: Text(
                               title,
                               style: GoogleFonts.poppins(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 12,
+                                height: 1.6,
                                 color: isSelected ? const Color(0xFFE02020) : const Color(0xFF888888),
                               ),
                             ),
@@ -813,8 +816,9 @@ class _FoodScreenState extends State<FoodScreen>{
                           addWidth(5),
                           Text('Delivery'.toUpperCase(),
                             style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.w400,
                                 fontSize: 12,
-                                fontWeight: FontWeight.w600,
+                                height: 1.6,
                                 color: const Color(0xFFD42216)
                             ),),
                         ],
@@ -836,8 +840,9 @@ class _FoodScreenState extends State<FoodScreen>{
                           addWidth(5),
                           Text('Pickup'.toUpperCase(),
                             style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.w400,
                                 fontSize: 12,
-                                fontWeight: FontWeight.w600,
+                                height: 1.6,
                                 color: const Color(0xFFD42216)
                             ),),
                         ],
@@ -859,8 +864,9 @@ class _FoodScreenState extends State<FoodScreen>{
                           addWidth(5),
                           Text('Dine-in'.toUpperCase(),
                             style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.w400,
                                 fontSize: 12,
-                                fontWeight: FontWeight.w600,
+                                height: 1.6,
                                 color: const Color(0xFFD42216)
                             ),
                           ),
