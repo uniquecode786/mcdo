@@ -69,7 +69,7 @@ class _MoreScreenState extends State<MoreScreen> {
                 ),
                 IconTextArrowRow(
                  leadingIcon: 'assets/icons/my_profile.png',
-                  text: 'My profile',
+                  text: 'My Profile',
                   onTap: (){
                     Get.toNamed(AccountScreen.route);
                   },

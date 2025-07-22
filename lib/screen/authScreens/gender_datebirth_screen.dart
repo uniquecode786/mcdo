@@ -76,9 +76,9 @@ class _GenderDateBirthScreenState extends State<GenderDateBirthScreen> {
                           addHeight(4),
                           const AddText(
                             text: 'Share your personal data so we can prepare some personal deals just for you.',
-                            fontSize: 12,
-                            height: 1.5,
                             fontWeight: FontWeight.w400,
+                            fontSize: 12,
+                            height: 1.6,
                             color: Color(0xFF6B6B6B),
                           ),
                           addHeight(20),
