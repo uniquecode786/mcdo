@@ -154,8 +154,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                                       obscureText1 = !obscureText1;
                                     });
                                   },
-                                  child:
-                                  Column(
+                                  child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.center,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
@@ -211,20 +210,20 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   ),
                 )
             ),
-            Visibility(
-              visible: MediaQuery.of(context).viewInsets.bottom == 0,
-              child: CustomButton(
-                radius: 0,
-                title: 'Create Account'.tr,
-                onPressed: () {
-                  Get.toNamed(TwoFactorValidationScreen.route);
-                },
+              Visibility(
+                visible: MediaQuery.of(context).viewInsets.bottom == 0,
+                child: CustomButton(
+                  radius: 0,
+                  title: 'Create Account'.tr,
+                  onPressed: () {
+                    addNameApi();
+                  },
+                ),
               ),
               addHeight(40),
             ],
           ),
         ),
-      ),
-    );
+      ));
   }
 }
