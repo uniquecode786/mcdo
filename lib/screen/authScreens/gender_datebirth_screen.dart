@@ -76,9 +76,9 @@ class _GenderDateBirthScreenState extends State<GenderDateBirthScreen> {
                           addHeight(4),
                           const AddText(
                             text: 'Share your personal data so we can prepare some personal deals just for you.',
-                            fontSize: 12,
-                            height: 1.5,
                             fontWeight: FontWeight.w400,
+                            fontSize: 12,
+                            height: 1.6,
                             color: Color(0xFF6B6B6B),
                           ),
                           addHeight(20),
@@ -98,7 +98,7 @@ class _GenderDateBirthScreenState extends State<GenderDateBirthScreen> {
                           ),
                           addHeight(20)
                         ],
-                      ).paddingSymmetric(horizontal: 28),
+                      ).paddingSymmetric(horizontal: 16),
                       const AddText(
                         text: 'yyyy-mm-dd',
                         fontSize: 12,
@@ -126,7 +126,7 @@ class _GenderDateBirthScreenState extends State<GenderDateBirthScreen> {
                             border: Border.all(color: const Color(0xFFD3D3D3))
                         ),
                         child:  Center(
-                          child: AddText(text: 'Maybe later'.tr,
+                          child: AddText(text: 'Maybe Later'.tr,
                             color: Colors.black,
                             fontSize: 15,
                             fontWeight: FontWeight.w500,

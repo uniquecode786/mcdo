@@ -51,7 +51,7 @@ class _ArtboardScreen3State extends State<ArtboardScreen3> {
                     color: Colors.black,
                   ),
                 ],
-              ).paddingSymmetric(horizontal: 18),
+              ).paddingSymmetric(horizontal: 16),
             ),
             Center(
               child: AddText(
@@ -63,7 +63,7 @@ class _ArtboardScreen3State extends State<ArtboardScreen3> {
           addHeight(28),
             CustomButton(
               radius: 0,
-              title: 'continue'.tr,
+              title: 'Continue'.tr,
               onPressed: () {
                 Get.toNamed(SignInOptionScreen.route);
               },

@@ -101,14 +101,14 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                                 height: 1.2,
                               ),
                             ),
-                            addHeight(46),
-                            const AddText(
-                              text: 'Please fill in your login details.',
-                              fontSize: 11,
-                              fontWeight: FontWeight.w500,
-                              height: 1.4,
-                              color: Colors.black,
-                            ),
+                          addHeight(46),
+                          const AddText(
+                            text: 'Please fill in your login details.',
+                            fontWeight: FontWeight.w400,
+                            fontSize: 12,
+                            height: 1.6,
+                            color: Colors.black,
+                          ),
                             addHeight(24),
                             ...fieldWithName(
                                 title: 'Email',
@@ -187,40 +187,38 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                               fontWeight: FontWeight.w400,
                               color: Color(0xFF6B6B6B),
                             ),
-
-                            addHeight(37),
-                          ],
-                        ).paddingSymmetric(horizontal: 30),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Image.asset('assets/icons/star.png',
-                              height: 20,
-                              width: 10,
-                            ),
-                            addWidth(5),
-                            const AddText(
-                              text: 'Required information',
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                              color: Color(0xFF6B6B6B),
-                            )
-                          ],
-                        ).paddingSymmetric(horizontal: 16),
-                      ],
-                    ),
-                  )
-              ),
-              Visibility(
-                visible: MediaQuery.of(context).viewInsets.bottom == 0,
-                child: CustomButton(
-                  radius: 0,
-                  title: 'create account'.tr,
-                  onPressed: () {
-                    addNameApi();
-                  },
-                ),
+                          addHeight(37),
+                        ],
+                      ).paddingSymmetric(horizontal: 16),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Image.asset('assets/icons/star.png',
+                            height: 20,
+                            width: 10,
+                          ),
+                          addWidth(5),
+                          const AddText(
+                            text: 'Required information',
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                            color: Color(0xFF6B6B6B),
+                          )
+                        ],
+                      ).paddingSymmetric(horizontal: 16),
+                    ],
+                  ),
+                )
+            ),
+            Visibility(
+              visible: MediaQuery.of(context).viewInsets.bottom == 0,
+              child: CustomButton(
+                radius: 0,
+                title: 'Create Account'.tr,
+                onPressed: () {
+                  Get.toNamed(TwoFactorValidationScreen.route);
+                },
               ),
               addHeight(40),
             ],

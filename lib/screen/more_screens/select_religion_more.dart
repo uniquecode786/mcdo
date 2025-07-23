@@ -218,7 +218,7 @@ class _SelectReligionScreenState extends State<SelectReligionScreen> {
           addHeight(41),
           CustomButton(
             radius: 4,
-            title: 'continue'.tr,
+            title: 'Continue'.tr,
             onPressed: () {
               Get.back();
             },

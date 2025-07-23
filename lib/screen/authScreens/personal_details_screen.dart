@@ -128,24 +128,82 @@ class _PersonalDetailsScreenState extends State<PersonalDetailsScreen> {
                               fontWeight: FontWeight.w400,
                               color: Color(0xFF6B6B6B),
                             )
+                        ),
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          addHeight(35),
+                          Image.asset('assets/icons/logo.png',
+                            height: 40,
+                            width: 80,
+                          ),
+                          addHeight(30),
+                          const AddText(text: 'Personal details',
+                            color: Colors.black,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 26,
+                            height: 1.2,
+                          ),
+                          addHeight(30),
+                          const AddText(
+                            text: 'Let us know how to properly address you. Please fill in your details.',
+                            fontWeight: FontWeight.w400,
+                            fontSize: 12,
+                            height: 1.6,
+                            color: Colors.black,
+                          ),
+                          addHeight(22),
+                          ...fieldWithName(
+                              title: 'First name',
+                              hintText: 'First name',
+                              controller: nameController),
+                          ...fieldWithName(
+                              title: 'Last name',
+                              hintText: 'Last name',
+                              controller: lastNameController),
+                          addHeight(30),
+                        ],
+                      ).paddingSymmetric(horizontal: 16),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Image.asset('assets/icons/star.png',
+                            height: 20,
+                            width: 10,
+                          ),
+                          addWidth(5),
+                          const AddText(
+                            text: 'Required information',
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                            color: Color(0xFF6B6B6B),
+                          )
+                        ],
+                      ).paddingSymmetric(horizontal: 16),
+                    ],
+                  ),
+                )
+            ),
+
+            Visibility(
+              visible: MediaQuery.of(context).viewInsets.bottom == 0,
+              child: CustomButton(
+                radius: 0,
+                title: 'Continue'.tr,
+                onPressed: () {
+                    if(formKey.currentState!.validate()) {
+                      Get.toNamed(CreateAccountScreen.route);
+                    }
+                  },
                           ],
                         ).paddingSymmetric(horizontal: 16),
                       ],
                     ),
                   )
               ),
-
-              Visibility(
-                visible: MediaQuery.of(context).viewInsets.bottom == 0,
-                child: CustomButton(
-                  radius: 0,
-                  title: 'continue'.tr,
-                  onPressed: () {
-                    if(formKey.currentState!.validate()) {
-                      Get.toNamed(CreateAccountScreen.route);
-                    }
-                  },
-                ),
               ),
               addHeight(40),
             ],

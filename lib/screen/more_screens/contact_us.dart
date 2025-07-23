@@ -76,8 +76,10 @@ class _SupportScreenState extends State<SupportScreen> {
           children:  [
             Text(
               'General questions',
-              style: GoogleFonts.poppins(fontSize: 14,
-                  fontWeight: FontWeight.w700,
+              style: GoogleFonts.poppins(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 12,
+                  height: 1.6,
                   color: const Color(0xFFDA0006)
               ),
             ),
@@ -129,16 +131,20 @@ class QuestionSection extends StatelessWidget {
         children: [
           Text(
             question,
-            style: GoogleFonts.poppins(fontSize: 13,
-                fontWeight: FontWeight.w600,
+            style: GoogleFonts.poppins(
+                fontWeight: FontWeight.w400,
+                fontSize: 12,
+                height: 1.6,
                 color: const Color(0xFFDA0006)
             ),
           ),
         addHeight(7),
           Text(
             answer,
-            style: GoogleFonts.poppins(fontSize: 13,
+            style: GoogleFonts.poppins(
                 fontWeight: FontWeight.w400,
+                fontSize: 12,
+                height: 1.6,
                 color: Colors.black
             ),
           ),

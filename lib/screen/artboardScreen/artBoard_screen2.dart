@@ -50,7 +50,7 @@ class _ArtboardScreen2State extends State<ArtboardScreen2> {
                       color: Colors.black,
                     ),
                   ],
-                ).paddingSymmetric(horizontal: 18),
+                ).paddingSymmetric(horizontal: 16),
             ),
            Center(
              child: AddText(
@@ -62,7 +62,7 @@ class _ArtboardScreen2State extends State<ArtboardScreen2> {
            addHeight(22),
             CustomButton(
               radius: 0,
-              title: 'continue'.tr,
+              title: 'Continue'.tr,
               onPressed: () {
                 Get.toNamed(ArtboardScreen3.route);
               },

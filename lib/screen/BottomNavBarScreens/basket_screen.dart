@@ -156,17 +156,17 @@ class _BasketScreenState extends State<BasketScreen> {
                                              Text(
                                                '1 x ',
                                                style: GoogleFonts.poppins(
-                                                 fontSize: 14,
+                                                 fontWeight: FontWeight.w400,
+                                                 fontSize: 12,
                                                  color: const Color(0xFFE02020),
-                                                 fontWeight: FontWeight.w500,
                                                ),
                                              ),
                                              Text(
                                                'Fillet Fish',
                                                style: GoogleFonts.poppins(
-                                                 fontSize: 14,
+                                                 fontWeight: FontWeight.w400,
+                                                 fontSize: 12,
                                                  color: Colors.black,
-                                                 fontWeight: FontWeight.w500,
                                                ),
                                              ),
                                            ],
@@ -222,8 +222,9 @@ class _BasketScreenState extends State<BasketScreen> {
                                  Text(
                                    '470,000 LBP',
                                    style: GoogleFonts.poppins(
-                                       fontWeight: FontWeight.w500,
-                                       fontSize: 14),
+                                     fontWeight: FontWeight.w400,
+                                     fontSize: 12,
+                                     height: 1.6,),
                                  )
                                ],
                              ).paddingSymmetric(horizontal: 14,vertical: 10),
@@ -312,8 +313,8 @@ class _BasketScreenState extends State<BasketScreen> {
                      children: [
                        const AddText(
                          text: 'Special request',
-                         fontWeight: FontWeight.w600,
-                         fontSize: 14,
+                         fontWeight: FontWeight.w400,
+                         fontSize: 12,
                          color: Color(0xFF333333),
                        ),
                        addHeight(13),
@@ -367,8 +368,8 @@ class _BasketScreenState extends State<BasketScreen> {
                          children: [
                            AddText(
                              text: "Save on your order",
-                             fontSize: 14,
-                             fontWeight: FontWeight.w600,
+                             fontWeight: FontWeight.w400,
+                             fontSize: 12,
                            ),
                            AddText(
                              text: "Add Voucher",
@@ -447,8 +448,8 @@ class _BasketScreenState extends State<BasketScreen> {
                 children: [
                   const AddText(
                     text: 'Payment Summary',
-                    fontWeight: FontWeight.w600,
-                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12,
                     color: Color(0xFF333333),
                   ),
                   addHeight(13),
@@ -464,13 +465,13 @@ class _BasketScreenState extends State<BasketScreen> {
                       AddText(
                         text: 'Basket Total',
                         fontWeight: FontWeight.w400,
-                        fontSize: 14,
+                        fontSize: 12,
                         color: Color(0xFF333333),
                       ),
                       AddText(
                         text: 'LBP 6,500,000',
                         fontWeight: FontWeight.w400,
-                        fontSize: 14,
+                        fontSize: 12,
                         color: Color(0xFF333333),
                       ),
 
@@ -483,10 +484,10 @@ class _BasketScreenState extends State<BasketScreen> {
                     children: [
                       Expanded(
                         child: SizedBox(
-                          height: 50,
+                          height: 45,
                           child: CustomOutlinedButton(
                             radius: 8,
-                            title: 'Add items',
+                            title: 'Add Items',
                             textColor: Colors.black,
                             onPressed: (){
                                Get.back();
@@ -497,7 +498,7 @@ class _BasketScreenState extends State<BasketScreen> {
                       addWidth(20),
                       Expanded(
                         child: SizedBox(
-                          height: 50,
+                          height: 45,
                           child: CustomButton(
                             radius: 8,
                             title: 'Checkout',
@@ -509,7 +510,7 @@ class _BasketScreenState extends State<BasketScreen> {
                       ),
                     ],
                   ),
-                  addHeight(50),
+                  addHeight(10),
                 ],
               ),
             ),

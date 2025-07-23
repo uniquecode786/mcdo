@@ -44,7 +44,7 @@ class _ArtboardScreen1State extends State<ArtboardScreen1> {
                 ),
                 addHeight(12),
                 AddText(
-                  text: 'thanks for choosing to use the McDonald\'s app in Lebanon. we\'re really excited to show you what\'s on available...'.tr,
+                  text: 'Thanks for choosing to use the McDonald\'s app in Lebanon. we\'re really excited to show you what\'s on available...'.tr,
                   fontWeight: FontWeight.w400,
                   fontSize: 12,
                   height: 1.6,
@@ -66,7 +66,7 @@ class _ArtboardScreen1State extends State<ArtboardScreen1> {
           addHeight(28),
           CustomButton(
             radius: 0,
-            title: 'Tell me more!'.tr,
+            title: 'Tell Me More!',
             onPressed: () {
               Get.toNamed(ArtboardScreen2.route);
             },

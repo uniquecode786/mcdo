@@ -208,6 +208,24 @@ class _TwoFactorValidationScreenState extends State<TwoFactorValidationScreen> {
                             text: 'Didn\'t get the code?',
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
+                            color: const Color(0xFF176397),
+                          decoration: TextDecoration.underline,
+                          decorationColor: const Color(0xFF176397),
+                        ),
+                        ),
+                      ],
+                    ).paddingSymmetric(horizontal: 16),
+                  ],
+                )
+            ),
+            Visibility(
+              visible: MediaQuery.of(context).viewInsets.bottom == 0,
+              child: CustomButton(
+                radius: 0,
+                title: 'Submit'.tr,
+                 onPressed: () {
+                    emailVerification();
+                  },
                             color: Color(0xFF6B6B6B),
                           ),
                           addHeight(28),
@@ -231,17 +249,7 @@ class _TwoFactorValidationScreenState extends State<TwoFactorValidationScreen> {
                     ],
                   )
               ),
-              Visibility(
-                visible: MediaQuery.of(context).viewInsets.bottom == 0,
-                child: CustomButton(
-                  radius: 0,
-                  title: 'submit'.tr,
-                  onPressed: () {
-                    emailVerification();
-
-                  },
-                ),
-              ),
+       
               addHeight(40),
             ],
           ),

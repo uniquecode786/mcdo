@@ -83,11 +83,11 @@ class _HomePageScreenState extends State<HomePageScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Center(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 18.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 30.0),
                   child: Text('Life deserves a break and ... a burger.',
                   style: GoogleFonts.poppins(
-                    fontSize: 27,
-                    height: 1.4,
+                    fontSize: 22,
+                    height: 1.3,
                     fontWeight: FontWeight.w600,
                     color: const Color(0xFF17648E)
                   ),
@@ -155,10 +155,10 @@ class _HomePageScreenState extends State<HomePageScreen> {
                                Text(
                                 'Log in or become a member to order and access personalised deals.',
                                  style: GoogleFonts.poppins(
-                                     fontSize: 11,
                                      fontWeight: FontWeight.w400,
+                                     fontSize: 12,
+                                     height: 1.6,
                                      color: Colors.black,
-                                     height: 1.4
                                  ),
                               ),
                             ],
@@ -189,7 +189,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4), // Adjust padding if needed
                       ),
                       child: Text(
-                        'Log in',
+                        'Log In',
                         style: GoogleFonts.poppins(
                           color: Colors.black,
                           fontSize: 12,
@@ -279,8 +279,9 @@ class _HomePageScreenState extends State<HomePageScreen> {
             Center(
                 child: Text('Check it again soon for more dellciousness!',
                 style: GoogleFonts.poppins(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w400,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12,
+                    height: 1.6,
                   color: Colors.black
                 ),
                 )),

@@ -142,7 +142,7 @@ class _PersonalDetailsScreenEditState extends State<PersonalDetailsScreenEdit> {
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.only(bottom: 8.0),
         child: CustomButton(
-          title: 'edit profile',
+          title: 'Edit Profile',
           onPressed: (){},
           radius: 0,
         ),

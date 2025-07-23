@@ -152,8 +152,9 @@ class _DealsScreenState extends State<DealsScreen> {
                               Text('scan code to collect points.',
                                 style: GoogleFonts.poppins(
                                     color: Colors.black,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w600
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 12,
+                                  height: 1.6,
                                 ),
                               )
                             ],
@@ -531,8 +532,9 @@ class _DealsScreenState extends State<DealsScreen> {
             Center(
                 child: Text('Check it again soon for more dellciousness!',
                   style: GoogleFonts.poppins(
-                      fontSize: 15,
                       fontWeight: FontWeight.w400,
+                      fontSize: 12,
+                      height: 1.6,
                       color: Colors.black
                   ),
                 )),

@@ -35,7 +35,7 @@ class AddText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      text!.capitalizeFirst!,
+      text!,
       maxLines: maxLines,
       overflow: textOverflow,
       textAlign: textAlign,

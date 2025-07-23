@@ -56,10 +56,10 @@ class _CommunicationSettingsScreenState extends State<CommunicationSettingsScree
                   children: [
                     const Expanded(
                          child: AddText(
-                           text: 'i\'d like to receive news, updates and promotions from Meatway\'s via email',
+                           text: 'I\'d like to receive news, updates and promotions from Meatway\'s via email',
                            color: Colors.black,
                            fontWeight: FontWeight.w400,
-                           fontSize: 11,
+                           fontSize: 12,
                            height: 1.6,
                          ),
                      ),
@@ -80,10 +80,10 @@ class _CommunicationSettingsScreenState extends State<CommunicationSettingsScree
                   children: [
                     const Expanded(
                          child: AddText(
-                           text: 'i\'d like to receive news, updates and promotions from Meatway\'s via sMS',
+                           text: 'I\'d like to receive news, updates and promotions from Meatway\'s via sMS',
                            color: Colors.black,
                            fontWeight: FontWeight.w400,
-                           fontSize: 11,
+                           fontSize: 12,
                            height: 1.6,
                          ),
                      ),
