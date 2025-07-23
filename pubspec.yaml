@@ -16,6 +16,12 @@ dependencies:
   get: ^4.7.2
   google_fonts: ^6.2.1
   intl_phone_field: ^3.2.0
+  client_information: ^2.2.0
+  shared_preferences: ^2.5.3
+  lottie:
+  flutter_animate: ^4.5.2
+  image_picker: ^1.1.2
+  fluttertoast: ^8.2.12
 
 dev_dependencies:
   flutter_test:
@@ -38,5 +44,5 @@ flutter:
 
   assets:
     - assets/icons/
-  #   - images/a_dot_ham.jpeg
+    - assets/loti/
 
