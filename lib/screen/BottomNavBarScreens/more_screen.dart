@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mcdo/routers/routers.dart';
@@ -49,115 +50,115 @@ class _MoreScreenState extends State<MoreScreen> {
                  ).paddingSymmetric(horizontal: 16),
                 addHeight(78),
                 IconTextArrowRow(
-                 leadingIcon: 'assets/icons/home_more.png',
+                 leadingIcon: 'assets/icons/m.svg',
                   text: 'Home',
+                  height: 12,
+                  width: 10,
                   onTap: (){},
                 ),
                 IconTextArrowRow(
-                 leadingIcon: 'assets/icons/menu_more.png',
+                 leadingIcon: 'assets/icons/menu.svg',
                   text: 'Menu',
+                  height: 18,
+                  width: 10,
                   onTap: (){
 
                   },
                 ),
                 IconTextArrowRow(
-                 leadingIcon: 'assets/icons/history.png',
+                 leadingIcon: 'assets/icons/document.svg',
                   text: 'History',
+                  height: 18,
+                  width: 10,
                   onTap: (){
                    Get.toNamed(HistoryScreen.route);
                   },
                 ),
                 IconTextArrowRow(
-                 leadingIcon: 'assets/icons/my_profile.png',
+                 leadingIcon: 'assets/icons/profile.svg',
                   text: 'My Profile',
+                  height: 18,
+                  width: 10,
                   onTap: (){
                     Get.toNamed(AccountScreen.route);
                   },
                 ),
                 IconTextArrowRow(
-                 leadingIcon: 'assets/icons/addresses.png',
+                 leadingIcon: 'assets/icons/location.svg',
                   text: 'Addresses',
+                  height: 18,
+                  width: 10,
                   onTap: (){
                    Get.toNamed(AddressScreen.route);
                   },
                 ),
                 IconTextArrowRow(
-                 leadingIcon: 'assets/icons/support.png',
+                 leadingIcon: 'assets/icons/chat.svg',
                   text: 'Support',
+                  height: 20,
+                  width: 10,
                   onTap: (){
                    Get.toNamed(SupportScreen.route);
                   },
                 ),
-                Column(
-                  children: [
-                    InkWell(
-                      onTap: (){
-                        Get.toNamed(FavouritesScreen.route);
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 20),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                              const Icon(Icons.favorite_border,color: Colors.black,size: 22,),
-                                const SizedBox(width: 10),
-                                Text(
-                                  'Favorites',
-                                  style: GoogleFonts.poppins(fontSize: 16, color: Colors.black,
-                                      fontWeight: FontWeight.w400
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const Icon(Icons.arrow_forward_ios, color: Colors.black, size: 16),
-                          ],
-                        ),
-                      ),
-                    ),
-                    const Divider(height: 1, thickness: 1,
-                      color: Color(0xFFC5C5C5),
-                    ),
-                  ],
+                IconTextArrowRow(
+                 leadingIcon: 'assets/icons/heart.svg',
+                  text: 'Favorites',
+                  height: 16,
+                  width: 10,
+                  onTap: (){
+                    Get.toNamed(FavouritesScreen.route);
+                  },
                 ),
                 IconTextArrowRow(
-                 leadingIcon: 'assets/icons/about_app.png',
+                 leadingIcon: 'assets/icons/about.svg',
                   text: 'About App',
+                  height: 18,
+                  width: 10,
                   onTap: (){
                    Get.toNamed(AboutScreen.route);
                   },
                 ),
                 IconTextArrowRow(
-                 leadingIcon: 'assets/icons/terms.png',
+                 leadingIcon: 'assets/icons/terms.svg',
                   text: 'Terms & Conditions',
+                  height: 18,
+                  width: 1,
                   onTap: (){
                    Get.toNamed(TermsConditionScreen.route);
                   },
                 ),
                 IconTextArrowRow(
-                 leadingIcon: 'assets/icons/delete_user.png',
+                 leadingIcon: 'assets/icons/remove-user.svg',
                   text: 'Delete User',
+                  height: 18,
+                  width: 10,
                   onTap: (){
                    Get.toNamed(DeleteAccountScreen.route);
                     // showDeleteAccountPopup(context);
                   },
                 ),
                 IconTextArrowRow(
-                 leadingIcon: 'assets/icons/share.png',
+                 leadingIcon: 'assets/icons/share.svg',
                   text: 'Share The App',
+                  height: 16,
+                  width: 10,
                   onTap: (){},
                 ),
                 IconTextArrowRow(
-                 leadingIcon: 'assets/icons/sign_out.png',
+                 leadingIcon: 'assets/icons/logout.svg',
                   text: 'Sign Out',
+                  height: 17,
+                  width: 10,
                   onTap: (){
                     showSignOutPopup(context);
                   },
                 ),
                 IconTextArrowRow(
-                 leadingIcon: 'assets/icons/world.png',
+                 leadingIcon: 'assets/icons/worldwide.svg',
                   text: 'Region & Language',
+                  height: 20,
+                  width: 10,
                   onTap: (){
                    Get.toNamed( SelectReligionScreen.route);
                   },
@@ -197,12 +198,16 @@ void showSignOutPopup(BuildContext context) {
 class IconTextArrowRow extends StatelessWidget {
   final String leadingIcon;
   final String text;
+  final double height;
+  final double width;
   final VoidCallback? onTap;
 
   const IconTextArrowRow({
     Key? key,
     required this.leadingIcon,
     required this.text,
+    required this.width,
+    required this.height,
     this.onTap,
   }) : super(key: key);
 
@@ -219,8 +224,11 @@ class IconTextArrowRow extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Image.asset(leadingIcon, color: Colors.black,width: 20,
-                    height: 20,),
+                    SvgPicture.asset(
+                      leadingIcon,
+                      width: width,
+                      height: height,
+                    ),
                     const SizedBox(width: 10),
                     AddText(text: text,
                       fontWeight: FontWeight.w400,

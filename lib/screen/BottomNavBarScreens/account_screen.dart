@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mcdo/routers/routers.dart';
@@ -56,35 +57,62 @@ class _AccountScreenState extends State<AccountScreen> {
                 ),
                 addHeight(51),
                 IconTextArrowRow1(
-                  leadingIcon: 'assets/icons/my_profile.png',
+                  leadingIcon: 'assets/icons/profile.svg',
                   text: 'Personal Details',
                   onTap: (){
                     Get.toNamed(PersonalDetailsScreenEdit.route);
                   },
                 ),
                 IconTextArrowRow1(
-                  leadingIcon: 'assets/icons/history.png',
+                  leadingIcon: 'assets/icons/document.svg',
                   text: 'Password & Security',
                   onTap: (){
                     Get.toNamed(PasswordSecurityScreen.route);
                   },
                 ),
                 IconTextArrowRow1(
-                  leadingIcon: 'assets/icons/history.png',
+                  leadingIcon: 'assets/icons/document.svg',
                   text: 'Communication Settings',
                   onTap: (){
                     Get.toNamed(CommunicationSettingsScreen.route);
                   },
                 ),
-                IconTextArrowRow1(
-                  leadingIcon: 'assets/icons/delete.png',
-                  text: 'Delete Account',
-                  onTap: (){
-                    Get.toNamed(DeleteAccountScreen.route);
-                  },
+                Column(
+                  children: [
+                    InkWell(
+                      onTap: (){
+                        Get.toNamed(DeleteAccountScreen.route);
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 20),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Image.asset('assets/icons/delete.png', color: Colors.black,width: 16,
+                                  height: 20,),
+                                const SizedBox(width: 10),
+                                Text(
+                                  'Delete Account',
+                                  style: GoogleFonts.poppins(fontSize: 14, color: Colors.black,
+                                      fontWeight: FontWeight.w400
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const Icon(Icons.arrow_forward_ios, color: Colors.black, size: 16),
+                          ],
+                        ),
+                      ),
+                    ),
+                    const Divider(height: 1, thickness: 1,
+                      color: Color(0xFFC5C5C5),
+                    ),
+                  ],
                 ),
                 IconTextArrowRow1(
-                  leadingIcon: 'assets/icons/log_new.png',
+                  leadingIcon: 'assets/icons/logout.svg',
                   text: 'Logout',
                   onTap: (){
                     showSignOutPopup(context);
@@ -147,7 +175,7 @@ class IconTextArrowRow1 extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Image.asset(leadingIcon, color: Colors.black,width: 16,
+                    SvgPicture.asset(leadingIcon, color: Colors.black,width: 16,
                       height: 20,),
                     const SizedBox(width: 10),
                     Text(

@@ -22,6 +22,7 @@ dependencies:
   flutter_animate: ^4.5.2
   image_picker: ^1.1.2
   fluttertoast: ^8.2.12
+  flutter_svg:
 
 dev_dependencies:
   flutter_test:

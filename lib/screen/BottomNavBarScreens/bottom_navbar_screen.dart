@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../controller/bottom_controller.dart';
@@ -195,11 +196,11 @@ class _BottomNavbarState extends State<BottomNavbar> {
                             children: [
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Image.asset(
-                                  'assets/icons/food.png',
+                                child: SvgPicture.asset(
+                                  'assets/icons/menu.svg',
                                   height: 20,
                                   color: bottomController.pageIndex.value == 2
-                                      ? null
+                                      ?  const Color(0xFFFFC732)
                                       : const Color(0xFF9E9E9E),
                                 ),
                               ),
@@ -230,7 +231,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
                             children: [
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Image.asset(
+                                child:Image.asset(
                                   'assets/icons/more.png',
                                   height: 18,
                                   width: 18,
