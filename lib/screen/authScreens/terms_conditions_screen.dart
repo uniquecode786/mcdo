@@ -78,7 +78,7 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                       ),
                       addWidth(5),
                       const AddText(
-                        text: 'required information',
+                        text: 'Required Information',
                         fontSize: 11,
                         fontWeight: FontWeight.w400,
                         color: Color(0xFF6B6B6B),
@@ -237,13 +237,13 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                 radius: 0,
                 title: 'Continue'.tr,
                 onPressed: () {
-                  if (!switchValue) {
-                    showToast('You must confirm that you are aged 16 or over and agree to the Terms to proceed.',
-                    center: true
-                    );
-
-                    return;
-                  }
+                  // if (!switchValue) {
+                  //   showToast('You must confirm that you are aged 16 or over and agree to the Terms to proceed.',
+                  //   center: true
+                  //   );
+                  //
+                  //   return;
+                  // }
                   Get.toNamed(PersonalDetailsScreen.route);
                 },
               ),

@@ -85,7 +85,7 @@ class _AccountScreenState extends State<AccountScreen> {
                 ),
                 IconTextArrowRow1(
                   leadingIcon: 'assets/icons/log_new.png',
-                  text: 'Log Out',
+                  text: 'Logout',
                   onTap: (){
                     showSignOutPopup(context);
                   },

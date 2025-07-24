@@ -267,6 +267,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 );
               },
             ),
+            addHeight(20),
             Center(
                 child: Text('That\'s all for now.',
                 style: GoogleFonts.poppins(

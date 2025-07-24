@@ -175,7 +175,7 @@ class _BasketScreenState extends State<BasketScreen> {
                                          Text(
                                            'Red Hot Twister Sandwich +\nRizo + Coleslaw + Drink.',
                                            style: GoogleFonts.poppins(
-                                               fontSize: 12,
+                                               fontSize: 10,
                                                fontWeight: FontWeight.w400,
                                                color: Colors.black),
                                          ),

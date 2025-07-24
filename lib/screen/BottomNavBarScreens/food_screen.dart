@@ -282,7 +282,7 @@ class _FoodScreenState extends State<FoodScreen>{
                                             Text(
                                               'Red Hot Twister Sandwich +\nRizo + Coleslaw + Drink.',
                                               style: GoogleFonts.poppins(
-                                                  fontSize: 12,
+                                                  fontSize: 10,
                                                   fontWeight: FontWeight.w400,
                                                   color: Colors.black),
                                             ),
