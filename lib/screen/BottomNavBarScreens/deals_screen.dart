@@ -410,7 +410,7 @@ class _DealsScreenState extends State<DealsScreen> {
                                              width: 10,
                                             ),
                                             addWidth(10),
-                                            Text('expires soon',
+                                            Text('Expires Soon',
                                             style: GoogleFonts.poppins(
                                               fontWeight: FontWeight.w400,
                                               fontSize: 11,
@@ -483,7 +483,7 @@ class _DealsScreenState extends State<DealsScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "My meatway's rewards",
+                        "My Meatway's Rewards",
                         style:  GoogleFonts.poppins(
                           fontWeight: FontWeight.w700,
                           fontSize: 13,
@@ -495,7 +495,7 @@ class _DealsScreenState extends State<DealsScreen> {
                         onTap: () {
                         },
                         child:  Text(
-                          'How it works',
+                          'How It Works',
                           style: GoogleFonts.poppins(
                             fontSize: 13,
                             fontWeight: FontWeight.w400,
@@ -519,7 +519,7 @@ class _DealsScreenState extends State<DealsScreen> {
                 ],
               ),
             ),
-            addHeight(101),
+            addHeight(35),
             Center(
                 child: Text('That\'s all for now.',
                   style: GoogleFonts.poppins(

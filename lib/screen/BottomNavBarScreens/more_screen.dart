@@ -230,6 +230,7 @@ class IconTextArrowRow extends StatelessWidget {
                       height: height,
                     ),
                     const SizedBox(width: 10),
+
                     AddText(text: text,
                       fontWeight: FontWeight.w400,
                       fontSize: 15,

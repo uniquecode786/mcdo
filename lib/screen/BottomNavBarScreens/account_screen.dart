@@ -176,12 +176,14 @@ class IconTextArrowRow1 extends StatelessWidget {
                 Row(
                   children: [
                     SvgPicture.asset(leadingIcon, color: Colors.black,width: 16,
-                      height: 20,),
+                      height: 18,),
                     const SizedBox(width: 10),
                     Text(
                       text,
-                      style: GoogleFonts.poppins(fontSize: 14, color: Colors.black,
-                          fontWeight: FontWeight.w400
+                      style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 15,
+                        color: Colors.black,
                       ),
                     ),
                   ],

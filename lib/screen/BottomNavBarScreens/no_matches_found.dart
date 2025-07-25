@@ -108,7 +108,7 @@ class _NoMatchesFoundScreenState extends State<NoMatchesFoundScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "My meatway's rewards",
+                          "My Meatway's Rewards",
                           style:  GoogleFonts.poppins(
                             fontWeight: FontWeight.w700,
                             fontSize: 13,
@@ -120,7 +120,7 @@ class _NoMatchesFoundScreenState extends State<NoMatchesFoundScreen> {
                           onTap: () {
                           },
                           child:  Text(
-                            'How it works',
+                            'How It Works',
                             style: GoogleFonts.poppins(
                               fontSize: 13,
                               fontWeight: FontWeight.w400,
