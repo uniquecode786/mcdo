@@ -114,39 +114,39 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                                 title: 'Email',
                                 hintText: 'Enter email',
                                 controller: signUpController.emailController,
-                                // validator: (value) {
-                                //   if (value == null || value.trim().isEmpty) {
-                                //     return 'Email is required';
-                                //   }
-                                //   final regex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
-                                //   if (!regex.hasMatch(value.trim())) {
-                                //     return 'Enter a valid email address';
-                                //   }
-                                //   return null;
-                                // },
+                                validator: (value) {
+                                  if (value == null || value.trim().isEmpty) {
+                                    return 'Email is required';
+                                  }
+                                  final regex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
+                                  if (!regex.hasMatch(value.trim())) {
+                                    return 'Enter a valid email address';
+                                  }
+                                  return null;
+                                },
                               ),
                               ...fieldWithName(
                                   title: 'Password',
                                   hintText: 'Enter password',
                                   controller: signUpController.passwordController,
-                                  // validator: (value) {
-                                  //   if (value == null || value.trim().isEmpty) {
-                                  //     return 'Password is required';
-                                  //   }
-                                  //   if (value.length < 8) {
-                                  //     return 'Must be at least 8 characters';
-                                  //   }
-                                  //   if (!RegExp(r'[A-Z]').hasMatch(value)) {
-                                  //     return 'Must include at least one uppercase letter';
-                                  //   }
-                                  //   if (!RegExp(r'[a-z]').hasMatch(value)) {
-                                  //     return 'Must include at least one lowercase letter';
-                                  //   }
-                                  //   if (!RegExp(r'[0-9]').hasMatch(value)) {
-                                  //     return 'Must include at least one number';
-                                  //   }
-                                  //   return null;
-                                  // },
+                                  validator: (value) {
+                                    if (value == null || value.trim().isEmpty) {
+                                      return 'Password is required';
+                                    }
+                                    if (value.length < 8) {
+                                      return 'Must be at least 8 characters';
+                                    }
+                                    if (!RegExp(r'[A-Z]').hasMatch(value)) {
+                                      return 'Must include at least one uppercase letter';
+                                    }
+                                    if (!RegExp(r'[a-z]').hasMatch(value)) {
+                                      return 'Must include at least one lowercase letter';
+                                    }
+                                    if (!RegExp(r'[0-9]').hasMatch(value)) {
+                                      return 'Must include at least one number';
+                                    }
+                                    return null;
+                                  },
                                   obSecure: obscureText1,
                                   suffixIcon: GestureDetector(
                                     onTap: () {
@@ -216,8 +216,8 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                     radius: 0,
                     title: 'Create Account'.tr,
                     onPressed: () {
-                      // addNameApi();
-                      Get.toNamed(TwoFactorValidationScreen.route);
+                      addNameApi();
+                      // Get.toNamed(TwoFactorValidationScreen.route);
                     },
                   ),
                 ),

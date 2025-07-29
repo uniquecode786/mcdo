@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../routers/routers.dart';
 import '../../wigets/addText.dart';
 import '../../wigets/common_button.dart';
+import '../BottomNavBarScreens/bottom_navbar_screen.dart';
+import '../authScreens/signIn_option_screen.dart';
 import 'artboard_screen1.dart';
 
 
 class ArtboardScreen extends StatefulWidget {
   const ArtboardScreen({super.key});
-
+  static String route = '/ArtboardScreen';
   @override
   State<ArtboardScreen> createState() => _ArtboardScreenState();
 }
@@ -30,6 +33,7 @@ class _ArtboardScreenState extends State<ArtboardScreen> {
 
     'English','Arabic'
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

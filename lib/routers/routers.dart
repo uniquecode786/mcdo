@@ -16,6 +16,7 @@ import '../screen/artboardScreen/artBoard_screen2.dart';
 import '../screen/artboardScreen/artBoard_screen3.dart';
 import '../screen/artboardScreen/artboard_screen.dart';
 import '../screen/artboardScreen/artboard_screen1.dart';
+import '../screen/artboardScreen/splash_screen.dart';
 import '../screen/authScreens/create_account_screen.dart';
 import '../screen/authScreens/gender_datebirth_screen.dart';
 import '../screen/authScreens/personal_details_screen.dart';
@@ -34,6 +35,7 @@ import '../screen/more_screens/favourites_screen.dart';
 import '../screen/more_screens/privacy_statement.dart';
 import '../screen/more_screens/select_religion_more.dart';
 import '../screen/more_screens/terms_condition_screen.dart';
+import '../screen/more_screens/update_profile_screen.dart';
 
 
 SizedBox addHeight(double size) => SizedBox(height: size);
@@ -41,7 +43,8 @@ SizedBox addWidth(double size) => SizedBox(width: size);
 
 class MyRouters {
   static var route = [
-    GetPage(name: '/', page: () =>  const ArtboardScreen()),
+    GetPage(name: '/', page: () =>  const SplashScreen()),
+    GetPage(name: ArtboardScreen.route, page: () =>  const ArtboardScreen()),
     GetPage(name: ArtboardScreen1.route, page: () =>  const ArtboardScreen1()),
     GetPage(name: ArtboardScreen2.route, page: () =>  const ArtboardScreen2()),
     GetPage(name: ArtboardScreen3.route, page: () =>  const ArtboardScreen3()),
@@ -75,6 +78,7 @@ class MyRouters {
     GetPage(name: BasketScreen.route, page: () =>  const BasketScreen()),
     GetPage(name: CheckoutScreen.route, page: () =>  const CheckoutScreen()),
     GetPage(name: ChangePassword.route, page: () =>  const ChangePassword()),
+    GetPage(name: UpdateProfileScreen.route, page: () =>  const UpdateProfileScreen()),
 
   ];
 }

@@ -237,13 +237,13 @@ class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
                 radius: 0,
                 title: 'Continue'.tr,
                 onPressed: () {
-                  // if (!switchValue) {
-                  //   showToast('You must confirm that you are aged 16 or over and agree to the Terms to proceed.',
-                  //   center: true
-                  //   );
-                  //
-                  //   return;
-                  // }
+                  if (!switchValue) {
+                    showToast('You must confirm that you are aged 16 or over and agree to the Terms to proceed.',
+                    center: true
+                    );
+
+                    return;
+                  }
                   Get.toNamed(PersonalDetailsScreen.route);
                 },
               ),

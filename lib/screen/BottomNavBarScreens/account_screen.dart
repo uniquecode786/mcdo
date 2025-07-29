@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mcdo/routers/routers.dart';
 import 'package:mcdo/screen/BottomNavBarScreens/password_security.dart';
 import 'package:mcdo/screen/BottomNavBarScreens/personal_details_screen.dart';
+import '../../controller/profile_controller.dart';
 import '../../wigets/addText.dart';
 import 'communication_settings_screen.dart';
 import 'delete_account_screen.dart';
@@ -19,6 +20,13 @@ class AccountScreen extends StatefulWidget {
 }
 
 class _AccountScreenState extends State<AccountScreen> {
+
+  final profileController = Get.put(ProfileController());
+  @override
+  void initState() {
+    super.initState();
+    profileController.getProfileRepo();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

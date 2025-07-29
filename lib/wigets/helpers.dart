@@ -100,3 +100,19 @@ extension ConvertToNum on String {
     return "${split(":")[0]}:${split(":")[1]}";
   }
 }
+
+class LoadingAnimation extends StatelessWidget {
+  const LoadingAnimation({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+        child: SizedBox(height: 100,
+            width: 100,
+            child: Lottie.asset(
+                "assets/loti/loading.json", frameRate: FrameRate.max))
+            .animate()
+            .scale(duration: 200.ms)
+            .fade(duration: 200.ms));
+  }
+}

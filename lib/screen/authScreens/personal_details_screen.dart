@@ -21,14 +21,14 @@ class PersonalDetailsScreen extends StatefulWidget {
 class _PersonalDetailsScreenState extends State<PersonalDetailsScreen> {
 
   final signUpController = Get.put(SignUpController());
-  // final formKey = GlobalKey<FormState>();
+  final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Form(
-          // key: formKey,
+          key: formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
@@ -81,29 +81,29 @@ class _PersonalDetailsScreenState extends State<PersonalDetailsScreen> {
                               title: 'First name',
                               hintText: 'First name',
                               controller: signUpController.nameController,
-                              // validator: (value) {
-                              //   if (value == null || value.trim().isEmpty) {
-                              //     return 'First name is required';
-                              //   }
-                              //   if (value.trim().length < 2) {
-                              //     return 'Must be at least 2 characters';
-                              //   }
-                              //   return null;
-                              // },
+                              validator: (value) {
+                                if (value == null || value.trim().isEmpty) {
+                                  return 'First name is required';
+                                }
+                                if (value.trim().length < 2) {
+                                  return 'Must be at least 2 characters';
+                                }
+                                return null;
+                              },
                             ),
                             ...fieldWithName(
                               title: 'Last name',
                               hintText: 'Last name',
                               controller: signUpController.lastNameController,
-                              // validator: (value) {
-                              //   if (value == null || value.trim().isEmpty) {
-                              //     return 'Last name is required';
-                              //   }
-                              //   if (value.trim().length < 2) {
-                              //     return 'Must be at least 2 characters';
-                              //   }
-                              //   return null;
-                              // },
+                              validator: (value) {
+                                if (value == null || value.trim().isEmpty) {
+                                  return 'Last name is required';
+                                }
+                                if (value.trim().length < 2) {
+                                  return 'Must be at least 2 characters';
+                                }
+                                return null;
+                              },
                             ),
                             addHeight(30),
                           ],
@@ -136,9 +136,9 @@ class _PersonalDetailsScreenState extends State<PersonalDetailsScreen> {
                   radius: 0,
                   title: 'Continue'.tr,
                   onPressed: () {
-                    // if(formKey.currentState!.validate()) {
+                    if(formKey.currentState!.validate()) {
                       Get.toNamed(CreateAccountScreen.route);
-                    // }
+                    }
                   },
                 ),
               ),

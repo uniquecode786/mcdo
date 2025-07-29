@@ -235,7 +235,7 @@ class _TwoFactorValidationScreenState extends State<TwoFactorValidationScreen> {
                           GestureDetector(
                             behavior: HitTestBehavior.translucent,
                             onTap: () {
-                              // resendOtp();
+                              resendOtp();
                             },
                             child: Text('Resend code',
                               style: GoogleFonts.poppins(
@@ -261,8 +261,8 @@ class _TwoFactorValidationScreenState extends State<TwoFactorValidationScreen> {
                   radius: 0,
                   title: 'Submit',
                   onPressed: () {
-                    // emailVerification();
-                    Get.toNamed(GenderDateBirthScreen.route);
+                    emailVerification();
+                    // Get.toNamed(GenderDateBirthScreen.route);
                   },
                 ),
               ),
