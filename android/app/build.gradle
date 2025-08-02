@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.mcdo.himpreet.mcdo"
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = 35
     ndkVersion = '28.0.12674087'
 
     compileOptions {

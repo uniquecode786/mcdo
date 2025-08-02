@@ -34,7 +34,8 @@ class _TwoFactorValidationScreenState extends State<TwoFactorValidationScreen> {
   emailVerification() {
     if (formKey.currentState!.validate()) {
       repositories.postApi(mapData: {
-        "email": signUpController.emailController.text.trim().toString(),
+        "country_code":  signUpController.code.toString(),
+        "phone": signUpController.emailController.text.trim().toString(),
         'otp': otpController.text.trim().toString(),
       },
           url: ApiUrls.emailVerificationUrl,
@@ -58,7 +59,8 @@ class _TwoFactorValidationScreenState extends State<TwoFactorValidationScreen> {
 
   resendOtp() {
     repositories.postApi(mapData: {
-      "email": signUpController.emailController.text.trim().toString(),
+      "country_code":  signUpController.code.toString(),
+      "phone": signUpController.emailController.text.trim().toString(),
     }, url: ApiUrls.resendOtpUrl, context: context, showResponse: true)
         .then((value) {
       CommonModel response = CommonModel.fromJson(jsonDecode(value));

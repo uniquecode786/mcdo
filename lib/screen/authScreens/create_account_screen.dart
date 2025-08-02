@@ -2,6 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:mcdo/screen/authScreens/personal_details_screen.dart';
 import 'package:mcdo/screen/authScreens/two_factor_validation_screen.dart';
 
@@ -31,7 +33,9 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
       repositories.postApi(mapData: {
         "first_name": signUpController.nameController.text.trim().toString(),
         "last_name":  signUpController.lastNameController.text.trim().toString(),
-        "email":      signUpController.emailController.text.trim().toString(),
+        // "email":      signUpController.emailController.text.trim().toString(),
+        "country_code": signUpController.code.toString(),
+        "phone":      signUpController.emailController.text.trim().toString(),
         "password":   signUpController.passwordController.text.trim().toString(),
         "is_over_16_and_agreed": "1",
         "receive_news_email": "1",
@@ -39,7 +43,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
       }, url: ApiUrls.signUpUrl, context: context,showResponse: true)
           .then((value) {
         CommonModel response = CommonModel.fromJson(jsonDecode(value));
-        showToast(response.message.toString(),center: true);
+        showToast(response.otp.toString(),center: true);
         if (response.status == true) {
           Get.toNamed(TwoFactorValidationScreen.route);
           // signUpController.nameController.clear();
@@ -53,6 +57,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
     }
   }
   var obscureText1 = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,21 +115,100 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                                 color: Colors.black,
                               ),
                               addHeight(24),
-                              ...fieldWithName(
-                                title: 'Email',
-                                hintText: 'Enter email',
+                              // ...fieldWithName(
+                              //   title: 'Email',
+                              //   hintText: 'Enter email',
+                              //   controller: signUpController.emailController,
+                              //   validator: (value) {
+                              //     if (value == null || value.trim().isEmpty) {
+                              //       return 'Email is required';
+                              //     }
+                              //     final regex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
+                              //     if (!regex.hasMatch(value.trim())) {
+                              //       return 'Enter a valid email address';
+                              //     }
+                              //     return null;
+                              //   },
+                              // ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  const Text('*',style: TextStyle(
+                                      color: Colors.red
+                                  ),),
+                                  Text(
+                                    'Phone Number',
+                                    style: GoogleFonts.poppins(fontSize: 11,
+                                        fontWeight: FontWeight.w400,
+                                        color: const Color(0xFF6B6B6B)),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 2,
+                              ),
+                              IntlPhoneField(
+                                // key: ValueKey(profileController.code),
+                                flagsButtonPadding: const EdgeInsets.all(8),
+                                dropdownIconPosition: IconPosition.trailing,
+                                showDropdownIcon: true,
+                                cursorColor: Colors.black,
+                                textInputAction: TextInputAction.next,
+                                dropdownTextStyle: const TextStyle(color: Colors.black),
+                                style: GoogleFonts.poppins(
+                                    color: Colors.black,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400
+                                ),
                                 controller: signUpController.emailController,
-                                validator: (value) {
-                                  if (value == null || value.trim().isEmpty) {
-                                    return 'Email is required';
-                                  }
-                                  final regex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
-                                  if (!regex.hasMatch(value.trim())) {
-                                    return 'Enter a valid email address';
-                                  }
-                                  return null;
+                                decoration: InputDecoration(
+                                  counterStyle: GoogleFonts.poppins(
+                                      color: Colors.black,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w400
+                                  ),
+                                  counter: const Offstage(),
+
+                                  errorMaxLines: 2,
+                                  contentPadding: const EdgeInsets.all(15),
+                                  filled: true,
+                                  hintText: 'Enter your phone number',
+                                  hintStyle: GoogleFonts.poppins(
+                                      color: const Color(0xFFC5C5C5),
+                                      fontSize: 13,
+                                      fontWeight: FontWeight.w400
+                                  ),
+                                  fillColor: Colors.white,
+                                  border: InputBorder.none,
+                                  focusedErrorBorder:  const OutlineInputBorder(
+                                      borderRadius: BorderRadius.all(Radius.circular(4)), borderSide: BorderSide(color: Color(0xFF6B6B6B))),
+                                  errorBorder:  const OutlineInputBorder(
+                                      borderRadius: BorderRadius.all(Radius.circular(4)), borderSide: BorderSide(color: Color(0xFF6B6B6B))),
+                                  focusedBorder:  const OutlineInputBorder(
+                                      borderRadius: BorderRadius.all(Radius.circular(4)), borderSide: BorderSide(color:Color(0xFF6B6B6B))),
+                                  disabledBorder:  const OutlineInputBorder(
+                                    borderRadius: BorderRadius.all(Radius.circular(4)),
+                                    borderSide: BorderSide(color:Color(0xFF6B6B6B)),
+                                  ),
+                                  enabledBorder:  const OutlineInputBorder(
+                                    borderRadius: BorderRadius.all(Radius.circular(4)),
+                                    borderSide: BorderSide(color: Color(0xFF6B6B6B)),
+                                  ),
+                                ),
+                                initialCountryCode: signUpController.code.toString(),
+                                languageCode:  signUpController.code,
+                                onCountryChanged: (phone) {
+                                  signUpController.code = phone.code;
+                                  print(phone.code);
+                                  print(signUpController.code.toString());
+                                },
+                                onChanged: (phone) {
+                                  signUpController.code = phone.countryISOCode.toString();
+                                  print(phone.countryCode);
+                                  print(signUpController.code.toString());
                                 },
                               ),
+                              addHeight(10),
                               ...fieldWithName(
                                   title: 'Password',
                                   hintText: 'Enter password',
